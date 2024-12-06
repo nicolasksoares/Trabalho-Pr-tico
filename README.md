@@ -12,8 +12,12 @@ Professores: Carlos Ribas e Laerte                Entrega: 15/12/2024           
 
  
 Objetivo:
+
 O objetivo é realizar um sistema de gerenciamento para a Voo Seguro, que subtitua os métodos manuais antigos. Para isso propomos um software feito na linguagem C que irá auxiliar-los por meio da automatização do controle de dados. A solução incluirá uma interface intuitiva, projetada para facilitar o uso com uma gama de comandos e funções para isso.
 
+Backlog:
+
+A figura 1 apresenta o backlog do produto realizado pelo time no projects do github com suas respectivas divisões e seus respectivos responsaveis para isso
 
 Observações:
 
