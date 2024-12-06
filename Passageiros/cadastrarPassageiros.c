@@ -1,21 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
-#define MAX_PASSAGEIROS 999
+#define MAX_PASSAGEIROS 99
 
-// Estruturas para armazenar as informações dos passageiros
-int id[MAX_PASSAGEIROS];
-char nome[MAX_PASSAGEIROS][40];
-char endereco[MAX_PASSAGEIROS][40];
-char telefone[MAX_PASSAGEIROS][20];
-int fidelidade[MAX_PASSAGEIROS];
-int pontos[MAX_PASSAGEIROS];
+// Definindo a struct para armazenar os dados dos passageiros
+typedef struct cadastroPassageiro{
+    int id;
+    char nome[40];
+    char endereco[40];
+    char telefone[20];
+    int fidelidade;
+    int pontos;
+} Passageiro;
 
+// Array de passageiros
+Passageiro passageiros[MAX_PASSAGEIROS];
 int n = 0;
 
 int verificarEspacosBrancos(const char *str)
 {
-    // Percorrer a string e verificar se algum caractere não é espaço
     while (*str)
     {
         if (!isspace(*str))
@@ -29,62 +33,71 @@ int verificarEspacosBrancos(const char *str)
 
 void add()
 {
-
     if (n >= MAX_PASSAGEIROS)
     {
         printf("Limite de passageiros atingido!\n");
-        return;}
+        return;
+    }
 
-    id[n] = n + 1;
+    // Preenche os dados do passageiro
+    Passageiro novo_passageiro;
+    novo_passageiro.id = n + 1;
     printf("Adicionar passageiro\n");
 
     do
     {
         setbuf(stdin, 0);
         printf("Digite o nome: ");
-        fgets(nome[n], sizeof(nome), stdin);
-        if (verificarEspacosBrancos(nome[n]))
+        fgets(novo_passageiro.nome, sizeof(novo_passageiro.nome), stdin);
+        if (verificarEspacosBrancos(novo_passageiro.nome))
         {
             printf("Nome invalido!\n");
         }
-    } while (verificarEspacosBrancos(nome[n]));
+    } while (verificarEspacosBrancos(novo_passageiro.nome));
 
     do
     {
         setbuf(stdin, 0);
         printf("Digite o endereco: ");
-        fgets(endereco[n], sizeof(endereco), stdin);
-        if (verificarEspacosBrancos(endereco[n])){
-            printf("Endereco invalido!\n");}
-    } while(verificarEspacosBrancos(endereco[n]));
+        fgets(novo_passageiro.endereco, sizeof(novo_passageiro.endereco), stdin);
+        if (verificarEspacosBrancos(novo_passageiro.endereco))
+        {
+            printf("Endereco invalido!\n");
+        }
+    } while (verificarEspacosBrancos(novo_passageiro.endereco));
 
-    do{
+    do
+    {
         setbuf(stdin, 0);
         printf("Digite o telefone: ");
-        fgets(telefone[n], sizeof(telefone), stdin);
-        if(verificarEspacosBrancos(telefone[n])){
+        fgets(novo_passageiro.telefone, sizeof(novo_passageiro.telefone), stdin);
+        if (verificarEspacosBrancos(novo_passageiro.telefone))
+        {
             printf("Telefone invalido!\n");
         }
-    } while(verificarEspacosBrancos(telefone[n]));
+    } while (verificarEspacosBrancos(novo_passageiro.telefone));
 
     do
     {
         printf("Digite a fidelidade\n"
                "[1]Sim\n"
                "[2]Nao\n");
-        scanf("%d", &fidelidade[n]);
-        if (fidelidade[n] != 1 && fidelidade[n] != 2)
+        scanf("%d", &novo_passageiro.fidelidade);
+        if (novo_passageiro.fidelidade != 1 && novo_passageiro.fidelidade != 2)
         {
             printf("Digite de 1 a 2!\n");
         }
-    } while (fidelidade[n] != 1 && fidelidade[n] != 2);
+    } while (novo_passageiro.fidelidade != 1 && novo_passageiro.fidelidade != 2);
+
+    // Adiciona o novo passageiro ao array
+    passageiros[n] = novo_passageiro;
 
     printf("\nPassageiro cadastrado\n");
-    printf("ID: %d\n", id[n]);
-    printf("Nome: %s", nome[n]);
-    printf("Endereco: %s", endereco[n]);
-    printf("Telefone: %s", telefone[n]);
-    if (fidelidade[n] == 1)
+    printf("ID: %d\n", passageiros[n].id);
+    printf("Nome: %s", passageiros[n].nome);
+    printf("Endereco: %s", passageiros[n].endereco);
+    printf("Telefone: %s", passageiros[n].telefone);
+    if (passageiros[n].fidelidade == 1)
     {
         printf("Fidelidade: Sim\n");
     }
@@ -116,10 +129,11 @@ void lerPassageiros()
     printf("Passageiros cadastrados\n");
     for (i = 0; i < n; i++)
     {
-        printf("Nome: %s", nome[i]);
-        printf("Endereco: %s", endereco[i]);
-        printf("Telefone: %s", telefone[i]);
-        if (fidelidade[i] == 1)
+        printf("ID: %d\n", passageiros[i].id);
+        printf("Nome: %s", passageiros[i].nome);
+        printf("Endereco: %s", passageiros[i].endereco);
+        printf("Telefone: %s", passageiros[i].telefone);
+        if (passageiros[i].fidelidade == 1)
         {
             printf("Fidelidade: Sim\n");
         }
