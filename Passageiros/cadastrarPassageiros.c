@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <string.h>
 
 #define MAX_PASSAGEIROS 99
 
 // Definindo a struct para armazenar os dados dos passageiros
-typedef struct cadastroPassageiro{
+typedef struct cadastroPassageiro {
     int id;
     char nome[40];
     char endereco[40];
@@ -14,9 +15,9 @@ typedef struct cadastroPassageiro{
     int pontos;
 } Passageiro;
 
-// Array de passageiros
+// Array de passageiros e contador
 Passageiro passageiros[MAX_PASSAGEIROS];
-int n = 0;
+int n = 0; // Declarando n como um contador global de passageiros
 
 int verificarEspacosBrancos(const char *str)
 {
@@ -31,7 +32,7 @@ int verificarEspacosBrancos(const char *str)
     return 1;
 }
 
-void add()
+void add(const char* nome_input, const char* endereco_input, const char* telefone_input, int fidelidade_input)
 {
     if (n >= MAX_PASSAGEIROS)
     {
@@ -42,70 +43,60 @@ void add()
     // Preenche os dados do passageiro
     Passageiro novo_passageiro;
     novo_passageiro.id = n + 1;
-    printf("Adicionar passageiro\n");
 
-    do
-    {
-        setbuf(stdin, 0);
-        printf("Digite o nome: ");
-        fgets(novo_passageiro.nome, sizeof(novo_passageiro.nome), stdin);
-        if (verificarEspacosBrancos(novo_passageiro.nome))
-        {
-            printf("Nome invalido!\n");
-        }
-    } while (verificarEspacosBrancos(novo_passageiro.nome));
+    if (nome_input == NULL) { // Se não for um teste, solicita a entrada do usuário
+        do {
+            setbuf(stdin, 0);
+            printf("Digite o nome: ");
+            fgets(novo_passageiro.nome, sizeof(novo_passageiro.nome), stdin);
+        } while (verificarEspacosBrancos(novo_passageiro.nome));
+    } else { // Usa os valores do teste
+        strncpy(novo_passageiro.nome, nome_input, sizeof(novo_passageiro.nome) - 1);
+        novo_passageiro.nome[sizeof(novo_passageiro.nome) - 1] = '\0';
+    }
 
-    do
-    {
-        setbuf(stdin, 0);
-        printf("Digite o endereco: ");
-        fgets(novo_passageiro.endereco, sizeof(novo_passageiro.endereco), stdin);
-        if (verificarEspacosBrancos(novo_passageiro.endereco))
-        {
-            printf("Endereco invalido!\n");
-        }
-    } while (verificarEspacosBrancos(novo_passageiro.endereco));
+    if (endereco_input == NULL) {
+        do {
+            setbuf(stdin, 0);
+            printf("Digite o endereco: ");
+            fgets(novo_passageiro.endereco, sizeof(novo_passageiro.endereco), stdin);
+        } while (verificarEspacosBrancos(novo_passageiro.endereco));
+    } else {
+        strncpy(novo_passageiro.endereco, endereco_input, sizeof(novo_passageiro.endereco) - 1);
+        novo_passageiro.endereco[sizeof(novo_passageiro.endereco) - 1] = '\0';
+    }
 
-    do
-    {
-        setbuf(stdin, 0);
-        printf("Digite o telefone: ");
-        fgets(novo_passageiro.telefone, sizeof(novo_passageiro.telefone), stdin);
-        if (verificarEspacosBrancos(novo_passageiro.telefone))
-        {
-            printf("Telefone invalido!\n");
-        }
-    } while (verificarEspacosBrancos(novo_passageiro.telefone));
+    if (telefone_input == NULL) {
+        do {
+            setbuf(stdin, 0);
+            printf("Digite o telefone: ");
+            fgets(novo_passageiro.telefone, sizeof(novo_passageiro.telefone), stdin);
+        } while (verificarEspacosBrancos(novo_passageiro.telefone));
+    } else {
+        strncpy(novo_passageiro.telefone, telefone_input, sizeof(novo_passageiro.telefone) - 1);
+        novo_passageiro.telefone[sizeof(novo_passageiro.telefone) - 1] = '\0';
+    }
 
-    do
-    {
-        printf("Digite a fidelidade\n"
-               "[1]Sim\n"
-               "[2]Nao\n");
-        scanf("%d", &novo_passageiro.fidelidade);
-        if (novo_passageiro.fidelidade != 1 && novo_passageiro.fidelidade != 2)
-        {
-            printf("Digite de 1 a 2!\n");
-        }
-    } while (novo_passageiro.fidelidade != 1 && novo_passageiro.fidelidade != 2);
+    if (fidelidade_input == -1) { 
+        do {
+            printf("Digite a fidelidade\n"
+                   "[1]Sim\n"
+                   "[2]Nao\n");
+            scanf("%d", &novo_passageiro.fidelidade);
+        } while (novo_passageiro.fidelidade != 1 && novo_passageiro.fidelidade != 2);
+    } else {
+        novo_passageiro.fidelidade = fidelidade_input;
+    }
 
-    // Adiciona o novo passageiro ao array
     passageiros[n] = novo_passageiro;
+    n++; // Incrementa o contador de passageiros
 
     printf("\nPassageiro cadastrado\n");
-    printf("ID: %d\n", passageiros[n].id);
-    printf("Nome: %s", passageiros[n].nome);
-    printf("Endereco: %s", passageiros[n].endereco);
-    printf("Telefone: %s", passageiros[n].telefone);
-    if (passageiros[n].fidelidade == 1)
-    {
-        printf("Fidelidade: Sim\n");
-    }
-    else
-    {
-        printf("Fidelidade: Nao\n");
-    }
-    n++;
+    printf("ID: %d\n", passageiros[n - 1].id);
+    printf("Nome: %s\n", passageiros[n - 1].nome);
+    printf("Endereco: %s\n", passageiros[n - 1].endereco);
+    printf("Telefone: %s\n", passageiros[n - 1].telefone);
+    printf("Fidelidade: %s\n", (passageiros[n - 1].fidelidade == 1) ? "Sim" : "Nao");
 }
 
 int continua()
@@ -144,7 +135,8 @@ void lerPassageiros()
     }
 }
 
-int main()
+/* Função para rodar o código principal, não alterada */
+/*int main()
 {
     int op, r;
     do
@@ -180,4 +172,4 @@ int main()
     lerPassageiros();
     getchar();
     return 0;
-}
+}*/
