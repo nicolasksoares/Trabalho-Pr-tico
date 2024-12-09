@@ -25,7 +25,7 @@ A figura 1 apresenta o backlog do produto realizado pelo time no projects do git
 |--------|-----------------|-------------------|--------------------|-------------------|
 |Numeros inteiros | Opção existente | Acessar funcionalidade | Numeros negativos, acima de 8 e nulos | Opção inválida|
 
-##Espaços em brancos
+## Espaços em brancos
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
 | Teclado     |   Texto     | Cadastrar informação     | Espaços brancos, tabulação e nova linha | É solicitadoa ao usuario escrevre novamente o texto|
