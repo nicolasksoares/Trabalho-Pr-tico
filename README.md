@@ -20,10 +20,33 @@ Backlog:
 A figura 1 apresenta o backlog do produto realizado pelo time no projects do github com suas respectivas divisões e seus respectivos responsaveis para isso
 
 TESTES:
+Menu:
 |ENTRADAS | CLASSES VÁLIDAS | RESULTADO ESPERADO | CLASSES INVÁLIDAS | RESULTADO ESPERADO|
 |--------|-----------------|-------------------|--------------------|-------------------|
-Numeros inteiros | Numeros de 1 a 8 | Acessar funcionalidade | Numeros negativos, acima de 8 e nulos | Opção inválida|
+|Numeros inteiros | Opção existente | Acessar funcionalidade | Numeros negativos, acima de 8 e nulos | Opção inválida|
 
+RELATORIO DE EXECUÇÃO DE TESTES:
+Menu: 
+| Teste 1: Menu de opções|
+|------------------------|
+|ENTRADAS | CLASSES VÁLIDAS | RESULTADO ESPERADO | CLASSES INVÁLIDAS | RESULTADO ESPERADO|
+|Numero inteiro| Numeros de 1 a 8| Acessar funcionalidade | Numeros negativos, acima de 8 e nulos| Opção invalida|
+|--------|-----------------|-------------------|--------------------|-------------------|
+|Relatorio de execução de testes|
+|---------------------------------|
+|Entradas| Resultado| Aprovados|
+|-------|----------|---------|
+|Valor: -5| Opção invalida| Sim|
+|Valor: 0| Opção invalida| Sim|
+|Valor: 1| Cadastrar Passageiro| Sim|
+|Valor: 2| Cadastrar Tripulação| Sim|
+|Valor: 3| Cadastrar Voo| Sim|
+|Valor: 4| Cadastrar Assento| Sim|
+|Valor: 5| Reserva| Sim|
+|Valor: 6| Baixa em reserva| Sim|
+|Valor: 7| Pesquisa| Sim|
+|Valor: 8| Programa de fidelidade| Sim|
+|Valor: 20| Opção Inválida| Sim|
 Observações:
 
 O trabalho poderá ser feito em grupos de até 4 alunos,
