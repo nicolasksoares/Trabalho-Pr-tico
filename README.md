@@ -19,6 +19,11 @@ Backlog:
 
 A figura 1 apresenta o backlog do produto realizado pelo time no projects do github com suas respectivas divisões e seus respectivos responsaveis para isso
 
+TESTES:
+|ENTRADAS | CLASSES VÁLIDAS | RESULTADO ESPERADO | CLASSES INVÁLIDAS | RESULTADO ESPERADO|
+|--------|-----------------|-------------------|--------------------|-------------------|
+Numeros inteiros | Numeros de 1 a 8 | Acessar funcionalidade | Numeros negativos, acima de 8 e nulos | Opção inválida|
+
 Observações:
 
 O trabalho poderá ser feito em grupos de até 4 alunos,
