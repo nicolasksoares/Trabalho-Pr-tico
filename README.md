@@ -19,23 +19,21 @@ Backlog:
 
 A figura 1 apresenta o backlog do produto realizado pelo time no projects do github com suas respectivas divisões e seus respectivos responsaveis para isso
 
-TESTES:
-Menu:
+## TESTES:
+# Menu:
 |ENTRADAS | CLASSES VÁLIDAS | RESULTADO ESPERADO | CLASSES INVÁLIDAS | RESULTADO ESPERADO|
 |--------|-----------------|-------------------|--------------------|-------------------|
 |Numeros inteiros | Opção existente | Acessar funcionalidade | Numeros negativos, acima de 8 e nulos | Opção inválida|
 
-RELATORIO DE EXECUÇÃO DE TESTES:
-Menu: 
-## Teste 1: Menu de opções
+## RELATORIO DE EXECUÇÃO DE TESTES:
+# Menu: 
+Teste 1: Menu de opções
 
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
-| Número inteiro    | Números de 1 a 8        | Acessar funcionalidade     | Números negativos, acima de 8 e nulos | Opção inválida        |
+| Número inteiro    | Números de 1 a 8        | Acessar funcionalidade     | Números negativos, acima de 8 e nulos | Opção inválida       
 
----
-
-## Relatório de execução de testes
+ Relatório de execução de testes
 
 | ENTRADAS   | RESULTADO                | APROVADOS |
 |------------|--------------------------|-----------|
@@ -50,7 +48,6 @@ Menu:
 | Valor: 7   | Pesquisa                 | Sim       |
 | Valor: 8   | Programa de fidelidade   | Sim       |
 | Valor: 20  | Opção inválida           | Sim       |
-Observações:
 
 O trabalho poderá ser feito em grupos de até 4 alunos,
 Cópias de trabalho receberão nota ZERO.
