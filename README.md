@@ -11,27 +11,32 @@ Disciplinas: Algoritmos e Estruturas de Dados I  / Fundamentos de Engenharia de 
 Professores: Carlos Ribas e Laerte                Entrega: 15/12/2024                 Valor: 10 pontos
 
  
-## Objetivo:
+# Objetivo:
 
 O objetivo é realizar um sistema de gerenciamento para a Voo Seguro, que subtitua os métodos manuais antigos. Para isso propomos um software feito na linguagem C que irá auxiliar-los por meio da automatização do controle de dados. A solução incluirá uma interface intuitiva, projetada para facilitar o uso com uma gama de comandos e funções para isso.
 
-## Backlog:
+# Backlog:
 
 A figura 1 apresenta o backlog do produto realizado pelo time no projects do github com suas respectivas divisões e seus respectivos responsaveis para isso
 
-## TESTES:
-# Menu:
+# TESTES:
+## Menu:
 |ENTRADAS | CLASSES VÁLIDAS | RESULTADO ESPERADO | CLASSES INVÁLIDAS | RESULTADO ESPERADO|
 |--------|-----------------|-------------------|--------------------|-------------------|
 |Numeros inteiros | Opção existente | Acessar funcionalidade | Numeros negativos, acima de 8 e nulos | Opção inválida|
 
-## RELATORIO DE EXECUÇÃO DE TESTES:
-# Menu: 
+##Espaços em brancos
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Teclado     |   Texto     | Cadastrar informação     | Espaços brancos, tabulação e nova linha | É solicitadoa ao usuario escrevre novamente o texto|
+
+# RELATORIO DE EXECUÇÃO DE TESTES:
+## Menu: 
 Teste 1: Menu de opções
 
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
-| Número inteiro    | Números de 1 a 8        | Acessar funcionalidade     | Números negativos, acima de 8 e nulos | Opção inválida       
+| Número inteiro    | Números de 1 a 8        | Acessar funcionalidade     | Números negativos, acima de 8 e nulos | Opção inválida |      
 
  Relatório de execução de testes
 
@@ -48,6 +53,22 @@ Teste 1: Menu de opções
 | Valor: 7   | Pesquisa                 | Sim       |
 | Valor: 8   | Programa de fidelidade   | Sim       |
 | Valor: 20  | Opção inválida           | Sim       |
+## Espaço em branco
+Teste 1: Verificar espaços brancos
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| String    |   String     | Cadastrar informação     | Espaços brancos, tabulação e nova linha | É solicitadoa ao usuario escrevre novamente o texto|
+
+Relatório de execução de testes:
+
+
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Valor: " "   | Texto invalido           | Sim       |
+| Valor: "Bom" | Texto válido             | Sim       |
+| Valor: ""    | Texto invalido           | Sim       |
+| Valor: \t\n  | Texto invalido           | Sim       |
+| Valor: " Opa"| Texto Válido         | Sim       |
 
 O trabalho poderá ser feito em grupos de até 4 alunos,
 Cópias de trabalho receberão nota ZERO.
