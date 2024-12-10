@@ -28,7 +28,12 @@ A figura 1 apresenta o backlog do produto realizado pelo time no projects do git
 ## Espaços em brancos
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
-| Teclado     |   Texto     | Cadastrar informação     | Espaços brancos, tabulação e nova linha | É solicitadoa ao usuario escrevre novamente o texto|
+| Teclado     |   Texto     | Cadastrar informação     | Espaços brancos, tabulação e nova linha | É solicitadoa ao usuario escrever| novamente o texto|
+
+## Adicionar passageiros
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Informação validas    |   Texto alfabético ou numérico     | Passageiro cadastrado     | Fidelidade com qualquer valor diferente de "Sim" ou "Não". Nome vazio ou caracteres invalidos | É solicitado ao usuario escrever novamente| 
 
 # RELATORIO DE EXECUÇÃO DE TESTES:
 ## Menu: 
@@ -57,7 +62,7 @@ Teste 1: Menu de opções
 Teste 1: Verificar espaços brancos
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
-| String    |   String     | Cadastrar informação     | Espaços brancos, tabulação e nova linha | É solicitadoa ao usuario escrevre novamente o texto|
+| String    |   String     | Cadastrar informação     | Espaços brancos, tabulação e nova linha | É solicitadoa ao usuario escrevre |novamente o texto|
 
 Relatório de execução de testes:
 
@@ -69,6 +74,53 @@ Relatório de execução de testes:
 | Valor: ""    | Texto invalido           | Sim       |
 | Valor: \t\n  | Texto invalido           | Sim       |
 | Valor: " Opa"| Texto Válido         | Sim       |
+
+## Adicionar passageiros
+Teste 1: Verificar adicionamento de passageiros
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+|  Strings e inteiros   |   Texto valido, pontos não negativos e fidelidade como 1 ou 2     | Informar ao usuario os dados cadastrados     | Strings vazias, numeros negativos e opçoes além do escopo de opção | É solicitado ao usuario escrever novamente| 
+
+Relatorio de execução de testes:
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Nome: "Wesley"   | Texto válido           | Sim       |
+| Endereço: "Rua" | Texto válido             | Sim       |
+| Numero: "40028922"    | Texto válido           | Sim       |
+| Fidelidade: "1"  | Opção válida          | Sim       |
+| Pontos: "1500"| Quantidade válida         | Sim       |
+
+## Adicionar cadastro
+
+Teste 1:  Limite de assentos cadastrados atingido
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Valor: "10000"   | Impossivel cadastrar           | Sim       |
+
+Teste 2: Cadastrar assento
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Assento: -1 Voo: -5 |   Cadastro inválido         | Sim       |
+| Assento: -1 Voo: 0 |   Cadastro inválido         | Sim       |
+| Assento: -1 Voo: 5 |   Cadastro inválido         | Sim       |
+| Assento: 0 Voo: -5 |   Cadastro inválido         | Sim       |
+| Assento: 0 Voo: 0 |   Cadastro inválido         | Sim       |
+| Assento: 0 Voo: 5 |   Cadastro inválido         | Sim       |
+| Assento: 17 Voo: -5 |   Cadastro inválido         | Sim       |
+| Assento: 17 Voo: 0 |   Cadastro inválido         | Sim       |
+| Assento: 17 Voo: 5 |   Cadastro válido         | Sim       |
+
+Teste 3: Verificar assento vazios
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Total de assentos: 0 |   Busca inválida         | Sim       |
+
+Teste 4: Assento duplicado
+Cadastramos o assento 17 05 e verificamos se ele já é existente
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Assento: 17 Voo: 5 |   Voo duplicado         | Sim       |
+
 
 O trabalho poderá ser feito em grupos de até 4 alunos,
 Cópias de trabalho receberão nota ZERO.
