@@ -33,8 +33,12 @@ A figura 1 apresenta o backlog do produto realizado pelo time no projects do git
 ## Adicionar passageiros
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
-| Informação validas    |   Texto alfabético ou numérico     | Passageiro cadastrado     | Fidelidade com qualquer valor diferente de "Sim" ou "Não". Nome vazio ou caracteres invalidos | É solicitado ao usuario escrever novamente| 
+| Informação validas    |   Texto alfabético ou numérico     | Passageiro cadastrado     | Fidelidade com qualquer valor diferente de "Sim" ou "Não". Nome vazio ou caracteres invalidos | É solicitado ao usuario escrever novamente|
 
+## Adicionar assentos
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Id do assento, codigo do voo | Id dentro do limite e existente, codigo do voo dentro do limite e existente e assento previamente não cadastrado | Cadastrar assento para denterminado voo | Id e codigo de voo negativo, nulo, além do limite e duplicado| Informar ao usuario que os dados não podem ser cadastrados |
 # RELATORIO DE EXECUÇÃO DE TESTES:
 ## Menu: 
 Teste 1: Menu de opções
@@ -90,14 +94,22 @@ Relatorio de execução de testes:
 | Fidelidade: "1"  | Opção válida          | Sim       |
 | Pontos: "1500"| Quantidade válida         | Sim       |
 
-## Adicionar cadastro
+## Adicionar assentos
 
 Teste 1:  Limite de assentos cadastrados atingido
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Inteiros         | Valores maiores que o limite| Erro ao cadastrar       | Numeros dentro do limite      | Executar a função de cadastrar     |
+Relatorio de execução de teste
 | ENTRADAS     | RESULTADO                | APROVADOS |
 |--------------|--------------------------|-----------|
 | Valor: "10000"   | Impossivel cadastrar           | Sim       |
 
 Teste 2: Cadastrar assento
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Inteiros         | Numeros inteiros positivos e não nulos que não extrapolam o limite| Cadastrar o assento | Numeros negativos, nulo e que extrapolam o limite| Informar ao usuario uma nova solicitação|
+Relatorio de execução de teste
 | ENTRADAS     | RESULTADO                | APROVADOS |
 |--------------|--------------------------|-----------|
 | Assento: -1 Voo: -5 |   Cadastro inválido         | Sim       |
@@ -111,11 +123,20 @@ Teste 2: Cadastrar assento
 | Assento: 17 Voo: 5 |   Cadastro válido         | Sim       |
 
 Teste 3: Verificar assento vazios
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Inteiros         | Listar assentos sem antes cadastrar | Informar que não existe | Listar assentos já pre-cadastrados | Mostrar o sassentos cadastrados|
+
+Relatorio de execução de teste
 | ENTRADAS     | RESULTADO                | APROVADOS |
 |--------------|--------------------------|-----------|
 | Total de assentos: 0 |   Busca inválida         | Sim       |
 
 Teste 4: Assento duplicado
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Inteiros         | Repeti o mesmo numero de assento e voo | Informar que o assento já existe | Informar outro assento | Realizar o cadastro|
+Relatorio de execução de teste
 Cadastramos o assento 17 05 e verificamos se ele já é existente
 | ENTRADAS     | RESULTADO                | APROVADOS |
 |--------------|--------------------------|-----------|
