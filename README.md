@@ -100,6 +100,7 @@ Teste 1:  Limite de assentos cadastrados atingido
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
 | Inteiros         | Valores maiores que o limite| Erro ao cadastrar       | Numeros dentro do limite      | Executar a função de cadastrar     |
+
 Relatorio de execução de teste
 | ENTRADAS     | RESULTADO                | APROVADOS |
 |--------------|--------------------------|-----------|
@@ -109,6 +110,7 @@ Teste 2: Cadastrar assento
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
 | Inteiros         | Numeros inteiros positivos e não nulos que não extrapolam o limite| Cadastrar o assento | Numeros negativos, nulo e que extrapolam o limite| Informar ao usuario uma nova solicitação|
+
 Relatorio de execução de teste
 | ENTRADAS     | RESULTADO                | APROVADOS |
 |--------------|--------------------------|-----------|
@@ -136,6 +138,7 @@ Teste 4: Assento duplicado
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
 | Inteiros         | Repeti o mesmo numero de assento e voo | Informar que o assento já existe | Informar outro assento | Realizar o cadastro|
+
 Relatorio de execução de teste
 Cadastramos o assento 17 05 e verificamos se ele já é existente
 | ENTRADAS     | RESULTADO                | APROVADOS |
