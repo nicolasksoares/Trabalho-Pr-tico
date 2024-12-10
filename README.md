@@ -90,6 +90,38 @@ Relatorio de execução de testes:
 | Fidelidade: "1"  | Opção válida          | Sim       |
 | Pontos: "1500"| Quantidade válida         | Sim       |
 
+## Adicionar cadastro
+
+Teste 1:  Limite de assentos cadastrados atingido
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Valor: "10000"   | Impossivel cadastrar           | Sim       |
+
+Teste 2: Cadastrar assento
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Assento: -1 Voo: -5 |   Cadastro inválido         | Sim       |
+| Assento: -1 Voo: 0 |   Cadastro inválido         | Sim       |
+| Assento: -1 Voo: 5 |   Cadastro inválido         | Sim       |
+| Assento: 0 Voo: -5 |   Cadastro inválido         | Sim       |
+| Assento: 0 Voo: 0 |   Cadastro inválido         | Sim       |
+| Assento: 0 Voo: 5 |   Cadastro inválido         | Sim       |
+| Assento: 17 Voo: -5 |   Cadastro inválido         | Sim       |
+| Assento: 17 Voo: 0 |   Cadastro inválido         | Sim       |
+| Assento: 17 Voo: 5 |   Cadastro válido         | Sim       |
+
+Teste 3: Verificar assento vazios
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Total de assentos: 0 |   Busca inválida         | Sim       |
+
+Teste 4: Assento duplicado
+Cadastramos o assento 17 05 e verificamos se ele já é existente
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Assento: 17 Voo: 5 |   Voo duplicado         | Sim       |
+
+
 O trabalho poderá ser feito em grupos de até 4 alunos,
 Cópias de trabalho receberão nota ZERO.
 O programa deve ser desenvolvido na linguagem de programação C e deverá ser entregue pelo Canvas até as 23:59 horas do dia 15/12/2024.
