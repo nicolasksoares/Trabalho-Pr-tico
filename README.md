@@ -11,15 +11,140 @@ Disciplinas: Algoritmos e Estruturas de Dados I  / Fundamentos de Engenharia de 
 Professores: Carlos Ribas e Laerte                Entrega: 15/12/2024                 Valor: 10 pontos
 
  
-Objetivo:
+# Objetivo:
 
 O objetivo é realizar um sistema de gerenciamento para a Voo Seguro, que subtitua os métodos manuais antigos. Para isso propomos um software feito na linguagem C que irá auxiliar-los por meio da automatização do controle de dados. A solução incluirá uma interface intuitiva, projetada para facilitar o uso com uma gama de comandos e funções para isso.
 
-Backlog:
+# Backlog:
 
 A figura 1 apresenta o backlog do produto realizado pelo time no projects do github com suas respectivas divisões e seus respectivos responsaveis para isso
 
-Observações:
+# TESTES:
+## Menu:
+|ENTRADAS | CLASSES VÁLIDAS | RESULTADO ESPERADO | CLASSES INVÁLIDAS | RESULTADO ESPERADO|
+|--------|-----------------|-------------------|--------------------|-------------------|
+|Numeros inteiros | Opção existente | Acessar funcionalidade | Numeros negativos, acima de 8 e nulos | Opção inválida|
+
+## Espaços em brancos
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Teclado     |   Texto     | Cadastrar informação     | Espaços brancos, tabulação e nova linha | É solicitadoa ao usuario escrever| novamente o texto|
+
+## Adicionar passageiros
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Informação validas    |   Texto alfabético ou numérico     | Passageiro cadastrado     | Fidelidade com qualquer valor diferente de "Sim" ou "Não". Nome vazio ou caracteres invalidos | É solicitado ao usuario escrever novamente|
+
+## Adicionar assentos
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Id do assento, codigo do voo | Id dentro do limite e existente, codigo do voo dentro do limite e existente e assento previamente não cadastrado | Cadastrar assento para denterminado voo | Id e codigo de voo negativo, nulo, além do limite e duplicado| Informar ao usuario que os dados não podem ser cadastrados |
+# RELATORIO DE EXECUÇÃO DE TESTES:
+## Menu: 
+Teste 1: Menu de opções
+
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Número inteiro    | Números de 1 a 8        | Acessar funcionalidade     | Números negativos, acima de 8 e nulos | Opção inválida |      
+
+ Relatório de execução de testes
+
+| ENTRADAS   | RESULTADO                | APROVADOS |
+|------------|--------------------------|-----------|
+| Valor: -5  | Opção inválida           | Sim       |
+| Valor: 0   | Opção inválida           | Sim       |
+| Valor: 1   | Cadastrar Passageiro     | Sim       |
+| Valor: 2   | Cadastrar Tripulação     | Sim       |
+| Valor: 3   | Cadastrar Voo            | Sim       |
+| Valor: 4   | Cadastrar Assento        | Sim       |
+| Valor: 5   | Reserva                  | Sim       |
+| Valor: 6   | Baixa em reserva         | Sim       |
+| Valor: 7   | Pesquisa                 | Sim       |
+| Valor: 8   | Programa de fidelidade   | Sim       |
+| Valor: 20  | Opção inválida           | Sim       |
+## Espaço em branco
+Teste 1: Verificar espaços brancos
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| String    |   String     | Cadastrar informação     | Espaços brancos, tabulação e nova linha | É solicitadoa ao usuario escrevre |novamente o texto|
+
+Relatório de execução de testes:
+
+
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Valor: " "   | Texto invalido           | Sim       |
+| Valor: "Bom" | Texto válido             | Sim       |
+| Valor: ""    | Texto invalido           | Sim       |
+| Valor: \t\n  | Texto invalido           | Sim       |
+| Valor: " Opa"| Texto Válido         | Sim       |
+
+## Adicionar passageiros
+Teste 1: Verificar adicionamento de passageiros
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+|  Strings e inteiros   |   Texto valido, pontos não negativos e fidelidade como 1 ou 2     | Informar ao usuario os dados cadastrados     | Strings vazias, numeros negativos e opçoes além do escopo de opção | É solicitado ao usuario escrever novamente| 
+
+Relatorio de execução de testes:
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Nome: "Wesley"   | Texto válido           | Sim       |
+| Endereço: "Rua" | Texto válido             | Sim       |
+| Numero: "40028922"    | Texto válido           | Sim       |
+| Fidelidade: "1"  | Opção válida          | Sim       |
+| Pontos: "1500"| Quantidade válida         | Sim       |
+
+## Adicionar assentos
+
+Teste 1:  Limite de assentos cadastrados atingido
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Inteiros         | Valores maiores que o limite| Erro ao cadastrar       | Numeros dentro do limite      | Executar a função de cadastrar     |
+
+Relatorio de execução de teste
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Valor: "10000"   | Impossivel cadastrar           | Sim       |
+
+Teste 2: Cadastrar assento
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Inteiros         | Numeros inteiros positivos e não nulos que não extrapolam o limite| Cadastrar o assento | Numeros negativos, nulo e que extrapolam o limite| Informar ao usuario uma nova solicitação|
+
+Relatorio de execução de teste
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Assento: -1 Voo: -5 |   Cadastro inválido         | Sim       |
+| Assento: -1 Voo: 0 |   Cadastro inválido         | Sim       |
+| Assento: -1 Voo: 5 |   Cadastro inválido         | Sim       |
+| Assento: 0 Voo: -5 |   Cadastro inválido         | Sim       |
+| Assento: 0 Voo: 0 |   Cadastro inválido         | Sim       |
+| Assento: 0 Voo: 5 |   Cadastro inválido         | Sim       |
+| Assento: 17 Voo: -5 |   Cadastro inválido         | Sim       |
+| Assento: 17 Voo: 0 |   Cadastro inválido         | Sim       |
+| Assento: 17 Voo: 5 |   Cadastro válido         | Sim       |
+
+Teste 3: Verificar assento vazios
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Inteiros         | Listar assentos sem antes cadastrar | Informar que não existe | Listar assentos já pre-cadastrados | Mostrar o sassentos cadastrados|
+
+Relatorio de execução de teste
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Total de assentos: 0 |   Busca inválida         | Sim       |
+
+Teste 4: Assento duplicado
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Inteiros         | Repeti o mesmo numero de assento e voo | Informar que o assento já existe | Informar outro assento | Realizar o cadastro|
+
+Relatorio de execução de teste
+Cadastramos o assento 17 05 e verificamos se ele já é existente
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Assento: 17 Voo: 5 |   Voo duplicado         | Sim       |
+
 
 O trabalho poderá ser feito em grupos de até 4 alunos,
 Cópias de trabalho receberão nota ZERO.
