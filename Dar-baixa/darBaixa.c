@@ -9,7 +9,7 @@
 
 typedef struct dadosAssentos
 {
-    int IDpessoa;
+    int idPassageiro;
     int numeroAssento;
     int codVoo;
     int status; // 0: Livre, 1: Ocupado
@@ -110,23 +110,6 @@ int verificarAssento(int numeroAssento, int codV)
     return 0;
 }
 
-int verificarReservaPassageiro(int codPassageiro, int codVoo) {
-    for (int i = 0; i < totalAssento; i++) {
-        if (grupo[i].codVoo == codVoo && grupo[i].status == 1) {
-            // Verificar se o assento está ocupado pelo passageiro
-            for (int j = 0; j < n; j++) {
-                if (passageiros[j].id == codPassageiro) {
-                    printf("Passageiro com ID %d já possui o assento %d reservado no voo %d.\n", 
-                            codPassageiro, grupo[i].numeroAssento, codVoo);
-                    return 1;
-                }
-            }
-        }
-    }
-    printf("Passageiro com ID %d não possui reservas no voo %d.\n", codPassageiro, codVoo);
-    return 0;
-}
-
 int verificarPassageiro(int id)
 {
     for (int j = 0; j < n; j++)
@@ -187,8 +170,10 @@ void listarAssento()
     }
 }
 
-void reserva() {
-    if (totalAssento <= 0) {
+void reserva()
+{
+    if (totalAssento <= 0)
+    {
         printf("Nenhum assento cadastrado!\n");
         return;
     }
@@ -198,40 +183,36 @@ void reserva() {
     scanf("%d", &numAssento);
     printf("Digite o código do voo para reserva: ");
     scanf("%d", &codVoo);
-    printf("Digite o código do passageiro para reserva (0 para cadastrar novo): ");
+    printf("Digite o código do passageiro para reserva: ");
     scanf("%d", &codPassageiro);
 
-    // Registrar passageiro se não estiver cadastrado
-    if (codPassageiro == 0) {
-        if (n >= MAX_PASSAGEIROS) {
-            printf("Limite de passageiros atingido! Não é possível cadastrar um novo passageiro.\n");
-            return;
-        }
-        printf("Cadastrando novo passageiro...\n");
-        add(); // Chama a função para adicionar um novo passageiro
-        codPassageiro = passageiros[n - 1].id; // Obtém o ID do último passageiro cadastrado
-    }
-
     // Verificar se o assento existe
-    if (!verificarAssento(numAssento, codVoo)) {
+    if (!verificarAssento(numAssento, codVoo))
+    {
         printf("Assento ou voo não encontrados!\n");
         return;
     }
 
-    // Verificar se o passageiro já possui reserva
-    if (verificarReservaPassageiro(codPassageiro, codVoo)) {
+    // Verificar se o passageiro existe
+    if (!verificarPassageiro(codPassageiro))
+    {
+        printf("Passageiro não encontrado!\n");
         return;
     }
 
     // Realizar a reserva
-    for (i = 0; i < totalAssento; i++) {
-        if (grupo[i].numeroAssento == numAssento && grupo[i].codVoo == codVoo) {
-            if (grupo[i].status == 0) {
+    for (i = 0; i < totalAssento; i++)
+    {
+        if (grupo[i].numeroAssento == numAssento && grupo[i].codVoo == codVoo)
+        {
+            if (grupo[i].status == 0)
+            {
                 grupo[i].status = 1;
-                grupo[i].IDpessoa = codPassageiro; // Vincula o ID do passageiro ao assento
-                printf("Assento reservado com sucesso para o passageiro ID %d!\n", codPassageiro);
+                printf("Assento reservado com sucesso!\n");
                 return;
-            } else {
+            }
+            else
+            {
                 printf("Assento já está ocupado!\n");
                 return;
             }
@@ -292,6 +273,39 @@ void assento()
     } while (opcao != 3);
 }
 
+void darBaixa()
+{
+    int numAssento, codVoo;
+    printf("Digite o número do assento: ");
+    scanf("%d", &numAssento);
+    printf("Digite o código do voo: ");
+    scanf("%d", &codVoo);
+    // Verificar se o assento existe
+    if (!verificarAssento(numAssento, codVoo))
+    {
+        printf("Assento ou voo não encontrados!\n");
+        return;
+    }
+    // Realizar a baixa
+    for (i = 0; i < totalAssento; i++)
+    {
+        if (grupo[i].numeroAssento == numAssento && grupo[i].codVoo == codVoo)
+        {
+            if (grupo[i].status == 1)
+            {
+                grupo[i].status = 0;
+                printf("Assento baixado com sucesso!\n");
+                return;
+            }
+            else
+            {
+                printf("Assento não está reservado!\n");
+                return;
+            }
+        }
+    }
+}
+
 int main()
 {
     setlocale(LC_ALL, "Portuguese");
@@ -325,6 +339,9 @@ int main()
             break;
         case 5:
             reserva();
+            break;
+        case 6:
+            darBaixa();
             break;
         default:
             printf("Opção inválida!\n");

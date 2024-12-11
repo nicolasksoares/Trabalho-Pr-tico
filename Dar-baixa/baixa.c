@@ -1,3 +1,14 @@
+typedef struct dadosAssentos
+{
+    int idPassageiro;
+    int numeroAssento;
+    int codVoo;
+    int status; // 0: Livre, 1: Ocupado
+} Assento;
+
+Assento assentos[99];
+int totalAssento = 0;
+
 void darBaixa()
 {
     int numAssento, codVoo;
@@ -14,11 +25,12 @@ void darBaixa()
     // Realizar a baixa
     for (i = 0; i < totalAssento; i++)
     {
-        if (grupo[i].numeroAssento == numAssento && grupo[i].codVoo == codVoo)
+        if (assentos[i].numeroAssento == numAssento && assentos[i].codVoo == codVoo)
         {
-            if (grupo[i].status == 1)
+            if (assentos[i].status == 1)
             {
-                grupo[i].status = 0;
+                assentos[i].status = 0;
+                assentos[i].idPassgaeiro = 0;  // Limpar o ID do passageiro
                 printf("Assento baixado com sucesso!\n");
                 return;
             }
