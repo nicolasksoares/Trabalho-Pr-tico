@@ -19,6 +19,15 @@ O objetivo é realizar um sistema de gerenciamento para a Voo Seguro, que subtit
 
 A figura 1 apresenta o backlog do produto realizado pelo time no projects do github com suas respectivas divisões e seus respectivos responsaveis para isso
 
+# Lista de assinaturas das funções e parâmetros
+Explicação da estrutura de dados principal do programa.
+
+As funções e parâmetros utilizados no programa foram:
+
+## *1.* int main () - Menu de opções
+
+Função para efetuar qual funcionalidade o usuario irá requerir, basicamente ira gerar um menu de opções e irá solivcitar ao usuario inserir uma opção válida.
+
 # TESTES:
 ## Menu:
 |ENTRADAS | CLASSES VÁLIDAS | RESULTADO ESPERADO | CLASSES INVÁLIDAS | RESULTADO ESPERADO|
