@@ -492,6 +492,13 @@ void reserva() {
         codPassageiro = passageiros[n - 1].id; // Obtém o ID do último passageiro cadastrado
     }
 
+    // Verificar se o passageiro existe
+    if (!verificarPassageiro(codPassageiro)) {
+    printf("Passageiro não encontrado! Cadastre o passageiro primeiro.\n");
+    getchar(); 
+    return;
+}
+
     // Verificar se o assento existe
     if (!verificarAssento(numAssento, codVoo)) {
         printf("Assento ou voo não encontrados!\n");
@@ -540,6 +547,7 @@ void darBaixa()
             if (grupo[i].status == 1)
             {
                 grupo[i].status = 0;
+                grupo[i].idPassageiro = 0; // Desvincular o ID do passageiro do assento
                 printf("Assento baixado com sucesso!\n");
                 return;
             }
