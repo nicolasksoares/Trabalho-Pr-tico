@@ -59,6 +59,12 @@ Função que recebe um string para verificar se o usuario digitou apenas espaço
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
 | Id do assento, codigo do voo | Id dentro do limite e existente, codigo do voo dentro do limite e existente e assento previamente não cadastrado | Cadastrar assento para denterminado voo | Id e codigo de voo negativo, nulo, além do limite e duplicado| Informar ao usuario que os dados não podem ser cadastrados |
+
+## Dar baixa em assento
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Numero e codigo do voo| Assento previamente reservado e existente | Altere o status para livre e remova o ID do passageiro |  Assento inexistente ou livre | Informar que o assento não está reservado ou inexistente|
+
 # RELATORIO DE EXECUÇÃO DE TESTES:
 ## Menu: 
 Teste 1: Menu de opções
@@ -172,11 +178,15 @@ Teste: Tentar da baixa em assento ocupado, não existente ou livre
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
 | Inteiros         | Assentos existentes      | Informar ao usuario que o assento foi desocupado e transforma o seu status em livre e desvincular o passageiro vinculado | Assento inexistente ou não ocupado | Infprmar ao usuario que o assento digitado não existe ou está livre |
 
-Relatorio de execução de teste
 Colocamos tres acertos e tentamos da baixa em cada um.
+
 Definimos o primeiro teste com um assento ocupado e existente codigo 17, voo 5, ocupado.
+
 Definimos o segundo teste com um assento livre e existente codigo 22, voo 5, livre.
+
 Definimos o terciro teste com um assento inexiste. O original é 27, 5.
+
+Relatorio de execução de teste
 | ENTRADAS     | RESULTADO                | APROVADOS |
 |--------------|--------------------------|-----------|
 | id="17" voo="5"    | Baixa com sucesso  | Sim       |
