@@ -102,7 +102,15 @@ Função sem passagem de parametro e sem retorno, que tem como funcionalidade mo
 
 ## 18. int verificarAssento(int numeroAssento, int codV) 
 
-Função com passagem de parâmetro e com retorno, recebe dois inteiros, os números de assento e o código do voo. É utilizada para verificar se o assento está ocupado ou não. 
+Função com passagem de parâmetro e com retorno, recebe dois inteiros, os números de assento e o código do voo. É utilizada para verificar se o assento está ocupado ou não.
+
+## 19. int verificarPassageiro(int id) 
+
+Função com passagem de parâmetro e com retorno, recebe o inteiro ID, cuja finalidade é verificar se o passageiro existe.
+
+## 20. void reserva() 
+
+Função que não recebe parâmetros e não retorna nada, garantindo que o passageiro tenha um assento. Ela verifica se o passageiro e o assento estão cadastrados, confirma a disponibilidade e, se todos os dados estiverem corretos, realiza a associação entre o passageiro e o voo.
 
 
 
