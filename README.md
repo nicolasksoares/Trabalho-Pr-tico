@@ -39,6 +39,42 @@ Função para efetuar qual funcionalidade o usuario irá requerir, basicamente i
 
 Função que recebe um string para verificar se o usuario digitou apenas espaços em brancos em determinadas partes do programa, resolicitando a sua digitação.
 
+## 3. void buscarPassageiro() 
+
+Função que busca o passageiro pelos dados. Aparecerá uma aba perguntando se você deseja pesquisar pelo nome ou pelo código do passageiro. Digite 1 para nome e 2 para o código. Se os dados estiverem errados ou inexistentes, aparecerá a mensagem: "Nenhum passageiro encontrado com o nome informado." Caso o passageiro seja encontrado, serão exibidos o nome, endereço e o status de fidelidade do respectivo passageiro.
+
+## 4. void buscarTripulante()
+
+Função que busca o tripulante pelo nome.Aparecerá uma aba perguntando se você deseja pesquisar pelo nome ou pelo código do tripulante. Digite 1 para nome e 2 para o código.Se os dados estiverem errados ou inexistentes, aparecerá a mensagem: "Nenhum tripulante encontrado com o nome informado." Caso o tripulante seja encontrado, serão exibidos nome, cargo e o telefone do respectivo tripulante.
+
+## 5. void listarVoosPassageiro()
+
+Função que lista todos os voos de um passageiro: A função solicitará que você digite o código do passageiro. Caso o código esteja incorreto ou não exista, será exibida a mensagem: "Passageiro não encontrado." Se o código for válido, serão exibidos todos os voos associados a esse passageiro.
+
+## 6. void pesquisa()
+
+Função de menu de pesquisa. Esta função permite escolher entre buscar passageiros, buscar tripulantes, listar os voos de um passageiro ou sair da aba de pesquisa. A primeira opção direciona para a pesquisa de passageiros, a segunda para a pesquisa de tripulantes, a terceira para a pesquisa de voos do respectivo passageiro, e a quarta encerra a sessão de pesquisa.
+
+## 7. int verificarAssento(int numeroAssento, int codV) 
+
+Função para verificar se o assento escolhido, existe no voo escolhido.  
+
+## 8.  void cadastrarAssento() 
+
+Função para cadastro de assentos. O administrador digita a quantidade máxima de assentos. Se o assento já estiver cadastrado, aparecerá 'assento já cadastrado'. Se os dados do voo estiverem incorretos, aparecerá 'código de voo inválido'. 
+
+## 9.  void listarAssento() 
+ 
+Função para listar a quantidade de assentos no respectivo voo, aparecera a mensagem “Nenhum assento cadastrado” se nenhum assento estiver cadastrado, nesta função você cadastrara o número de assento, o código do respectivo voo, os status do assento, se ele está livre aparecera “livre” e se estiver ocupado aparecera “ocupado”. 
+
+## 10.  void darBaixa() 
+
+Esta função realiza a baixa na reserva de assento do respectivo voo. Nela, você digita o número do assento e o código do voo. Se os dados estiverem corretos, o assento será reservado para o passageiro. Caso algum dos dados esteja errado, aparecerá a mensagem 'assento ou voo não encontrado'. 
+
+## 11. int verificarAssento(int numeroAssento, int codV) 
+
+Função com passagem de parâmetro e com retorno, recebe dois inteiros, os números de assento e o código do voo. É utilizada para verificar se o assento está ocupado ou não.
+
 # TESTES:
 ## Menu:
 |ENTRADAS | CLASSES VÁLIDAS | RESULTADO ESPERADO | CLASSES INVÁLIDAS | RESULTADO ESPERADO|
