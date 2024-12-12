@@ -4,6 +4,7 @@
 #include <string.h>
 #include <ctype.h>
 
+
 #define MAX_ASSENTOS 100
 #define MAX_PASSAGEIROS 99
 
@@ -26,6 +27,7 @@ typedef struct cadastroPassageiro
 } Passageiro;
 
 int i;
+int tarifaVoo=50; //Simulação de tarifa
 Assento grupo[MAX_ASSENTOS];
 int totalAssento = 0;
 int cdVoo[50];
@@ -210,6 +212,7 @@ void reserva()
                 grupo[i].status = 1;
                 printf("Assento reservado com sucesso!\n");
                 return;
+                passageiros[codPassageiro].pontos += tarifaVoo;
             }
             else
             {

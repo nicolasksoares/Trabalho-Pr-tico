@@ -6,6 +6,7 @@ typedef struct dadosAssentos
     int status; // 0: Livre, 1: Ocupado
 } Assento;
 
+int i;
 Assento assentos[99];
 int totalAssento = 0;
 
@@ -30,7 +31,7 @@ void darBaixa()
             if (assentos[i].status == 1)
             {
                 assentos[i].status = 0;
-                assentos[i].idPassgaeiro = 0;  // Limpar o ID do passageiro
+                assentos[i].idPassageiro = 0;  // Limpar o ID do passageiro
                 printf("Assento baixado com sucesso!\n");
                 return;
             }
