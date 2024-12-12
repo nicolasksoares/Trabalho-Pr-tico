@@ -92,6 +92,20 @@ Função que recebe um string para verificar se o usuario digitou apenas espaço
 
 Função sem passagem de parâmetro e sem retorno, com a finalidade de adicionar os dados dos passageiros (ID, nome, endereço, fidelidade). Ao atingir 99 passageiros, a função exibe a mensagem 'limite de passageiros'. 
 
+## 16. int continua() 
+
+função que não recebe parâmetros e retorna um valor. Essa função tem como objetivo perguntar ao passageiro se ele deseja continuar cadastrando ou encerrar para exibir os cadastros realizados. O retorno será 1 caso o passageiro escolha continuar, e 2 caso opte por parar e visualizar os cadastros. 
+
+## 17. void lerPassageiros() 
+
+Função sem passagem de parametro e sem retorno, que tem como funcionalidade mostra os dados (ID, nome, endereço, telefone, fidelidade) dos passageiros cadastrados. 
+
+## 18. int verificarAssento(int numeroAssento, int codV) 
+
+Função com passagem de parâmetro e com retorno, recebe dois inteiros, os números de assento e o código do voo. É utilizada para verificar se o assento está ocupado ou não. 
+
+
+
 
 # TESTES:
 ## Menu:
