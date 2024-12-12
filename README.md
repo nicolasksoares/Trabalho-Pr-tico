@@ -10,12 +10,13 @@ Disciplinas: Algoritmos e Estruturas de Dados I  / Fundamentos de Engenharia de 
 
 Professores: Carlos Ribas e Laerte                Entrega: 15/12/2024                 Valor: 10 pontos
 
-# Intregantes:
+# Integrantes:
 
-[Wesley Domingos](github.com/WesleySDz)
-[Nicolas Kiffer](github.com/nicolasksoares)
-[Luiz Moreira](github.com/LuizFMoreira)
-[Matheus Malta](github.com/)
+- [Wesley Domingos](https://github.com/WesleySDz)  
+- [Nicolas Kiffer](https://github.com/nicolasksoares)  
+- [Luiz Moreira](https://github.com/LuizFMoreira)  
+- [Matheus Malta](https://github.com/)  
+
 
 # Objetivo:
 
@@ -164,6 +165,23 @@ Cadastramos o assento 17 05 e verificamos se ele já é existente
 |--------------|--------------------------|-----------|
 | Assento: 17 Voo: 5 |   Voo duplicado         | Sim       |
 
+## Dar baixa em assento
+
+Teste: Tentar da baixa em assento ocupado, não existente ou livre
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Inteiros         | Assentos existentes      | Informar ao usuario que o assento foi desocupado e transforma o seu status em livre e desvincular o passageiro vinculado | Assento inexistente ou não ocupado | Infprmar ao usuario que o assento digitado não existe ou está livre |
+
+Relatorio de execução de teste
+Colocamos tres acertos e tentamos da baixa em cada um.
+Definimos o primeiro teste com um assento ocupado e existente codigo 17, voo 5, ocupado.
+Definimos o segundo teste com um assento livre e existente codigo 22, voo 5, livre.
+Definimos o terciro teste com um assento inexiste. O original é 27, 5.
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| id="17" voo="5"    | Baixa com sucesso  | Sim       |
+| id="22" voo="5"    | Assento não está ocupado | Sim |
+| id="29" voo="15"   | Assento não existe | Sim       |
 
 O trabalho poderá ser feito em grupos de até 4 alunos,
 Cópias de trabalho receberão nota ZERO.
