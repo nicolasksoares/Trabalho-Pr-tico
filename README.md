@@ -10,7 +10,13 @@ Disciplinas: Algoritmos e Estruturas de Dados I  / Fundamentos de Engenharia de 
 
 Professores: Carlos Ribas e Laerte                Entrega: 15/12/2024                 Valor: 10 pontos
 
- 
+# Intregantes:
+
+[Wesley Domingos](github.com/WesleySDz)
+[Nicolas Kiffer](github.com/nicolasksoares)
+[Luiz Moreira](github.com/LuizFMoreira)
+[Matheus Malta](github.com/)
+
 # Objetivo:
 
 O objetivo é realizar um sistema de gerenciamento para a Voo Seguro, que subtitua os métodos manuais antigos. Para isso propomos um software feito na linguagem C que irá auxiliar-los por meio da automatização do controle de dados. A solução incluirá uma interface intuitiva, projetada para facilitar o uso com uma gama de comandos e funções para isso.
@@ -18,6 +24,19 @@ O objetivo é realizar um sistema de gerenciamento para a Voo Seguro, que subtit
 # Backlog:
 
 A figura 1 apresenta o backlog do produto realizado pelo time no projects do github com suas respectivas divisões e seus respectivos responsaveis para isso
+
+# Lista de assinaturas das funções e parâmetros
+Explicação da estrutura de dados principal do programa.
+
+As funções e parâmetros utilizados no programa foram:
+
+## *1.* int main () - Menu de opções
+
+Função para efetuar qual funcionalidade o usuario irá requerir, basicamente ira gerar um menu de opções e irá solivcitar ao usuario inserir uma opção válida.
+
+## *2.* int verificarEspacosBrancos(const char *str)
+
+Função que recebe um string para verificar se o usuario digitou apenas espaços em brancos em determinadas partes do programa, resolicitando a sua digitação.
 
 # TESTES:
 ## Menu:
