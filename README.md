@@ -48,12 +48,17 @@ Função que recebe um string para verificar se o usuario digitou apenas espaço
 ## Espaços em brancos
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
-| Teclado     |   Texto     | Cadastrar informação     | Espaços brancos, tabulação e nova linha | É solicitadoa ao usuario escrever| novamente o texto|
+| Texto    |   Texto     | Cadastrar informação     | Espaços brancos, tabulação e nova linha | É solicitadoa ao usuario escrever| novamente o texto|
 
 ## Adicionar passageiros
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
 | Informação validas    |   Texto alfabético ou numérico     | Passageiro cadastrado     | Fidelidade com qualquer valor diferente de "Sim" ou "Não". Nome vazio ou caracteres invalidos | É solicitado ao usuario escrever novamente|
+
+## Adicionar tripulação
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Nome, cargo, telefone | Nome com apenas letras e espaços. Codigo numerico representando o cargo. Int com comprimento válido | Tripulante salvo | Nome em branco. Crago com letras, caracteres especiais ou vazios. Telefone com letras, negativos ou vazios | Informar ao usuario erro que não foi possível cadastrar o tripulante |
 
 ## Adicionar assentos
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
@@ -124,6 +129,47 @@ Relatorio de execução de testes:
 | Numero: "40028922"    | Texto válido           | Sim       |
 | Fidelidade: "1"  | Opção válida          | Sim       |
 | Pontos: "1500"| Quantidade válida         | Sim       |
+
+## Adicionar tripulação
+Teste 1: Adicionar tripulação
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Strings e inteiros | Numeros não negativos e não nulos, telefone com no minimo 8 caracteres. Nome sem ser espaços em brancos. Cargo dentro do limite | Cadastro realizado | Numeros negativos e nulos, telefone com menos de 8 caracteres. Nome em branco | Registro não realizado |
+
+Relatorio de execução de testes:
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Id: "1"      | Id salvo                 | Sim       |
+| Nome: "João" | Nome salvo               | Sim       |
+| Cargo: "1"   | Cargo salvo              | Sim       |
+| Telefone: "40028922" | Telefone salvo   | Sim       |
+
+Teste 2: Verificar cargos
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Inteiros | Piloto : 1, Copiloto: 2, Comissário: 3 | Registrar o cargo | Negativo, nulo, maior que 3 | Peder novamente a inserção |
+
+Relatorio de execução de testes:
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Cargo: "1"   |  Piloto                  | Sim       |
+| Cargo: "2"   |  Copiloto                | Sim       |
+| Cargo: "3"   |  Comissário              | Sim       |
+| Cargo: "0"   |  Inexistente             | Sim       |
+| Cargo: "-5"  |  Inexistente             | Sim       |
+| Cargo: "17"  |  Inexistente             | Sim       |
+
+Teste 3: Verificar telefone
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Inteiros   |   Telefones com mais de 8 digitos e não negativos | Telefone cadastrado | Telefone com menos de 8 digitos e negativos | Telefone não cadastrado |
+
+Relatorio de execução de testes:
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Telefone: "-12345678" |  Telefone não válido  | Sim       |
+| Telefone: "12345" |  Telefone não válido  | Sim       |
+| Telefone: "40028922" |  Telefone válido  | Sim       |
 
 ## Adicionar assentos
 
