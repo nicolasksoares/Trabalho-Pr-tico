@@ -606,7 +606,7 @@ void buscarPassageiro()
     if (opcao == 1)
     {
         char nomeBusca[CHAR_MAX];
-        getchar(); // Limpa o buffer do teclado
+        getchar(); 
         printf("Digite o nome do passageiro: ");
         fgets(nomeBusca, sizeof(nomeBusca), stdin);
         nomeBusca[strcspn(nomeBusca, "\n")] = '\0';
@@ -625,7 +625,7 @@ void buscarPassageiro()
 
         if (!encontrado)
         {
-            printf("Nenhum passageiro encontrado com o nome informado.\n");
+            printf("Nenhum passageiro encontrado com este nome informado.\n");
         }
     }
     else if (opcao == 2)
@@ -639,9 +639,9 @@ void buscarPassageiro()
         {
             if (passageiros[i].id == codigoBusca)
             {
-                printf("ID: %d\nNome: %s\nEndereco: %s\nTelefone: %s\nFidelidade: %s\nPontos: %d\n",
+                printf("ID: %d\nNome: %s\nEndereco: %s\nTelefone: %s\nFidelidade: %s\n\n",
                        passageiros[i].id, passageiros[i].nome, passageiros[i].endereco,
-                       passageiros[i].telefone, passageiros[i].fidelidade == 1 ? "Sim" : "Não", passageiros[i].pontos);
+                       passageiros[i].telefone, passageiros[i].fidelidade == 1 ? "Sim" : "Não");
                 encontrado = 1;
                 break;
             }
@@ -659,79 +659,84 @@ void buscarPassageiro()
 }
 
 // Função para buscar membros da tripulação pelo nome ou código
-void toLowerCase(char *str)
+// Função para buscar membros da tripulação pelo nome ou código
+void buscarTripulante()
 {
-    for (int i = 0; str[i]; i++)
-    {
-        str[i] = tolower(str[i]);
-    }
-}
-
-void buscarTripulante() {
     int opcao;
-    do {
-        printf("Pesquisar Tripulante:\n"
-               "[1] Pelo Nome\n"
-               "[2] Pelo Código\n"
-               "[3] Voltar ao Menu Anterior\n"
-               "Escolha uma opção: ");
-        scanf("%d", &opcao);
-        setbuf(stdin, NULL);
+    printf("Pesquisar Tripulante:\n[1] Pelo Nome\n[2] Pelo Código\nEscolha uma opção: ");
+    scanf("%d", &opcao);
 
-        if (opcao == 1) { // Busca por nome
-            char nomeBusca[CHAR_MAX];
-            printf("Digite o nome do tripulante: ");
-            fgets(nomeBusca, sizeof(nomeBusca), stdin);
-            nomeBusca[strcspn(nomeBusca, "\n")] = '\0'; // Remove a quebra de linha
-            toLowerCase(nomeBusca);
+    if (opcao == 1)
+    {
+        char nomeBusca[CHAR_MAX];
+        getchar(); // Limpa o buffer do teclado
+        printf("Digite o nome do tripulante: ");
+        fgets(nomeBusca, sizeof(nomeBusca), stdin);
+        nomeBusca[strcspn(nomeBusca, "\n")] = '\0';
 
-            int encontrado = 0;
-            for (int i = 0; i < quantidadeTripulacao; i++) {
-                char nomeTemp[CHAR_MAX];
-                strncpy(nomeTemp, tripulacao[i].nome, CHAR_MAX);
-                toLowerCase(nomeTemp);
+        int encontrado = 0;
+        for (int i = 0; i < quantidadeTripulacao; i++)
+        {
+            if (strstr(tripulacao[i].nome, nomeBusca))
+            {
+                printf("ID: %d\nNome: %s\nCargo: ", tripulacao[i].id, tripulacao[i].nome);
 
-                if (strstr(nomeTemp, nomeBusca)) {
-                    printf("ID: %d\n", tripulacao[i].id);
-                    printf("Nome: %s\n", tripulacao[i].nome);
-                    printf("Cargo: %s\n", tripulacao[i].cargo == 1 ? "Piloto" : (tripulacao[i].cargo == 2 ? "Copiloto" : "Comissário"));
-                    printf("Telefone: %s\n", tripulacao[i].telefone);
-                    printf("----------------------------\n");
-                    encontrado = 1;
+                // Exibe o cargo de forma descritiva
+                switch (tripulacao[i].cargo)
+                {
+                    case 1: printf("Piloto\n"); break;
+                    case 2: printf("Copiloto\n"); break;
+                    case 3: printf("Comissário\n"); break;
+                    default: printf("Indefinido\n");
                 }
-            }
 
-            if (!encontrado) {
-                printf("Nenhum tripulante encontrado com o nome informado.\n");
+                printf("Telefone: %d\n\n", tripulacao[i].telefone);
+                encontrado = 1;
             }
-        } else if (opcao == 2) { // Busca por código
-            int codigoBusca;
-            printf("Digite o código do tripulante: ");
-            scanf("%d", &codigoBusca);
-
-            int encontrado = 0;
-            for (int i = 0; i < quantidadeTripulacao; i++) {
-                if (tripulacao[i].id == codigoBusca) {
-                    printf("ID: %d\n", tripulacao[i].id);
-                    printf("Nome: %s\n", tripulacao[i].nome);
-                    printf("Cargo: %s\n", tripulacao[i].cargo == 1 ? "Piloto" : (tripulacao[i].cargo == 2 ? "Copiloto" : "Comissário"));
-                    printf("Telefone: %s\n", tripulacao[i].telefone);
-                    printf("----------------------------\n");
-                    encontrado = 1;
-                    break;
-                }
-            }
-
-            if (!encontrado) {
-                printf("Nenhum tripulante encontrado com o código informado.\n");
-            }
-        } else if (opcao == 3) {
-            printf("Retornando ao menu anterior...\n");
-        } else {
-            printf("Opção inválida. Tente novamente.\n");
         }
 
-    } while (opcao != 3); // Continua até o usuário escolher "Voltar ao Menu Anterior"
+        if (!encontrado)
+        {
+            printf("Nenhum tripulante encontrado com o nome informado.\n");
+        }
+    }
+    else if (opcao == 2)
+    {
+        int codigoBusca;
+        printf("Digite o código do tripulante: ");
+        scanf("%d", &codigoBusca);
+
+        int encontrado = 0;
+        for (int i = 0; i < quantidadeTripulacao; i++)
+        {
+            if (tripulacao[i].id == codigoBusca)
+            {
+                printf("ID: %d\nNome: %s\nCargo: ", tripulacao[i].id, tripulacao[i].nome);
+
+                // Exibe o cargo de forma descritiva
+                switch (tripulacao[i].cargo)
+                {
+                    case 1: printf("Piloto\n"); break;
+                    case 2: printf("Copiloto\n"); break;
+                    case 3: printf("Comissário\n"); break;
+                    default: printf("Indefinido\n");
+                }
+
+                printf("Telefone: %d\n\n", tripulacao[i].telefone);
+                encontrado = 1;
+                break;
+            }
+        }
+
+        if (!encontrado)
+        {
+            printf("Nenhum tripulante encontrado com o código informado.\n");
+        }
+    }
+    else
+    {
+        printf("Opção inválida.\n");
+    }
 }
 
 
