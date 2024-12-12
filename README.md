@@ -10,7 +10,13 @@ Disciplinas: Algoritmos e Estruturas de Dados I  / Fundamentos de Engenharia de 
 
 Professores: Carlos Ribas e Laerte                Entrega: 15/12/2024                 Valor: 10 pontos
 
- 
+# Intregantes:
+
+[Wesley Domingos](github.com/WesleySDz)
+[Nicolas Kiffer](github.com/nicolasksoares)
+[Luiz Moreira](github.com/LuizFMoreira)
+[Matheus Malta](github.com/)
+
 # Objetivo:
 
 O objetivo é realizar um sistema de gerenciamento para a Voo Seguro, que subtitua os métodos manuais antigos. Para isso propomos um software feito na linguagem C que irá auxiliar-los por meio da automatização do controle de dados. A solução incluirá uma interface intuitiva, projetada para facilitar o uso com uma gama de comandos e funções para isso.
