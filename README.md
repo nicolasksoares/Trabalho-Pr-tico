@@ -81,7 +81,17 @@ Função com passagem de parâmetro e com retorno, recebe o inteiro ID, cuja fin
 
 ## 13. void reserva() 
 
-Função que não recebe parâmetros e não retorna nada, garantindo que o passageiro tenha um assento. Ela verifica se o passageiro e o assento estão cadastrados, confirma a disponibilidade e, se todos os dados estiverem corretos, realiza a associação entre o passageiro e o voo. 
+Função que não recebe parâmetros e não retorna nada, garantindo que o passageiro tenha um assento. Ela verifica se o passageiro e o assento estão cadastrados, confirma a disponibilidade e, se todos os dados estiverem corretos, realiza a associação entre o passageiro e o voo.
+
+## 14. int verificarEspacosBrancos(const char *str) 
+
+Função que recebe um string para verificar se o usuario digitou apenas espaços em brancos em determinadas partes do programa, resolicitando a sua digitação. 
+
+
+## 15. void add() 
+
+Função sem passagem de parâmetro e sem retorno, com a finalidade de adicionar os dados dos passageiros (ID, nome, endereço, fidelidade). Ao atingir 99 passageiros, a função exibe a mensagem 'limite de passageiros'. 
+
 
 # TESTES:
 ## Menu:
