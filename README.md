@@ -112,8 +112,17 @@ Função com passagem de parâmetro e com retorno, recebe o inteiro ID, cuja fin
 
 Função que não recebe parâmetros e não retorna nada, garantindo que o passageiro tenha um assento. Ela verifica se o passageiro e o assento estão cadastrados, confirma a disponibilidade e, se todos os dados estiverem corretos, realiza a associação entre o passageiro e o voo.
 
+## 21. void acumularPontos(int idPassageiro)
 
+Função para acumular os pontos obtidos pelo passageiro: Após reservar um assento no voo, o passageiro recebe 10 pontos. Esta função é responsável por acumular os pontos obtidos por cada passageiro.
 
+## 22. void consultarPontos(int idPassageiro)
+
+Função para consultar pontos de fidelidade pelo ID. Esta função mostra o respectivo passageiro e quantos pontos ele tem.
+
+## 23. void fidelidade()
+
+Esta função mostra 3 opções, a primeira é para consultar os pontos de fidelidade, a segunda é para acumular os pontos, e a terceira é para sair da aba de fidelidade. A primeira e segunda você digita o ID do passageiro para consultar os pontos do mesmo.
 
 # TESTES:
 ## Menu:
