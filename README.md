@@ -60,6 +60,11 @@ Função que recebe um string para verificar se o usuario digitou apenas espaço
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
 | Id do assento, codigo do voo | Id dentro do limite e existente, codigo do voo dentro do limite e existente e assento previamente não cadastrado | Cadastrar assento para denterminado voo | Id e codigo de voo negativo, nulo, além do limite e duplicado| Informar ao usuario que os dados não podem ser cadastrados |
 
+## Realizar reservas
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Id do assento, codigo do voo, codigo do pasasgeiro | Ids dentro do limite e existente, codigo do voo dentro do limite e existente, assento não ocupado | Realizar reserva para o codigo do passageiro descrito | Ids negativos e codigo do voo negativo, nulo, além do limite e duplicado | Mostrar que não foi possível realizar a reserva de acordo com a quebra feita |
+
 ## Dar baixa em assento
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
@@ -171,9 +176,56 @@ Cadastramos o assento 17 05 e verificamos se ele já é existente
 |--------------|--------------------------|-----------|
 | Assento: 17 Voo: 5 |   Voo duplicado         | Sim       |
 
+## Realizar reserva
+Teste 1: Assento livre
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Inteiros   | Assento pre-cadastrado, livre, passageiro cadastrado | Reserva feita com sucesso | Assento inexistente, ocupado, passageiro não encontrado | Reserva não concluída |
+
+Relatorio de execução de teste
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Assento: 17  Voo: 5 Passageiro: 1 | Assento   reservado |  Sim    |
+
+Teste 2: Assento ocupado
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Inteiros   | Assento com status ocupado | Não foi possivel cadastrar | Assento com status livre | Reserva feita |
+
+Relatorio de execução de teste
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Assento: 17  Voo: 5 Passageiro: 1 | Assento ocupado |  Sim    |
+
+Teste 3: Assento não encontrado
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Inteiros | Assento não cadastrado previamente | Não foi possivel realizar a reserva | Assento previamente cadastrado | Reserva feita |
+
+Definimos um unico assento 17, 05
+
+Relatorio de execução de teste
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Assento: 18 Voo: 5  | Assento não encontrado |  Sim    |
+| Assento: -5 Voo: 0  | Assento não encontrado |  Sim    |
+| Assento: 5 Voo: 0  | Assento não encontrado |  Sim    |
+
+Teste 4: Passageiro não encontrado
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Inteiros | Passageiro cadastrado  | Assento reservado com sucesso | Id do passageiro não cadastrado | Erro ao fazer reserva |
+
+Definimos um unico passageiro com id=1
+
+Relatorio de execução de teste
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Assento: 17 Voo: 5 Passageiro: -1 | Passageiro não encontrado |  Sim    |
+
 ## Dar baixa em assento
 
-Teste: Tentar da baixa em assento ocupado, não existente ou livre
+Teste 1: Tentar da baixa em assento ocupado, não existente ou livre
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
 | Inteiros         | Assentos existentes      | Informar ao usuario que o assento foi desocupado e transforma o seu status em livre e desvincular o passageiro vinculado | Assento inexistente ou não ocupado | Infprmar ao usuario que o assento digitado não existe ou está livre |
