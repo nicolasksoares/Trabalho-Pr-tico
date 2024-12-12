@@ -15,6 +15,7 @@
 // Estruturas de dados
 typedef struct dadosAssentos
 {
+    int idPassageiro;
     int numeroAssento;
     int codVoo;
     int status; // 0: Livre, 1: Ocupado
@@ -59,6 +60,7 @@ Assento grupo[MAX_ASSENTOS];
 Passageiro passageiros[MAX_PASSAGEIROS];
 Tripulacao tripulacao[MAX_TRIPULACAO];
 Voo voos[MAX_VOOS];
+int i;
 int quantidadeTripulacao = 0; 
 int totalAssento = 0;
 int totalVoos = 0; 
@@ -252,38 +254,38 @@ void cadastrarTripulacao() {
     }}
 }
 
-void cadastrarVoo()
-{
-    int opc;
-    while (1){
-        printf("\nEscolha uma opcao:\n"
-                "[1] Cadastrar Voo\n"
-                "[2] Listar Voo\n"
-                "[3] Sair\n");
-        scanf("%d", &opc);
-        while (opc != 1 && opc != 2 && opc != 3) {
-            printf("Opcao invalida! Tente novamente.\n");
-            scanf("%d", &opc);
-        }
-        switch (opc) {
-            case 1:
-                registrarVoo();
-                break;
-            case 2:
-                listarVoo();
-                break;
-            case 3:
-                printf("Saindo do menu de cadastrar voo...\n");
-                break;
-            default:
-                break;
-        }
-        if (opc == 3) {
-            return;
-        }
-    }
+// void cadastrarVoo()
+// {
+//     int opc;
+//     while (1){
+//         printf("\nEscolha uma opcao:\n"
+//                 "[1] Cadastrar Voo\n"
+//                 "[2] Listar Voo\n"
+//                 "[3] Sair\n");
+//         scanf("%d", &opc);
+//         while (opc != 1 && opc != 2 && opc != 3) {
+//             printf("Opcao invalida! Tente novamente.\n");
+//             scanf("%d", &opc);
+//         }
+//         switch (opc) {
+//             case 1:
+//                 registrarVoo();
+//                 break;
+//             case 2:
+//                 listarVoo();
+//                 break;
+//             case 3:
+//                 printf("Saindo do menu de cadastrar voo...\n");
+//                 break;
+//             default:
+//                 break;
+//         }
+//         if (opc == 3) {
+//             return;
+//         }
+//     }
 
-}
+// }
 
 int validarTripulante(int id) {
     for (int i = 0; i < quantidadeTripulacao; i++) {
@@ -294,87 +296,87 @@ int validarTripulante(int id) {
     return 0;
 }
 
-void registrarVoo() {
-    if (totalVoos >= MAX_ASSENTOS) {
-        printf("Número máximo de voos atingido!\n");
-        return;
-    }
+// void registrarVoo() {
+//     if (totalVoos >= MAX_ASSENTOS) {
+//         printf("Número máximo de voos atingido!\n");
+//         return;
+//     }
 
-    voos.id_Voo = totalVoos + 1;
+//     voos.id_Voo = totalVoos + 1;
 
-    getchar(); // Limpa o buffer do teclado
+//     getchar(); // Limpa o buffer do teclado
 
-    // Entrada de origem
-    printf("Insira a origem do voo: ");
-    fgets(voos.origem, sizeof(voos.origem), stdin);
-    voos.origem[strcspn(voos.origem, "\n")] = '\0';
+//     // Entrada de origem
+//     printf("Insira a origem do voo: ");
+//     fgets(voos.origem, sizeof(voos.origem), stdin);
+//     voos.origem[strcspn(voos.origem, "\n")] = '\0';
 
-    // Entrada de destino
-    printf("Insira o destino do voo: ");
-    fgets(voos.destino, sizeof(voos.destino), stdin);
-    voos.destino[strcspn(voos.destino, "\n")] = '\0';
+//     // Entrada de destino
+//     printf("Insira o destino do voo: ");
+//     fgets(voos.destino, sizeof(voos.destino), stdin);
+//     voos.destino[strcspn(voos.destino, "\n")] = '\0';
 
-    // Seleção do piloto
-    do {
-        printf("Insira o ID do piloto: ");
-        scanf("%d", &voos.id_Piloto);
-        if (!validarTripulante(voos.id_Piloto)) {
-            printf("Erro: piloto não encontrado. Tente novamente.\n");
-        }
-    } while (!validarTripulante(voos.id_Piloto));
+//     // Seleção do piloto
+//     do {
+//         printf("Insira o ID do piloto: ");
+//         scanf("%d", &voos.id_Piloto);
+//         if (!validarTripulante(voos.id_Piloto)) {
+//             printf("Erro: piloto não encontrado. Tente novamente.\n");
+//         }
+//     } while (!validarTripulante(voos.id_Piloto));
 
-    // Seleção do copiloto
-    do {
-        printf("Insira o ID do copiloto: ");
-        scanf("%d", &voos.id_Copiloto);
-        if (!validarTripulante(voos.id_Copiloto)) {
-            printf("Erro: copiloto não encontrado. Tente novamente.\n");
-        }
-    } while (!validarTripulante(voos.id_Copiloto));
+//     // Seleção do copiloto
+//     do {
+//         printf("Insira o ID do copiloto: ");
+//         scanf("%d", &voos.id_Copiloto);
+//         if (!validarTripulante(voos.id_Copiloto)) {
+//             printf("Erro: copiloto não encontrado. Tente novamente.\n");
+//         }
+//     } while (!validarTripulante(voos.id_Copiloto));
 
-    // Seleção do comissário
-    do {
-        printf("Insira o ID do comissário: ");
-        scanf("%d", &voos.id_Comissario);
-        if (!validarTripulante(voos.id_Comissario)) {
-            printf("Erro: comissário não encontrado. Tente novamente.\n");
-        }
-    } while (!validarTripulante(voos.id_Comissario));
+//     // Seleção do comissário
+//     do {
+//         printf("Insira o ID do comissário: ");
+//         scanf("%d", &voos.id_Comissario);
+//         if (!validarTripulante(voos.id_Comissario)) {
+//             printf("Erro: comissário não encontrado. Tente novamente.\n");
+//         }
+//     } while (!validarTripulante(voos.id_Comissario));
 
-    // Entrada do status do voo
-    printf("Insira o status do voo (1 para Ativo, 0 para Inativo): ");
-    scanf("%d", (int *)&voos.status);
+//     // Entrada do status do voo
+//     printf("Insira o status do voo (1 para Ativo, 0 para Inativo): ");
+//     scanf("%d", (int *)&voos.status);
 
-    // Entrada da tarifa
-    printf("Insira a tarifa do voo: ");
-    scanf("%f", &voos.tarifa);
+//     // Entrada da tarifa
+//     printf("Insira a tarifa do voo: ");
+//     scanf("%f", &voos.tarifa);
 
-    // Adiciona o novo voo à lista
-    voos[totalVoos] = voos;
-    totalVoos++;
+//     // Adiciona o novo voo à lista
+//     voos[totalVoos] = voos;
+//     totalVoos++;
 
-    printf("Voo registrado com sucesso!\n");
-}
+//     printf("Voo registrado com sucesso!\n");
+// }
 
-void listarVoo() {
-    if (totalVoos == 0) {
-        printf("Nenhum voo registrado.\n");
-        return;
-    }
+// void listarVoo() {
+//     if (totalVoos == 0) {
+//         printf("Nenhum voo registrado.\n");
+//         return;
+//     }
 
-    printf("\nLista de Voos Registrados:\n");
-    for (int i = 0; i < totalVoos; i++) {
-        printf("\nID do Voo: %d\n", voos[i].id_Voo);
-        printf("Origem: %s\n", voos[i].origem);
-        printf("Destino: %s\n", voos[i].destino);
-        printf("ID Piloto: %d\n", voos[i].id_Piloto);
-        printf("ID Copiloto: %d\n", voos[i].id_Copiloto);
-        printf("ID Comissário: %d\n", voos[i].id_Comissario);
-        printf("Status: %s\n", voos[i].status == ATIVO ? "Ativo" : "Inativo");
-        printf("Tarifa: %.2f\n", voos[i].tarifa);
-        printf("----------------------------\n");
-    }
-}
+//     printf("\nLista de Voos Registrados:\n");
+//     for (int i = 0; i < totalVoos; i++) {
+//         printf("\nID do Voo: %d\n", voos[i].id_Voo);
+//         printf("Origem: %s\n", voos[i].origem);
+//         printf("Destino: %s\n", voos[i].destino);
+//         printf("ID Piloto: %d\n", voos[i].id_Piloto);
+//         printf("ID Copiloto: %d\n", voos[i].id_Copiloto);
+//         printf("ID Comissário: %d\n", voos[i].id_Comissario);
+//         printf("Status: %s\n", voos[i].status == ATIVO ? "Ativo" : "Inativo");
+//         printf("Tarifa: %.2f\n", voos[i].tarifa);
+//         printf("----------------------------\n");
+//     }
+// }
 
 void cadastrarAssento()
 {
@@ -421,6 +423,20 @@ void listarAssento()
     }
 }
 
+int verificarReservaPassageiro(int idPassageiro, int codVoo)
+{
+    for (int i = 0; i < totalAssento; i++)
+    {
+        // Verifica se o assento já está reservado pelo passageiro no voo informado
+        if (grupo[i].idPassageiro == idPassageiro && grupo[i].codVoo == codVoo)
+        {
+            printf("O passageiro ID %d já possui reserva no voo %d.\n", idPassageiro, codVoo);
+            return 1; // Retorna 1 indicando que a reserva já existe
+        }
+    }
+    return 0; // Retorna 0 indicando que a reserva não foi encontrada
+}
+
 void reserva() {
     if (totalAssento <= 0) {
         printf("Nenhum assento cadastrado!\n");
@@ -442,7 +458,7 @@ void reserva() {
             return;
         }
         printf("Cadastrando novo passageiro...\n");
-        add(); // Chama a função para adicionar um novo passageiro
+        addPassageiro(); // Chama a função para adicionar um novo passageiro
         codPassageiro = passageiros[n - 1].id; // Obtém o ID do último passageiro cadastrado
     }
 
@@ -462,7 +478,7 @@ void reserva() {
         if (grupo[i].numeroAssento == numAssento && grupo[i].codVoo == codVoo) {
             if (grupo[i].status == 0) {
                 grupo[i].status = 1;
-                grupo[i].IDpessoa = codPassageiro; // Vincula o ID do passageiro ao assento
+                grupo[i].idPassageiro = codPassageiro; // Vincula o ID do passageiro ao assento
                 printf("Assento reservado com sucesso para o passageiro ID %d!\n", codPassageiro);
                 return;
             } else {
@@ -551,6 +567,198 @@ void lerPassageiros()
     }
 }
 
+void buscarPassageiro()
+{
+    int opcao;
+    printf("Pesquisar Passageiro:\n[1] Pelo Nome\n[2] Pelo Código\nEscolha uma opção: ");
+    scanf("%d", &opcao);
+
+    if (opcao == 1)
+    {
+        char nomeBusca[CHAR_MAX];
+        getchar(); // Limpa o buffer do teclado
+        printf("Digite o nome do passageiro: ");
+        fgets(nomeBusca, sizeof(nomeBusca), stdin);
+        nomeBusca[strcspn(nomeBusca, "\n")] = '\0';
+
+        int encontrado = 0;
+        for (int i = 0; i < n; i++)
+        {
+            if (strstr(passageiros[i].nome, nomeBusca))
+            {
+                printf("ID: %d\nNome: %s\nEndereco: %s\nTelefone: %s\nFidelidade: %s\n\n",
+                       passageiros[i].id, passageiros[i].nome, passageiros[i].endereco,
+                       passageiros[i].telefone, passageiros[i].fidelidade == 1 ? "Sim" : "Não");
+                encontrado = 1;
+            }
+        }
+
+        if (!encontrado)
+        {
+            printf("Nenhum passageiro encontrado com o nome informado.\n");
+        }
+    }
+    else if (opcao == 2)
+    {
+        int codigoBusca;
+        printf("Digite o código do passageiro: ");
+        scanf("%d", &codigoBusca);
+
+        int encontrado = 0;
+        for (int i = 0; i < n; i++)
+        {
+            if (passageiros[i].id == codigoBusca)
+            {
+                printf("ID: %d\nNome: %s\nEndereco: %s\nTelefone: %s\nFidelidade: %s\nPontos: %d\n",
+                       passageiros[i].id, passageiros[i].nome, passageiros[i].endereco,
+                       passageiros[i].telefone, passageiros[i].fidelidade == 1 ? "Sim" : "Não", passageiros[i].pontos);
+                encontrado = 1;
+                break;
+            }
+        }
+
+        if (!encontrado)
+        {
+            printf("Nenhum passageiro encontrado com o código informado.\n");
+        }
+    }
+    else
+    {
+        printf("Opção inválida.\n");
+    }
+}
+
+// Função para buscar membros da tripulação pelo nome ou código
+void buscarTripulante()
+{
+    int opcao;
+    printf("Pesquisar Tripulante:\n[1] Pelo Nome\n[2] Pelo Código\nEscolha uma opção: ");
+    scanf("%d", &opcao);
+
+    if (opcao == 1)
+    {
+        char nomeBusca[CHAR_MAX];
+        getchar(); // Limpa o buffer do teclado
+        printf("Digite o nome do tripulante: ");
+        fgets(nomeBusca, sizeof(nomeBusca), stdin);
+        nomeBusca[strcspn(nomeBusca, "\n")] = '\0';
+
+        int encontrado = 0;
+        for (int i = 0; i < quantidadeTripulacao; i++)
+        {
+            if (strstr(tripulacao[i].nome, nomeBusca))
+            {
+                printf("ID: %d\nNome: %s\nCargo: %s\nTelefone: %s\n\n",
+                       tripulacao[i].id, tripulacao[i].nome, tripulacao[i].cargo, tripulacao[i].telefone);
+                encontrado = 1;
+            }
+        }
+
+        if (!encontrado)
+        {
+            printf("Nenhum tripulante encontrado com o nome informado.\n");
+        }
+    }
+    else if (opcao == 2)
+    {
+        int codigoBusca;
+        printf("Digite o código do tripulante: ");
+        scanf("%d", &codigoBusca);
+
+        int encontrado = 0;
+        for (int i = 0; i < quantidadeTripulacao; i++)
+        {
+            if (tripulacao[i].id == codigoBusca)
+            {
+                printf("ID: %d\nNome: %s\nCargo: %s\nTelefone: %s\n\n",
+                       tripulacao[i].id, tripulacao[i].nome, tripulacao[i].cargo, tripulacao[i].telefone);
+                encontrado = 1;
+                break;
+            }
+        }
+
+        if (!encontrado)
+        {
+            printf("Nenhum tripulante encontrado com o código informado.\n");
+        }
+    }
+    else
+    {
+        printf("Opção inválida.\n");
+    }
+}
+
+// Função para listar todos os voos de um passageiro
+void listarVoosPassageiro()
+{
+    int codigoPassageiro;
+    printf("Digite o código do passageiro: ");
+    scanf("%d", &codigoPassageiro);
+
+    if (!verificarPassageiro(codigoPassageiro))
+    {
+        printf("Passageiro não encontrado.\n");
+        return;
+    }
+
+    int encontrado = 0;
+    printf("\nVoos do Passageiro ID %d:\n", codigoPassageiro);
+    for (int i = 0; i < totalAssento; i++)
+    {
+        if (grupo[i].status == 1 && grupo[i].idPassageiro == codigoPassageiro)
+        {
+            for (int j = 0; j < totalVoos; j++)
+            {
+                if (grupo[i].codVoo == voos[j].id_Voo)
+                {
+                    printf("Voo ID: %d\nOrigem: %s\nDestino: %s\nTarifa: %.2f\n\n",
+                           voos[j].id_Voo, voos[j].origem, voos[j].destino, voos[j].tarifa);
+                    encontrado = 1;
+                }
+            }
+        }
+    }
+
+    if (!encontrado)
+    {
+        printf("Nenhum voo encontrado para este passageiro.\n");
+    }
+}
+
+// Menu de pesquisa
+void pesquisa()
+{
+    int opcao;
+    do
+    {
+        printf("\nMenu de Pesquisa:\n"
+               "[1] Buscar Passageiro\n"
+               "[2] Buscar Tripulante\n"
+               "[3] Listar Voos de Passageiro\n"
+               "[4] Sair\n"
+               "Escolha uma opção: ");
+        scanf("%d", &opcao);
+
+        switch (opcao)
+        {
+        case 1:
+            buscarPassageiro();
+            break;
+        case 2:
+            buscarTripulante();
+            break;
+        case 3:
+            listarVoosPassageiro();
+            break;
+        case 4:
+            printf("Saindo do menu de pesquisa...\n");
+            break;
+        default:
+            printf("Opção inválida!\n");
+        }
+    } while (opcao != 4);
+}
+
 // Função principal
 int main()
 {
@@ -579,7 +787,7 @@ int main()
             cadastrarTripulacao();
             break;
         case 3:
-            cadastrarVoo();
+            //cadastrarVoo();
         case 4:
             assento();
             break;
@@ -588,6 +796,9 @@ int main()
             break;
         case 6:
             darBaixa();
+            break;
+        case 7:
+            pesquisa();
             break;
         case 9:
             printf("Saindo do programa...\n");

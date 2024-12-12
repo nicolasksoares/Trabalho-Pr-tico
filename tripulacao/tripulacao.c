@@ -7,15 +7,18 @@
 typedef struct {
     int id;
     char nome[25];
-    char cargo[25];
+    int cargo; // 1: Piloto, 2: Copiloto, 3: Comissario
     char telefone[14];
 } Tripulacao;
 
-void registrarTripulacao(Tripulacao tripulacao[], int *quantidadeTripulacao) {
-    if (*quantidadeTripulacao < MAX_TRIPULACAO) {
+Tripulacao tripulacao[MAX_TRIPULACAO];
+int quantidadeTripulacao = 0; 
+
+void registrarTripulacao() {
+    if (quantidadeTripulacao < MAX_TRIPULACAO) {
         Tripulacao novaTripulacao;
 
-        novaTripulacao.id = *quantidadeTripulacao + 1;
+        novaTripulacao.id = quantidadeTripulacao + 1;
 
         getchar();
 
@@ -23,16 +26,24 @@ void registrarTripulacao(Tripulacao tripulacao[], int *quantidadeTripulacao) {
         fgets(novaTripulacao.nome, sizeof(novaTripulacao.nome), stdin);
         novaTripulacao.nome[strcspn(novaTripulacao.nome, "\n")] = '\0';
 
-        printf("Digite o cargo do tripulante: ");
-        fgets(novaTripulacao.cargo, sizeof(novaTripulacao.cargo), stdin);
-        novaTripulacao.cargo[strcspn(novaTripulacao.cargo, "\n")] = '\0';
+        printf("Selecione o cargo do tripulante: \n");
+        printf("[1] Piloto\n[2] Copiloto\n[3] Comissario\n");
+        scanf("%d", &novaTripulacao.cargo);
+
+        while (novaTripulacao.cargo < 1 || novaTripulacao.cargo > 3) {
+            printf("Opcao invalida! Tente novamente.\n");
+            printf("[1] Piloto\n[2] Copiloto\n[3] Comissario\n");
+            scanf("%d", &novaTripulacao.cargo);
+        }
+
+        getchar(); // Limpa o buffer do teclado
 
         printf("Digite o telefone do tripulante: ");
         fgets(novaTripulacao.telefone, sizeof(novaTripulacao.telefone), stdin);
         novaTripulacao.telefone[strcspn(novaTripulacao.telefone, "\n")] = '\0';
 
-        tripulacao[*quantidadeTripulacao] = novaTripulacao;
-        (*quantidadeTripulacao)++;
+        tripulacao[quantidadeTripulacao] = novaTripulacao;
+        (quantidadeTripulacao)++;
 
         printf("Tripulacao registrada com sucesso!\n");
     } else {
@@ -40,7 +51,7 @@ void registrarTripulacao(Tripulacao tripulacao[], int *quantidadeTripulacao) {
     }
 }
 
-void mostrarTripulacao(Tripulacao tripulacao[], int quantidadeTripulacao) {
+void mostrarTripulacao() {
     if (quantidadeTripulacao == 0) {
         printf("Nao ha tripulantes registrados.\n");
         return;
@@ -50,15 +61,28 @@ void mostrarTripulacao(Tripulacao tripulacao[], int quantidadeTripulacao) {
     for (int i = 0; i < quantidadeTripulacao; i++) {
         printf("ID: %d\n", tripulacao[i].id);
         printf("Nome: %s\n", tripulacao[i].nome);
-        printf("Cargo: %s\n", tripulacao[i].cargo);
+
+        printf("Cargo: ");
+        switch (tripulacao[i].cargo) {
+            case 1:
+                printf("Piloto\n");
+                break;
+            case 2:
+                printf("Copiloto\n");
+                break;
+            case 3:
+                printf("Comissario\n");
+                break;
+            default:
+                printf("Nao definido\n");
+        }
+
         printf("Telefone: %s\n", tripulacao[i].telefone);
         printf("----------------------------\n");
     }
 }
 
 int main() {
-    Tripulacao tripulacao[MAX_TRIPULACAO];
-    int quantidadeTripulacao = 0; 
     int opcao;
 
     // Menu principal
@@ -69,7 +93,7 @@ int main() {
                "[3] Sair\n");
         scanf("%d", &opcao);
 
-        // Verificar se a opção é válida
+        // Verificar se a opcao e valida
         while (opcao != 1 && opcao != 2 && opcao != 3) {
             printf("Opcao invalida! Tente novamente.\n");
             scanf("%d", &opcao);
@@ -77,13 +101,13 @@ int main() {
 
         switch (opcao) {
             case 1:
-                registrarTripulacao(tripulacao, &quantidadeTripulacao);
+                registrarTripulacao();
                 break;
             case 2:
-                mostrarTripulacao(tripulacao, quantidadeTripulacao);
+                mostrarTripulacao();
                 break;
             case 3:
-                printf("Saindo do programa.\n");
+                printf("Saindo...\n");
                 return 0;
             default:
                 break;
