@@ -75,6 +75,46 @@ Esta função realiza a baixa na reserva de assento do respectivo voo. Nela, voc
 
 Função com passagem de parâmetro e com retorno, recebe dois inteiros, os números de assento e o código do voo. É utilizada para verificar se o assento está ocupado ou não.
 
+## 12. int verificarPassageiro(int id) 
+
+Função com passagem de parâmetro e com retorno, recebe o inteiro ID, cuja finalidade é verificar se o passageiro existe.
+
+## 13. void reserva() 
+
+Função que não recebe parâmetros e não retorna nada, garantindo que o passageiro tenha um assento. Ela verifica se o passageiro e o assento estão cadastrados, confirma a disponibilidade e, se todos os dados estiverem corretos, realiza a associação entre o passageiro e o voo.
+
+## 14. int verificarEspacosBrancos(const char *str) 
+
+Função que recebe um string para verificar se o usuario digitou apenas espaços em brancos em determinadas partes do programa, resolicitando a sua digitação. 
+
+
+## 15. void add() 
+
+Função sem passagem de parâmetro e sem retorno, com a finalidade de adicionar os dados dos passageiros (ID, nome, endereço, fidelidade). Ao atingir 99 passageiros, a função exibe a mensagem 'limite de passageiros'. 
+
+## 16. int continua() 
+
+função que não recebe parâmetros e retorna um valor. Essa função tem como objetivo perguntar ao passageiro se ele deseja continuar cadastrando ou encerrar para exibir os cadastros realizados. O retorno será 1 caso o passageiro escolha continuar, e 2 caso opte por parar e visualizar os cadastros. 
+
+## 17. void lerPassageiros() 
+
+Função sem passagem de parametro e sem retorno, que tem como funcionalidade mostra os dados (ID, nome, endereço, telefone, fidelidade) dos passageiros cadastrados. 
+
+## 18. int verificarAssento(int numeroAssento, int codV) 
+
+Função com passagem de parâmetro e com retorno, recebe dois inteiros, os números de assento e o código do voo. É utilizada para verificar se o assento está ocupado ou não.
+
+## 19. int verificarPassageiro(int id) 
+
+Função com passagem de parâmetro e com retorno, recebe o inteiro ID, cuja finalidade é verificar se o passageiro existe.
+
+## 20. void reserva() 
+
+Função que não recebe parâmetros e não retorna nada, garantindo que o passageiro tenha um assento. Ela verifica se o passageiro e o assento estão cadastrados, confirma a disponibilidade e, se todos os dados estiverem corretos, realiza a associação entre o passageiro e o voo.
+
+
+
+
 # TESTES:
 ## Menu:
 |ENTRADAS | CLASSES VÁLIDAS | RESULTADO ESPERADO | CLASSES INVÁLIDAS | RESULTADO ESPERADO|
