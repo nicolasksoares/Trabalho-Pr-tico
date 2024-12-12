@@ -8,7 +8,7 @@ typedef struct {
     int id;
     char nome[25];
     int cargo; // 1: Piloto, 2: Copiloto, 3: Comissario
-    char telefone[14];
+    int telefone;
 } Tripulacao;
 
 Tripulacao tripulacao[MAX_TRIPULACAO];
@@ -38,12 +38,18 @@ void registrarTripulacao() {
 
         getchar(); // Limpa o buffer do teclado
 
-        printf("Digite o telefone do tripulante: ");
-        fgets(novaTripulacao.telefone, sizeof(novaTripulacao.telefone), stdin);
-        novaTripulacao.telefone[strcspn(novaTripulacao.telefone, "\n")] = '\0';
+        printf("Digite o telefone do tripulante (apenas numeros, minimo 8 digitos): ");
+        scanf("%d", &novaTripulacao.telefone);
+
+        // Validar telefone
+        while (novaTripulacao.telefone < 0 || novaTripulacao.telefone / 10000000 == 0) {
+            printf("Telefone invalido! Deve ter pelo menos 8 digitos e nao ser negativo.\n");
+            printf("Digite o telefone novamente: ");
+            scanf("%d", &novaTripulacao.telefone);
+        }
 
         tripulacao[quantidadeTripulacao] = novaTripulacao;
-        (quantidadeTripulacao)++;
+        quantidadeTripulacao++;
 
         printf("Tripulacao registrada com sucesso!\n");
     } else {
@@ -77,7 +83,7 @@ void mostrarTripulacao() {
                 printf("Nao definido\n");
         }
 
-        printf("Telefone: %s\n", tripulacao[i].telefone);
+        printf("Telefone: %d\n", tripulacao[i].telefone);
         printf("----------------------------\n");
     }
 }

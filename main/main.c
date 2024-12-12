@@ -33,9 +33,9 @@ typedef struct cadastroPassageiro
 
 typedef struct {
     int id;
-    char nome[CHAR_MAX];
-    char cargo[CHAR_MAX];
-    char telefone[CHAR_MAX];
+    char nome[25];
+    int cargo; // 1: Piloto, 2: Copiloto, 3: Comissario
+    int telefone;
 } Tripulacao;
 
 typedef enum {
@@ -174,11 +174,11 @@ void addPassageiro()
 }
 
 //Cadastrar tripulaçõa
-void registrarTripulacao(Tripulacao tripulacao[], int *quantidadeTripulacao) {
-    if (*quantidadeTripulacao < MAX_TRIPULACAO) {
+void registrarTripulacao() {
+    if (quantidadeTripulacao < MAX_TRIPULACAO) {
         Tripulacao novaTripulacao;
 
-        novaTripulacao.id = *quantidadeTripulacao + 1;
+        novaTripulacao.id = quantidadeTripulacao + 1;
 
         getchar();
 
@@ -186,16 +186,30 @@ void registrarTripulacao(Tripulacao tripulacao[], int *quantidadeTripulacao) {
         fgets(novaTripulacao.nome, sizeof(novaTripulacao.nome), stdin);
         novaTripulacao.nome[strcspn(novaTripulacao.nome, "\n")] = '\0';
 
-        printf("Digite o cargo do tripulante: ");
-        fgets(novaTripulacao.cargo, sizeof(novaTripulacao.cargo), stdin);
-        novaTripulacao.cargo[strcspn(novaTripulacao.cargo, "\n")] = '\0';
+        printf("Selecione o cargo do tripulante: \n");
+        printf("[1] Piloto\n[2] Copiloto\n[3] Comissario\n");
+        scanf("%d", &novaTripulacao.cargo);
 
-        printf("Digite o telefone do tripulante: ");
-        fgets(novaTripulacao.telefone, sizeof(novaTripulacao.telefone), stdin);
-        novaTripulacao.telefone[strcspn(novaTripulacao.telefone, "\n")] = '\0';
+        while (novaTripulacao.cargo < 1 || novaTripulacao.cargo > 3) {
+            printf("Opcao invalida! Tente novamente.\n");
+            printf("[1] Piloto\n[2] Copiloto\n[3] Comissario\n");
+            scanf("%d", &novaTripulacao.cargo);
+        }
 
-        tripulacao[*quantidadeTripulacao] = novaTripulacao;
-        (*quantidadeTripulacao)++;
+        getchar(); // Limpa o buffer do teclado
+
+        printf("Digite o telefone do tripulante (apenas numeros, minimo 8 digitos): ");
+        scanf("%d", &novaTripulacao.telefone);
+
+        // Validar telefone
+        while (novaTripulacao.telefone < 0 || novaTripulacao.telefone / 10000000 == 0) {
+            printf("Telefone invalido! Deve ter pelo menos 8 digitos e nao ser negativo.\n");
+            printf("Digite o telefone novamente: ");
+            scanf("%d", &novaTripulacao.telefone);
+        }
+
+        tripulacao[quantidadeTripulacao] = novaTripulacao;
+        quantidadeTripulacao++;
 
         printf("Tripulacao registrada com sucesso!\n");
     } else {
@@ -203,7 +217,7 @@ void registrarTripulacao(Tripulacao tripulacao[], int *quantidadeTripulacao) {
     }
 }
 
-void mostrarTripulacao(Tripulacao tripulacao[], int quantidadeTripulacao) {
+void mostrarTripulacao() {
     if (quantidadeTripulacao == 0) {
         printf("Nao ha tripulantes registrados.\n");
         return;
@@ -213,8 +227,23 @@ void mostrarTripulacao(Tripulacao tripulacao[], int quantidadeTripulacao) {
     for (int i = 0; i < quantidadeTripulacao; i++) {
         printf("ID: %d\n", tripulacao[i].id);
         printf("Nome: %s\n", tripulacao[i].nome);
-        printf("Cargo: %s\n", tripulacao[i].cargo);
-        printf("Telefone: %s\n", tripulacao[i].telefone);
+
+        printf("Cargo: ");
+        switch (tripulacao[i].cargo) {
+            case 1:
+                printf("Piloto\n");
+                break;
+            case 2:
+                printf("Copiloto\n");
+                break;
+            case 3:
+                printf("Comissario\n");
+                break;
+            default:
+                printf("Nao definido\n");
+        }
+
+        printf("Telefone: %d\n", tripulacao[i].telefone);
         printf("----------------------------\n");
     }
 }
