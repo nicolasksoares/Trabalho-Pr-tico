@@ -39,7 +39,7 @@ Continuamos desenvolvendo o código; as funcionalidades de cadastro de passageir
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#Sprint 4: Entendemos os problemas
+#Sprint 4: Na quarta imagem, mostramos o quadro Kanban da quarta sprint. Terminamos todas as primeiras funções e seus devidos testes e começamos a revisá-los. Após isso, iniciamos as funcionalidades de dar baixa em reservas, cadastro de voo, cadastro de tripulação e pesquisa.
 ![Sprint 4](img/Backlog-do-produto4.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
