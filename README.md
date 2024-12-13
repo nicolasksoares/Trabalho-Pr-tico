@@ -158,7 +158,9 @@ Função que recebe como parâmetros as variáveis e o struct (Voo *voo, Voo voo
 
 Função para exibir todos os dados do voo. Mostra os dados como (ID, data, hora, origem, destino, IDS de tripulante, status (ativo ou inativo) e tarifa. 
 
+# Backlog to produto:
 
+![Captura de tela 2024-12-13 141855](https://github.com/user-attachments/assets/7f3f5248-42ee-4688-9cdf-f922a11781f6)
 
 # TESTES:
 ## Menu:
