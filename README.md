@@ -159,10 +159,24 @@ Função que recebe como parâmetros as variáveis e o struct (Voo *voo, Voo voo
 Função para exibir todos os dados do voo. Mostra os dados como (ID, data, hora, origem, destino, IDS de tripulante, status (ativo ou inativo) e tarifa. 
 
 # Backlog to produto:
-
+#Sprint 1: Entendemos os problemas
 ![Captura de tela 2024-12-13 141855](https://github.com/user-attachments/assets/7f3f5248-42ee-4688-9cdf-f922a11781f6)
 
-# TESTES:
+![Captura de tela 2024-12-13 141954](https://github.com/user-attachments/assets/42d873ea-b48c-459b-b25c-213a15456268)
+
+![Captura de tela 2024-12-13 142012](https://github.com/user-attachments/assets/c9a55413-b040-4cc2-8460-1b4bd3704df9)
+
+![Captura de tela 2024-12-13 142051](https://github.com/user-attachments/assets/a917d3e4-c483-41e9-9c1f-e4500fb5550e)
+
+![Captura de tela 2024-12-13 142115](https://github.com/user-attachments/assets/32a40a55-3fa1-498f-ac0e-29b285182c63)
+
+![Captura de tela 2024-12-13 142207](https://github.com/user-attachments/assets/76c5c72e-4a10-45f3-8045-089c3564620b)
+
+![Captura de tela 2024-12-13 142246](https://github.com/user-attachments/assets/0f3925d1-d5d4-42d3-a3a1-214974b1eb11)
+
+
+# TESTES:![Uploading Captura de tela 2024-12-13 141954.png…]()
+
 ## Menu:
 |ENTRADAS | CLASSES VÁLIDAS | RESULTADO ESPERADO | CLASSES INVÁLIDAS | RESULTADO ESPERADO|
 |--------|-----------------|-------------------|--------------------|-------------------|
