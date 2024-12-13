@@ -160,24 +160,34 @@ Função para exibir todos os dados do voo. Mostra os dados como (ID, data, hora
 
 # Backlog to produto:
 #Sprint 1: Na primeira imagem, mostramos o quadro Kanban após a primeira sprint. Primeiro, entendemos os requisitos do trabalho e realizamos a divisão das tarefas que cada membro irá realizar, os níveis de dificuldade, o tempo estimado, o tamanho de cada tarefa e os seus níveis de prioridade. Por fim, mostramos os progressos que cada tarefa irá fazer ao decorrer das sprints.
+
 ![WhatsApp Image 2024-12-13 at 14 38 10](https://github.com/user-attachments/assets/d43ffeb4-0e42-4284-a473-faf7f35dd25e)
 #Sprint 2: Na segunda imagem, mostramos o quadro Kanban após a segunda sprint. Começamos os primeiros passos para desenvolver o código, iniciando com as funcionalidades de cadastrar passageiro, realizar reserva, cadastrar assento e, por último, o programa de fidelidade(Cada função com seu devido nivel de dificuldade e prioridade).
+
 ![WhatsApp Image 2024-12-13 at 14 39 40](https://github.com/user-attachments/assets/b2ccb033-ee7c-4ff3-ad30-875173eb0ec5)
 #Sprint 3: Entendemos os problemas
+
 ![WhatsApp Image 2024-12-13 at 14 45 46](https://github.com/user-attachments/assets/3fbc830d-9dca-42a5-b5e5-3268d3dd5760)
 #Sprint 4: Entendemos os problemas
+
 ![WhatsApp Image 2024-12-13 at 14 46 11](https://github.com/user-attachments/assets/3f34e0a3-c194-4101-9264-dc53195f4b2d)
 #Sprint 5: Entendemos os problemas
+
 ![WhatsApp Image 2024-12-13 at 14 46 29](https://github.com/user-attachments/assets/8ca2cb0f-0919-4dbe-ad0f-79e3e1c7cbf1)
 #Sprint 6: Entendemos os problemas
+
 ![WhatsApp Image 2024-12-13 at 14 49 42](https://github.com/user-attachments/assets/d20aeaee-b52d-4ba7-a983-1f011ef22716)
 #Sprint 7: Entendemos os problemas
+
 ![WhatsApp Image 2024-12-13 at 14 51 04](https://github.com/user-attachments/assets/9a6fa345-89d3-4f01-989b-6c71b929d091)
 #Sprint 8: Entendemos os problemas
+
 ![WhatsApp Image 2024-12-13 at 14 52 56](https://github.com/user-attachments/assets/d7388a4f-7f48-4617-b882-8008078fcdac)
 #Sprint 9: Entendemos os problemas
+
 ![WhatsApp Image 2024-12-13 at 14 54 07](https://github.com/user-attachments/assets/be2151bf-af1b-4b91-b5b9-fe643ca7e71a)
-#Sprint 10: Entendemos os problemas
+#Sprint 10: Entendemos os problemas.
+
 ![WhatsApp Image 2024-12-13 at 14 54 28](https://github.com/user-attachments/assets/27b25007-8359-4d79-9817-41dba4f62306)
 
 
