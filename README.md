@@ -243,6 +243,12 @@ Função para exibir todos os dados do voo. Mostra os dados como (ID, data, hora
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
 | Numero e codigo do voo| Assento previamente reservado e existente | Altere o status para livre e remova o ID do passageiro |  Assento inexistente ou livre | Informar que o assento não está reservado ou inexistente|
 
+## Pesquisar
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Id, nome do passageiro ou do tripulante solicitado | Passageiro pre-existente, assentos pré-reservados, tripulantes já cadastrados | Mostar ao usuario informações a respeito | Id, nome não existente e não cadastro de nehum assento | Avisar ao usuario que não foi possível realizar a operação |
+
+
 ## Fidelidade
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
