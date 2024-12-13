@@ -23,11 +23,15 @@ Professores: Carlos Ribas e Laerte                Entrega: 15/12/2024           
 O objetivo é realizar um sistema de gerenciamento para a Voo Seguro, que subtitua os métodos manuais antigos. Para isso propomos um software feito na linguagem C que irá auxiliar-los por meio da automatização do controle de dados. A solução incluirá uma interface intuitiva, projetada para facilitar o uso com uma gama de comandos e funções para isso.
 
 # Backlog to produto:
-#Sprint 1: Na primeira imagem, mostramos o quadro Kanban da primeira sprint. Primeiro, entendemos os requisitos do trabalho e realizamos a divisão das tarefas que cada membro irá realizar, os níveis de dificuldade, o tempo estimado, o tamanho de cada tarefa e os seus níveis de prioridade. Por fim, mostramos os progressos que cada tarefa irá fazer ao decorrer das sprints.
+#Sprint 1: Na primeira imagem, mostramos o quadro Kanban da primeira sprint.
+
+Primeiro, entendemos os requisitos do trabalho e realizamos a divisão das tarefas que cada membro irá realizar, os níveis de dificuldade, o tempo estimado, o tamanho de cada tarefa e os seus níveis de prioridade. Por fim, mostramos os progressos que cada tarefa irá fazer ao decorrer das sprints.
 ![Sprint 1](img/Backlog-do-produto.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Sprint 2: Na segunda imagem, mostramos o quadro Kanban da segunda sprint. Começamos os primeiros passos para desenvolver o código, iniciando com as funcionalidades de cadastrar passageiro, realizar reserva, cadastrar assento e, por último, o programa de fidelidade(Cada função com seu devido nivel de dificuldade e prioridade).
+#Sprint 2: Na segunda imagem, mostramos o quadro Kanban da segunda sprint.
+
+Começamos os primeiros passos para desenvolver o código, iniciando com as funcionalidades de cadastrar passageiro, realizar reserva, cadastrar assento e, por último, o programa de fidelidade(Cada função com seu devido nivel de dificuldade e prioridade).
 ![Sprint 2](img/Backlog-do-produto2.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -39,15 +43,21 @@ Continuamos desenvolvendo o código; as funcionalidades de cadastro de passageir
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#Sprint 4: Na quarta imagem, mostramos o quadro Kanban da quarta sprint. Terminamos todas as primeiras funções e seus devidos testes e começamos a revisá-los. Após isso, iniciamos as funcionalidades de dar baixa em reservas, cadastro de voo, cadastro de tripulação e pesquisa.
+#Sprint 4: Na quarta imagem, mostramos o quadro Kanban da quarta sprint.
+
+Terminamos todas as primeiras funções e seus devidos testes e começamos a revisá-los. Após isso, iniciamos as funcionalidades de dar baixa em reservas, cadastro de voo, cadastro de tripulação e pesquisa.
 ![Sprint 4](img/Backlog-do-produto4.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Sprint 5: Na quinta imagem, mostramos o quadro Kanban da quinta sprint. Realizamos os testes utilizando a biblioteca Unit nas funções que foram realizadas na última sprint (4). Os testes foram nas funções de cadastrar voo, cadastrar tripulação, pesquisar e dar baixa em reservas. Também é perceptível o andamento das nossas tarefas ao longo das sprints. 
+#Sprint 5: Na quinta imagem, mostramos o quadro Kanban da quinta sprint.
+
+Realizamos os testes utilizando a biblioteca Unit nas funções que foram realizadas na última sprint (4). Os testes foram nas funções de cadastrar voo, cadastrar tripulação, pesquisar e dar baixa em reservas. Também é perceptível o andamento das nossas tarefas ao longo das sprints. 
 ![Sprint 5](img/Backlog-do-produto5.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Sprint 6: Na sexta imagem, mostramos o quadro Kanban da sexta sprint. Começamos a parte de documentação, realizando a documentação nas funções de fazer reserva, cadastrar passageiros, menu e função de cadastro de assentos, também realizamos a revisão dos codigos e dos testes que foram feitos até o momento.
+#Sprint 6: Na sexta imagem, mostramos o quadro Kanban da sexta sprint.
+
+Começamos a parte de documentação, realizando a documentação nas funções de fazer reserva, cadastrar passageiros, menu e função de cadastro de assentos, também realizamos a revisão dos codigos e dos testes que foram feitos até o momento.
 ![Sprint 6](img/Backlog-do-produto6.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
