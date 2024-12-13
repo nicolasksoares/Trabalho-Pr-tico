@@ -15,7 +15,7 @@ Professores: Carlos Ribas e Laerte                Entrega: 15/12/2024           
 - [Wesley Domingos](https://github.com/WesleySDz)  
 - [Nicolas Kiffer](https://github.com/nicolasksoares)  
 - [Luiz Moreira](https://github.com/LuizFMoreira)  
-- [Matheus Malta](https://github.com/)  
+- [Matheus Malta](https://github.com/MatheusSMalta)  
 
 
 # Objetivo:
@@ -195,6 +195,11 @@ Função para exibir todos os dados do voo. Mostra os dados como (ID, data, hora
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
 | Numero e codigo do voo| Assento previamente reservado e existente | Altere o status para livre e remova o ID do passageiro |  Assento inexistente ou livre | Informar que o assento não está reservado ou inexistente|
+
+## Pesquisa
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Codigo de pasasgeiro | Passageiro previamente cadastrado e com fidelidade | Acumular 10 pontos ao passageiro. Mostrar a quantidade de pontos do passageiro | Passageiro não cadastrado previamente ou passageiro sem fidelidade |Ilustrar ao ussuario que não foi possivel realizar a operação |
 
 # RELATORIO DE EXECUÇÃO DE TESTES:
 ## Menu: 
@@ -411,6 +416,50 @@ Relatorio de execução de teste
 | id="17" voo="5"    | Baixa com sucesso  | Sim       |
 | id="22" voo="5"    | Assento não está ocupado | Sim |
 | id="29" voo="15"   | Assento não existe | Sim       |
+
+## Pesquisa
+
+Teste 1: Menu de opções
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Inteiros | Numeros entre 1 a 3 | Acessar funcionalidade | Informar ao usuario a quantidade de pontos do usuario, ou acumular pontos ao usuario | Numeros negativos, nulos ou acima de 3 | Solicitar novamente a inserção da opção |
+
+Relatorio de execução de teste
+
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Valor: "-1"  | Opção inexistente        | Sim       |
+| Valor: "0"   | Opção inexistente        | Sim       |
+| Valor: "1"   | Consultar pontos         | Sim       |
+| Valor: "2"   | Acumular pontos          | Sim       |
+| Valor: "3"   | Sair do menu             | Sim       |
+| Valor: "17"  | Opção inexistente        | Sim       |
+
+Teste 2: Consultar pontos
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Inteiros | Codigo de passageiro existente e que possui fidelidade| Mostrar a quantidade de pontos que possui | Codigo inexistente, negativo ou nulo | Informar que não foi encontrado o passageiro|
+
+Relatorio de execução de teste
+
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Id: "1"      | Passageiro encontrado    | Sim       |
+| Id: "0"      | Passageiro não encontrado | Sim      |
+| Id: "-1"     | Passageiro encontrado    | Sim       |
+
+Teste 3: Acumular pontos
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Inteiros | Código de passageiro existente e que possui fidelidade | Adicionar 10 pontos de fidelidade ao usuario | Código inexistente, negativo, não, nulo ou que não tem fidelidade | Informar que não foi possivel acumular pontos |
+
+Relatorio de execução de teste
+
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Id: "1"      | Mais 10 pontos acumulado   | Sim       |
+| Id: "0"      | Não foi possivel encontrar | Sim      |
+| Id: "-1"     | Não foi possível encontrar    | Sim       |
 
 O trabalho poderá ser feito em grupos de até 4 alunos,
 Cópias de trabalho receberão nota ZERO.
