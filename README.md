@@ -28,31 +28,31 @@ O objetivo é realizar um sistema de gerenciamento para a Voo Seguro, que subtit
 ![Sprint 1](img/Backlog-do-produto.png)
 #Sprint 2: Na segunda imagem, mostramos o quadro Kanban após a segunda sprint. Começamos os primeiros passos para desenvolver o código, iniciando com as funcionalidades de cadastrar passageiro, realizar reserva, cadastrar assento e, por último, o programa de fidelidade(Cada função com seu devido nivel de dificuldade e prioridade).
 
-![WhatsApp Image 2024-12-13 at 14 39 40](https://github.com/user-attachments/assets/b2ccb033-ee7c-4ff3-ad30-875173eb0ec5)
+![Sprint 2](img/Backlog-do-produto2.png)
 #Sprint 3: Entendemos os problemas
 
-![WhatsApp Image 2024-12-13 at 14 45 46](https://github.com/user-attachments/assets/3fbc830d-9dca-42a5-b5e5-3268d3dd5760)
+![Sprint 3](img/Backlog-do-produto3.png)
 #Sprint 4: Entendemos os problemas
 
-![WhatsApp Image 2024-12-13 at 14 46 11](https://github.com/user-attachments/assets/3f34e0a3-c194-4101-9264-dc53195f4b2d)
+![Sprint 4](img/Backlog-do-produto4.png)
 #Sprint 5: Entendemos os problemas
 
-![WhatsApp Image 2024-12-13 at 14 46 29](https://github.com/user-attachments/assets/8ca2cb0f-0919-4dbe-ad0f-79e3e1c7cbf1)
+![Sprint 5](img/Backlog-do-produto5.png)
 #Sprint 6: Entendemos os problemas
 
-![WhatsApp Image 2024-12-13 at 14 49 42](https://github.com/user-attachments/assets/d20aeaee-b52d-4ba7-a983-1f011ef22716)
+![Sprint 6](img/Backlog-do-produto6.png)
 #Sprint 7: Entendemos os problemas
 
-![WhatsApp Image 2024-12-13 at 14 51 04](https://github.com/user-attachments/assets/9a6fa345-89d3-4f01-989b-6c71b929d091)
+![Sprint 7](img/Backlog-do-produto7.png)
 #Sprint 8: Entendemos os problemas
 
-![WhatsApp Image 2024-12-13 at 14 52 56](https://github.com/user-attachments/assets/d7388a4f-7f48-4617-b882-8008078fcdac)
+![Sprint 8](img/Backlog-do-produto8.png)
 #Sprint 9: Entendemos os problemas
 
-![WhatsApp Image 2024-12-13 at 14 54 07](https://github.com/user-attachments/assets/be2151bf-af1b-4b91-b5b9-fe643ca7e71a)
+![Sprint 9](img/Backlog-do-produto9.png)
 #Sprint 10: Entendemos os problemas.
 
-![WhatsApp Image 2024-12-13 at 14 54 28](https://github.com/user-attachments/assets/27b25007-8359-4d79-9817-41dba4f62306)
+![Sprint 10](img/Backlog-do-produto10.png)
 
 
 # Lista de assinaturas das funções e parâmetros
