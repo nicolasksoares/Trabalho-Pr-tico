@@ -2,7 +2,7 @@ void acumularPontos(int idPassageiro)
 {
     for (int i = 0; i < MAX_PASSAGEIROS; i++)
     {
-        if (passageiros[i].id == idPassageiro)
+        if (passageiros[i].id == idPassageiro && passageiros[i].fidelida == 1)
         {
             passageiros[i].pontos += 10; // Adiciona 10 pontos por voo
             printf("10 pontos adicionados ao passageiro %s (ID: %d). Total: %d pontos.\n",
@@ -18,7 +18,7 @@ void consultarPontos(int idPassageiro)
 {
     for (int i = 0; i < MAX_PASSAGEIROS; i++)
     {
-        if (passageiros[i].id == idPassageiro)
+        if (passageiros[i].id == idPassageiro && passageiros[i].fidelidade == 1)
         {
             printf("Passageiro %s (ID: %d) possui %d pontos de fidelidade.\n",
                    passageiros[i].nome, idPassageiro, passageiros[i].pontos);

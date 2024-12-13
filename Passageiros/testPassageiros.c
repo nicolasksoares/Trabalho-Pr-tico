@@ -5,6 +5,74 @@
 #include "../munit/munit.c"
 #include "cadastrarPassageiros.c"
 
+void add(const char* nome_input, const char* endereco_input, const char* telefone_input, int fidelidade_input)
+{
+    if (n >= MAX_PASSAGEIROS)
+    {
+        printf("Limite de passageiros atingido!\n");
+        return;
+    }
+
+    // Preenche os dados do passageiro
+    Passageiro novo_passageiro;
+    novo_passageiro.id = n + 1;
+
+    if (nome_input == NULL) { // Se não for um teste, solicita a entrada do usuário
+        do {
+            setbuf(stdin, 0);
+            printf("Digite o nome: ");
+            fgets(novo_passageiro.nome, sizeof(novo_passageiro.nome), stdin);
+        } while (verificarEspacosBrancos(novo_passageiro.nome));
+    } else { // Usa os valores do teste
+        strncpy(novo_passageiro.nome, nome_input, sizeof(novo_passageiro.nome) - 1);
+        novo_passageiro.nome[sizeof(novo_passageiro.nome) - 1] = '\0';
+    }
+
+    if (endereco_input == NULL) {
+        do {
+            setbuf(stdin, 0);
+            printf("Digite o endereco: ");
+            fgets(novo_passageiro.endereco, sizeof(novo_passageiro.endereco), stdin);
+        } while (verificarEspacosBrancos(novo_passageiro.endereco));
+    } else {
+        strncpy(novo_passageiro.endereco, endereco_input, sizeof(novo_passageiro.endereco) - 1);
+        novo_passageiro.endereco[sizeof(novo_passageiro.endereco) - 1] = '\0';
+    }
+
+    if (telefone_input == NULL) {
+        do {
+            setbuf(stdin, 0);
+            printf("Digite o telefone: ");
+            fgets(novo_passageiro.telefone, sizeof(novo_passageiro.telefone), stdin);
+        } while (verificarEspacosBrancos(novo_passageiro.telefone));
+    } else {
+        strncpy(novo_passageiro.telefone, telefone_input, sizeof(novo_passageiro.telefone) - 1);
+        novo_passageiro.telefone[sizeof(novo_passageiro.telefone) - 1] = '\0';
+    }
+
+    if (fidelidade_input == -1) { 
+        do {
+            printf("Digite a fidelidade\n"
+                   "[1]Sim\n"
+                   "[2]Nao\n");
+            scanf("%d", &novo_passageiro.fidelidade);
+        } while (novo_passageiro.fidelidade != 1 && novo_passageiro.fidelidade != 2);
+    } else {
+        novo_passageiro.fidelidade = fidelidade_input;
+    }
+
+    passageiros[n] = novo_passageiro;
+    n++; // Incrementa o contador de passageiros
+
+    printf("\nPassageiro cadastrado\n");
+    printf("ID: %d\n", passageiros[n - 1].id);
+    printf("Nome: %s\n", passageiros[n - 1].nome);
+    printf("Endereco: %s\n", passageiros[n - 1].endereco);
+    printf("Telefone: %s\n", passageiros[n - 1].telefone);
+    printf("Fidelidade: %s\n", (passageiros[n - 1].fidelidade == 1) ? "Sim" : "Nao");
+}
+
+
 static MunitResult test_verificarEspacosBrancos(const MunitParameter params[], void *data)
 {
     const char *input;
