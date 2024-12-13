@@ -158,9 +158,24 @@ Função que recebe como parâmetros as variáveis e o struct (Voo *voo, Voo voo
 
 Função para exibir todos os dados do voo. Mostra os dados como (ID, data, hora, origem, destino, IDS de tripulante, status (ativo ou inativo) e tarifa. 
 
+# Backlog to produto:
+#Sprint 1: Entendemos os problemas
+![WhatsApp Image 2024-12-13 at 14 38 10](https://github.com/user-attachments/assets/d43ffeb4-0e42-4284-a473-faf7f35dd25e)
+![WhatsApp Image 2024-12-13 at 14 39 40](https://github.com/user-attachments/assets/b2ccb033-ee7c-4ff3-ad30-875173eb0ec5)
+![WhatsApp Image 2024-12-13 at 14 45 46](https://github.com/user-attachments/assets/3fbc830d-9dca-42a5-b5e5-3268d3dd5760)
+![WhatsApp Image 2024-12-13 at 14 46 11](https://github.com/user-attachments/assets/3f34e0a3-c194-4101-9264-dc53195f4b2d)
+![WhatsApp Image 2024-12-13 at 14 46 29](https://github.com/user-attachments/assets/8ca2cb0f-0919-4dbe-ad0f-79e3e1c7cbf1)
+![WhatsApp Image 2024-12-13 at 14 49 42](https://github.com/user-attachments/assets/d20aeaee-b52d-4ba7-a983-1f011ef22716)
+![WhatsApp Image 2024-12-13 at 14 51 04](https://github.com/user-attachments/assets/9a6fa345-89d3-4f01-989b-6c71b929d091)
+![WhatsApp Image 2024-12-13 at 14 52 56](https://github.com/user-attachments/assets/d7388a4f-7f48-4617-b882-8008078fcdac)
+![WhatsApp Image 2024-12-13 at 14 54 07](https://github.com/user-attachments/assets/be2151bf-af1b-4b91-b5b9-fe643ca7e71a)
+![WhatsApp Image 2024-12-13 at 14 54 28](https://github.com/user-attachments/assets/27b25007-8359-4d79-9817-41dba4f62306)
+
+
 
 
 # TESTES:
+
 ## Menu:
 |ENTRADAS | CLASSES VÁLIDAS | RESULTADO ESPERADO | CLASSES INVÁLIDAS | RESULTADO ESPERADO|
 |--------|-----------------|-------------------|--------------------|-------------------|
