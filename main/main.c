@@ -70,14 +70,40 @@ void obterString(char mensagem[], char destino[]) {
     while (1) {
         printf("%s", mensagem);
         fgets(destino, CHAR_MAX, stdin);
-        destino[strcspn(destino, "\n")] = '\0'; 
-        if (strlen(destino) > 0) {
-            break;
+        destino[strcspn(destino, "\n")] = '\0';  
+
+        // Verifica se a string não está vazia e se contém apenas letras
+        int valido = 1;
+        for (int i = 0; destino[i] != '\0'; i++) {
+            if (!isalpha(destino[i]) && destino[i] != ' ') {  // Permite espaços
+                valido = 0;
+                break;
+            }
         }
-        printf("Erro: O valor não pode ser vazio. Tente novamente.\n");
+
+        // Se válido, sai do loop, caso contrário, pede novamente
+        if (strlen(destino) > 0 && valido) {
+            break;
+        } else {
+            printf("Erro: O nome deve conter apenas letras e espaços. Tente novamente.\n");
+        }
     }
 }
 
+void obterString2(char mensagem[], char destino[]) {
+    while (1) {
+        printf("%s", mensagem);
+        fgets(destino, CHAR_MAX, stdin);
+        destino[strcspn(destino, "\n")] = '\0';  // Remove o '\n' no final da string
+
+        // Permitimos que o campo não seja vazio, mas não validamos mais os espaços internos
+        if (strlen(destino) > 0) {
+            break;
+        }
+
+        printf("Erro: O valor não pode ser vazio. Tente novamente.\n");
+    }
+}
 // Função para obter um número inteiro positivo
 int obterInteiro(char mensagem[]) {
     int valor;
@@ -154,12 +180,8 @@ void addPassageiro()
     Passageiro novo_passageiro;
     novo_passageiro.id = n + 1;
 
-    do
-    {
-        setbuf(stdin, 0);
-        printf("Digite o nome: ");
-        fgets(novo_passageiro.nome, sizeof(novo_passageiro.nome), stdin);
-        novo_passageiro.nome[strcspn(novo_passageiro.nome, "\n")] = '\0'; 
+    do {
+        obterString("Digite o nome: ", novo_passageiro.nome);
     } while (verificarEspacosBrancos(novo_passageiro.nome));
 
     do
@@ -220,13 +242,13 @@ void registrarTripulacao() {
 
         getchar();
 
-        printf("Digite o nome do tripulante: ");
-        fgets(novaTripulacao.nome, sizeof(novaTripulacao.nome), stdin);
-        novaTripulacao.nome[strcspn(novaTripulacao.nome, "\n")] = '\0';
+        do {
+            obterString("Digite o nome: ", novaTripulacao.nome);
+        } while (verificarEspacosBrancos(novaTripulacao.nome));
 
         printf("Selecione o cargo do tripulante: \n");
         printf("[1] Piloto\n[2] Copiloto\n[3] Comissario\n");
-        scanf("%d", &novaTripulacao.cargo);
+        novaTripulacao.cargo = obterInteiro("Digite o cargo: ");
 
         while (novaTripulacao.cargo < 1 || novaTripulacao.cargo > 3) {
             printf("Opcao invalida! Tente novamente.\n");
@@ -234,7 +256,6 @@ void registrarTripulacao() {
             scanf("%d", &novaTripulacao.cargo);
         }
 
-        getchar(); 
 
         printf("Digite o telefone do tripulante (apenas numeros, minimo 8 digitos): ");
         scanf("%d", &novaTripulacao.telefone);
@@ -394,11 +415,11 @@ int verificarExistenciaTripulante(int idTripulante) {
 void registrarVoo(int index) {
     Voo temp;
     do {
-        obterString("Insira a data do voo (DD/MM/AAAA): ", temp.data);
+        obterString2("Insira a data do voo (DD/MM/AAAA): ", temp.data);
     } while (!validarData(temp.data));
 
     do {
-        obterString("Insira a hora do voo (HH:MM): ",temp.hora);
+        obterString2("Insira a hora do voo (HH:MM): ",temp.hora);
     } while (!validarHora(temp.hora));
 
     obterString("Insira a origem do voo: ",temp.origem);
@@ -906,7 +927,7 @@ void listarVoosPassageiro()
             {
                 if (grupo[i].codVoo == voos[j].id)
                 {
-                    printf("Voo ID: %d\nOrigem: %s\nDestino: %s\nTarifa: %.2f\n\n",
+                    printf("Nome: %d\nVoo ID: %d\nOrigem: %s\nDestino: %s\nTarifa: %.2f\n\n",
                            voos[j].id, voos[j].origem, voos[j].destino, voos[j].tarifa);
                     encontrado = 1;
                 }
@@ -975,6 +996,7 @@ void consultarPontos(int idPassageiro) {
     printf("Erro: Passageiro com ID %d não encontrado ou não possui fidelidade.\n", idPassageiro);
 }
 
+//Fidelidade
 void fidelidade(){
     int opcao;
     do
