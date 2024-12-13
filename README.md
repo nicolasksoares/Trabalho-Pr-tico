@@ -32,7 +32,9 @@ O objetivo é realizar um sistema de gerenciamento para a Voo Seguro, que subtit
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#Sprint 3: Entendemos os problemas
+#Sprint 3: Na terceira imagem, mostramos o quadro Kanban após a terceira sprint. 
+
+Continuamos desenvolvendo o código; as funcionalidades de cadastro de passageiro, realização de reserva, cadastro de assento e o programa de fidelidade foram concluídas e passaram para a etapa de testes. 
 ![Sprint 3](img/Backlog-do-produto3.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -49,7 +51,9 @@ O objetivo é realizar um sistema de gerenciamento para a Voo Seguro, que subtit
 ![Sprint 6](img/Backlog-do-produto6.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Sprint 7: Entendemos os problemas
+#Sprint 7: Na sétima imagem, mostramos o quadro Kanban após a sétima sprint. 
+
+Continuamos desenvolvendo o código; as funcionalidades de teste de voo, baixa na reserva, cadastro de tripulação, pesquisa, teste de pesquisa e teste de baixa na reserva já foram revisadas e concluídas. As tarefas de documentação de reserva, documentação de cadastro de passageiros, documentação de menu e documentação de cadastro de assentos foram realizadas e estão aguardando revisão. A documentação de cadastro de voo e a documentação de pesquisa começaram a ser desenvolvidas. 
 ![Sprint 7](img/Backlog-do-produto7.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
