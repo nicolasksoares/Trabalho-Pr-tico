@@ -66,6 +66,38 @@ int totalVoos = 0;
 int n = 0; // Contador de passageiros
 
 // Funções auxiliares
+int obterTelefone() {
+    int telefone;
+    while (1) {
+        printf("Digite o telefone do passageiro (apenas números, mínimo 8 dígitos): ");
+        telefone = obterInteiro("");  
+
+        // Validar se o telefone tem pelo menos 8 dígitos e não é negativo
+        int numDigitos = 0;
+        int tempTelefone = telefone;
+
+        if (telefone < 0) {
+            printf("Erro: O telefone não pode ser negativo.\n");
+            continue;
+        }
+
+        // Contar o número de dígitos
+        while (tempTelefone > 0) {
+            tempTelefone /= 10;
+            numDigitos++;
+        }
+
+        if (numDigitos >= 8) {
+            break;  // Telefone válido
+        } else {
+            printf("Erro: O telefone deve ter pelo menos 8 dígitos.\n");
+        }
+    }
+
+    return telefone;
+}
+
+
 void obterString(char mensagem[], char destino[]) {
     while (1) {
         printf("%s", mensagem);
@@ -192,12 +224,7 @@ void addPassageiro()
         novo_passageiro.endereco[strcspn(novo_passageiro.endereco, "\n")] = '\0';
     } while (verificarEspacosBrancos(novo_passageiro.endereco));
 
-        novo_passageiro.telefone = obterInteiro("Digite o telefone do passageiro (apenas numeros, minimo 8 digitos): ");
-        // Validar telefone
-        while (novo_passageiro.telefone < 0 || novo_passageiro.telefone / 10000000 == 0) {
-            printf("Telefone invalido! Deve ter pelo menos 8 digitos e nao ser negativo.\n");
-            novo_passageiro.telefone = obterInteiro("Digite novamente: ");
-        }
+        novo_passageiro.telefone = obterTelefone();
 
     do
     {
@@ -257,8 +284,7 @@ void registrarTripulacao() {
         }
 
 
-        printf("Digite o telefone do tripulante (apenas numeros, minimo 8 digitos): ");
-        scanf("%d", &novaTripulacao.telefone);
+        novaTripulacao.telefone = obterTelefone();
 
         // Validar telefone
         while (novaTripulacao.telefone < 0 || novaTripulacao.telefone / 10000000 == 0) {
@@ -1036,7 +1062,7 @@ void fidelidade(){
 // Função principal
 int main()
 {
-    setlocale(LC_ALL, "pt_BR.utf8");
+    setlocale(LC_ALL, "Portuguese");
     int op;
     printf("Bem vindo ao sistema\n");
     printf("Digite qualquer tecla para continuar\n");
