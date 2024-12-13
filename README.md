@@ -63,13 +63,13 @@ Continuamos desenvolvendo a parte de documentação; as tarefas de documentaçã
 ![Sprint 8](img/Backlog-do-produto8.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Sprint 9: Na nona imagem, mostramos o quadro Kanban na nona sprint. 
+#Sprint 9: Na nona imagem, mostramos o quadro Kanban da nona sprint. 
 
 Nessa sprint, todas as tarefas que estavam em revisão foram revisadas e concluídas (documentação de reserva, documentação de cadastro de passageiros, documentação de menu, documentação de cadastro de assentos, documentação de cadastro de voo e documentação de pesquisa). O menu foi finalizado, e as tarefas de integração de todo o código e o teste de menu começaram a ser desenvolvidas. 
 ![Sprint 9](img/Backlog-do-produto9.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Sprint 10: Na décima imagem, mostramos o quadro Kanban na décima sprint. 
+#Sprint 10: Na décima imagem, mostramos o quadro Kanban da décima sprint. 
 
 Todos os testes foram realizados e todos os códigos foram criados. Agora, começamos a juntar todo o programa.
 ![Sprint 10](img/Backlog-do-produto10.png)
