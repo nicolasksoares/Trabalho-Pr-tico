@@ -196,7 +196,7 @@ Função para exibir todos os dados do voo. Mostra os dados como (ID, data, hora
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
 | Numero e codigo do voo| Assento previamente reservado e existente | Altere o status para livre e remova o ID do passageiro |  Assento inexistente ou livre | Informar que o assento não está reservado ou inexistente|
 
-## Pesquisa
+## Fidelidade
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
 | Codigo de pasasgeiro | Passageiro previamente cadastrado e com fidelidade | Acumular 10 pontos ao passageiro. Mostrar a quantidade de pontos do passageiro | Passageiro não cadastrado previamente ou passageiro sem fidelidade |Ilustrar ao ussuario que não foi possivel realizar a operação |
@@ -417,7 +417,7 @@ Relatorio de execução de teste
 | id="22" voo="5"    | Assento não está ocupado | Sim |
 | id="29" voo="15"   | Assento não existe | Sim       |
 
-## Pesquisa
+## Fidelidade
 
 Teste 1: Menu de opções
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
