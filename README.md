@@ -124,6 +124,42 @@ Função para consultar pontos de fidelidade pelo ID. Esta função mostra o res
 
 Esta função mostra 3 opções, a primeira é para consultar os pontos de fidelidade, a segunda é para acumular os pontos, e a terceira é para sair da aba de fidelidade. A primeira e segunda você digita o ID do passageiro para consultar os pontos do mesmo.
 
+## 24. void obterString(char mensagem[], char destino []) 
+
+Essa função é responsável por obter uma string válida do usuário. Ela exibe uma mensagem para o usuário e continua solicitando a entrada até que o valor fornecido não seja vazio. 
+
+## 25. Int obterInteiro(char mensagem[]) 
+
+Essa função solicita ao usuário um número inteiro positivo. Ela valida a entrada, garantindo que seja um valor maior que zero. Em caso de erro, informa ao usuário e pede a entrada novamente. 
+
+
+## 26. Int obterFloat(char mensagem[]) 
+
+Semelhante à função anterior, mas usada para obter um número decimal positivo (valor do tipo float). Também valida a entrada e solicita novamente em caso de erro. 
+
+ 
+## 27. Int validarData(char Data[]) 
+
+Função com passagem de parâmetro e retorno, que recebe a variável Data e tem como objetivo validar as datas do voo.
+
+## 28. Int validarHora(char hora[]) 
+
+Função com passagem de parâmetro e retorno, que recebe a variável hora e tem como objetivo validar os horários do voo. 
+
+## 29. Int verificarDuplicidade(Voo voos[], int total, Voo novoVoo) 
+
+Função com passagem de parâmetros e retorno, que recebe as variáveis e o struct (Voo voos[], int total, Voo novoVoo) com o objetivo de verificar se há duplicidade de informações entre o novo voo e a lista de voos já cadastrados. 
+
+## 30. Void registrarVoo(Voo *voo, Voo voos[], int totalVoos) 
+
+Função que recebe como parâmetros as variáveis e o struct (Voo *voo, Voo voos[], int totalVoos), cuja finalidade é registrar novos voos, validar os dados do voo, e ver se há duplicidade em voos já cadastrados  
+
+## 31. Void exibierVoo(Voo *voo) 
+
+Função para exibir todos os dados do voo. Mostra os dados como (ID, data, hora, origem, destino, IDS de tripulante, status (ativo ou inativo) e tarifa. 
+
+
+
 # TESTES:
 ## Menu:
 |ENTRADAS | CLASSES VÁLIDAS | RESULTADO ESPERADO | CLASSES INVÁLIDAS | RESULTADO ESPERADO|
