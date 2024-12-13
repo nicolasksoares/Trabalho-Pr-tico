@@ -88,7 +88,7 @@ Função que não recebe parâmetros e não retorna nada, garantindo que o passa
 Função que recebe um string para verificar se o usuario digitou apenas espaços em brancos em determinadas partes do programa, resolicitando a sua digitação. 
 
 
-## 15. void add() 
+## 15. void addPassageiro() 
 
 Função sem passagem de parâmetro e sem retorno, com a finalidade de adicionar os dados dos passageiros (ID, nome, endereço, fidelidade). Ao atingir 99 passageiros, a função exibe a mensagem 'limite de passageiros'. 
 
