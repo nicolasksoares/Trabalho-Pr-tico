@@ -27,7 +27,7 @@ typedef struct cadastroPassageiro
     int id;
     char nome[CHAR_MAX];
     char endereco[CHAR_MAX];
-    char telefone[CHAR_MAX];
+    int telefone;
     int fidelidade; // 1: Sim, 2: Não
     int pontos;
 } Passageiro;
@@ -38,12 +38,6 @@ typedef struct {
     int cargo; // 1: Piloto, 2: Copiloto, 3: Comissario
     int telefone;
 } Tripulacao;
-
-typedef enum {
-    ATIVO,
-    INATIVO
-} StatusVoo;
-
 
 typedef struct {
     int id;
@@ -165,7 +159,7 @@ void addPassageiro()
         setbuf(stdin, 0);
         printf("Digite o nome: ");
         fgets(novo_passageiro.nome, sizeof(novo_passageiro.nome), stdin);
-        novo_passageiro.nome[strcspn(novo_passageiro.nome, "\n")] = '\0'; // Remove a quebra de linha
+        novo_passageiro.nome[strcspn(novo_passageiro.nome, "\n")] = '\0'; 
     } while (verificarEspacosBrancos(novo_passageiro.nome));
 
     do
@@ -173,31 +167,29 @@ void addPassageiro()
         setbuf(stdin, 0);
         printf("Digite o endereco: ");
         fgets(novo_passageiro.endereco, sizeof(novo_passageiro.endereco), stdin);
-        novo_passageiro.endereco[strcspn(novo_passageiro.endereco, "\n")] = '\0'; // Remove a quebra de linha
+        novo_passageiro.endereco[strcspn(novo_passageiro.endereco, "\n")] = '\0'; 
     } while (verificarEspacosBrancos(novo_passageiro.endereco));
 
-    do
-    {
-        setbuf(stdin, 0);
-        printf("Digite o telefone: ");
-        fgets(novo_passageiro.telefone, sizeof(novo_passageiro.telefone), stdin);
-        novo_passageiro.telefone[strcspn(novo_passageiro.telefone, "\n")] = '\0'; // Remove a quebra de linha
-    } while (verificarEspacosBrancos(novo_passageiro.telefone));
+        novo_passageiro.telefone = obterInteiro("Digite o telefone do passageiro (apenas numeros, minimo 8 digitos): ");
+        // Validar telefone
+        while (novo_passageiro.telefone < 0 || novo_passageiro.telefone / 10000000 == 0) {
+            printf("Telefone invalido! Deve ter pelo menos 8 digitos e nao ser negativo.\n");
+            novo_passageiro.telefone = obterInteiro("Digite novamente: ");
+        }
 
     do
     {
         printf("Digite a fidelidade\n"
                "[1] Sim\n"
                "[2] Não\n");
-        scanf("%d", &novo_passageiro.fidelidade);
+        novo_passageiro.fidelidade = obterInteiro(": ");
     } while (novo_passageiro.fidelidade != 1 && novo_passageiro.fidelidade != 2);
 
     if (novo_passageiro.fidelidade == 1)
     {
         do
         {
-            printf("Digite a quantidade de pontos: ");
-            scanf("%d", &novo_passageiro.pontos);
+            novo_passageiro.pontos = obterInteiro("Digite a quantidade de pontos: ");
             if (novo_passageiro.pontos < 0)
                 printf("Pontos inválidos. Por favor, insira um número positivo.\n");
         } while (novo_passageiro.pontos < 0);
@@ -208,14 +200,15 @@ void addPassageiro()
     }
 
     passageiros[n] = novo_passageiro;
-    n++; // Incrementa o contador de passageiros
+    n++;
 
     printf("\nPassageiro cadastrado\n");
     printf("ID: %d\n", passageiros[n - 1].id);
     printf("Nome: %s\n", passageiros[n - 1].nome);
     printf("Endereco: %s\n", passageiros[n - 1].endereco);
-    printf("Telefone: %s\n", passageiros[n - 1].telefone);
+    printf("Telefone: %d\n", passageiros[n - 1].telefone);
     printf("Fidelidade: %s\n", (passageiros[n - 1].fidelidade == 1) ? "Sim" : "Não");
+    printf("Pontos: %d\n", passageiros[n - 1].pontos);
 }
 
 //Cadastrar tripulaçõa
@@ -368,7 +361,7 @@ int verificarDuplicidade(Voo voos[], int total, Voo novoVoo) {
                 voos[i].idCopiloto == novoVoo.idCopiloto ||
                 voos[i].idComissario == novoVoo.idComissario ||
                 strcmp(voos[i].origem, novoVoo.origem) == 0 && strcmp(voos[i].destino, novoVoo.destino) == 0) {
-                return 1; // Duplicidade encontrada
+                return 1; 
             }
         }
     }
@@ -390,7 +383,7 @@ int verificarTripulanteCadastrado(int cargo, int idTripulante) {
 int verificarExistenciaTripulante(int idTripulante) {
     for (int i = 0; i < quantidadeTripulacao; i++) {
         if (tripulacao[i].id == idTripulante) {
-            return 1; // Tripulante encontrado
+            return 1; 
         }
     }
     return 0; // 
@@ -506,7 +499,7 @@ void cadastrarVoo() {
                 if (totalVoos < MAX_VOOS) {
                     printf("\n--- Registro do Voo %d ---\n", totalVoos + 1);
                     voos[totalVoos].id = totalVoos + 1;
-                    registrarVoo(totalVoos);  // Passando o índice em vez de ponteiro
+                    registrarVoo(totalVoos);  
                 } else {
                     printf("Limite máximo de voos atingido.\n");
                 }
@@ -514,7 +507,7 @@ void cadastrarVoo() {
             case 2:
                 printf("\n--- Voos Registrados ---\n");
                 for (int i = 0; i < totalVoos; i++) {
-                    exibirVoo(i);  // Passando o índice em vez de ponteiro
+                    exibirVoo(i);  
                 }
                 break;
             case 3:
@@ -559,9 +552,9 @@ void cadastrarAssento() {
         printf("Erro: Código de voo %d não registrado!\n", codVoo);
         return;  
     }
-    
+
     // Verificar se o voo está ativo (status == 1)
-    if (voos[codVoo - 1].status != 1) {  // Assumindo que o voo é identificado pelo código codVoo
+    if (voos[codVoo - 1].status != 1) {  
         printf("Erro: O voo com código %d não está ativo.\n", codVoo);
         return;
     }
@@ -574,7 +567,7 @@ void cadastrarAssento() {
 
     grupo[totalAssento].numeroAssento = numAssento;
     grupo[totalAssento].codVoo = codVoo;
-    grupo[totalAssento].status = 0;  // Assento livre
+    grupo[totalAssento].status = 0;  
     totalAssento++;
 
     printf("Assento cadastrado com sucesso!\n");
@@ -603,10 +596,10 @@ int verificarReservaPassageiro(int idPassageiro, int codVoo)
         if (grupo[i].idPassageiro == idPassageiro && grupo[i].codVoo == codVoo)
         {
             printf("O passageiro ID %d já possui reserva no voo %d.\n", idPassageiro, codVoo);
-            return 1; // Retorna 1 indicando que a reserva já existe
+            return 1; 
         }
     }
-    return 0; // Retorna 0 indicando que a reserva não foi encontrada
+    return 0; 
 }
 
 void reserva() {
@@ -630,8 +623,8 @@ void reserva() {
             return;
         }
         printf("Cadastrando novo passageiro...\n");
-        addPassageiro(); // Chama a função para adicionar um novo passageiro
-        codPassageiro = passageiros[n - 1].id; // Obtém o ID do último passageiro cadastrado
+        addPassageiro(); 
+        codPassageiro = passageiros[n - 1].id; 
     }
 
     // Verificar se o passageiro existe
@@ -657,8 +650,9 @@ void reserva() {
         if (grupo[i].numeroAssento == numAssento && grupo[i].codVoo == codVoo) {
             if (grupo[i].status == 0) {
                 grupo[i].status = 1;
-                grupo[i].idPassageiro = codPassageiro; // Vincula o ID do passageiro ao assento
+                grupo[i].idPassageiro = codPassageiro; 
                 printf("Assento reservado com sucesso para o passageiro ID %d!\n", codPassageiro);
+                printf("Você irá pagar: %.2f\n", voos[i].tarifa);
                 return;
             } else {
                 printf("Assento já está ocupado!\n");
@@ -693,7 +687,7 @@ void darBaixa()
             if (grupo[i].status == 1)
             {
                 grupo[i].status = 0;
-                grupo[i].idPassageiro = 0; // Desvincular o ID do passageiro do assento
+                grupo[i].idPassageiro = 0; 
                 printf("Assento baixado com sucesso!\n");
                 return;
             }
@@ -821,7 +815,7 @@ void buscarTripulante()
     if (opcao == 1)
     {
         char nomeBusca[CHAR_MAX];
-        getchar(); // Limpa o buffer do teclado
+        getchar(); 
         printf("Digite o nome do tripulante: ");
         fgets(nomeBusca, sizeof(nomeBusca), stdin);
         nomeBusca[strcspn(nomeBusca, "\n")] = '\0';
