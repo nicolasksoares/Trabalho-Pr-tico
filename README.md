@@ -57,7 +57,7 @@ Continuamos desenvolvendo o código; as funcionalidades de teste de voo, baixa n
 ![Sprint 7](img/Backlog-do-produto7.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Sprint 8: Na oitava imagem, mostramos o quadro Kanban na oitava sprint. 
+#Sprint 8: Na oitava imagem, mostramos o quadro Kanban da oitava sprint. 
 
 Continuamos desenvolvendo a parte de documentação; as tarefas de documentação de reserva, documentação de cadastro de passageiros, documentação de menu, documentação de cadastro de assentos, documentação de cadastro de voo e documentação de pesquisa estão aguardando revisão. O menu começou a ser desenvolvido. 
 ![Sprint 8](img/Backlog-do-produto8.png)
