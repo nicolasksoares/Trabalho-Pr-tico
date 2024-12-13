@@ -27,6 +27,7 @@ O objetivo é realizar um sistema de gerenciamento para a Voo Seguro, que subtit
 
 ![Sprint 1](img/Backlog-do-produto.png)
 #Sprint 2: Na segunda imagem, mostramos o quadro Kanban após a segunda sprint. Começamos os primeiros passos para desenvolver o código, iniciando com as funcionalidades de cadastrar passageiro, realizar reserva, cadastrar assento e, por último, o programa de fidelidade(Cada função com seu devido nivel de dificuldade e prioridade).
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ![Sprint 2](img/Backlog-do-produto2.png)
 #Sprint 3: Entendemos os problemas
