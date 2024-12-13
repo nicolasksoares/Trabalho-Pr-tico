@@ -697,6 +697,10 @@ void reserva() {
         if (grupo[i].numeroAssento == numAssento && grupo[i].codVoo == codVoo) {
             if (grupo[i].status == 0) {
                 grupo[i].status = 1;
+                if (passageiros[i].fidelidade == 1){
+                    passageiros[i].pontos += 10;
+                    printf("Parabéns! Você é um assinante fidelidade.\n");
+                    printf("Seu novo total de pontos é: %d\n", passageiros[i].pontos);}
                 printf("Assento reservado com sucesso para o passageiro ID %d!\n", codPassageiro);
                 printf("Você irá pagar: %.2f\n", voos[i].tarifa);
                 return;
@@ -734,9 +738,6 @@ void darBaixa()
             {
                 grupo[i].status = 0;
                 grupo[i].idPassageiro = 0;
-                if (passageiros[grupo[i].idPassageiro -1].fidelidade == 1){ 
-                    passageiros[grupo[i].idPassageiro - 1].pontos += 10;
-                    printf("Mais 10 pontos\n");}
                 printf("Assento baixado com sucesso!\n");
                 return;
             }
