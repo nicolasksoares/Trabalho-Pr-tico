@@ -747,64 +747,62 @@ void lerPassageiros()
 
 void buscarPassageiro()
 {
-    int opcao;
-    printf("Pesquisar Passageiro:\n[1] Pelo Nome\n[2] Pelo Código\nEscolha uma opção: ");
-    scanf("%d", &opcao);
+    int escolha;
+    printf("Buscar passageiro por:\n");
+    printf("[1] ID\n");
+    printf("[2] Nome\n");
+    escolha = obterInteiro("Digite a opção desejada: ");
 
-    if (opcao == 1)
-    {
-        char nomeBusca[CHAR_MAX];
-        getchar(); 
-        printf("Digite o nome do passageiro: ");
-        fgets(nomeBusca, sizeof(nomeBusca), stdin);
-        nomeBusca[strcspn(nomeBusca, "\n")] = '\0';
+    if (escolha == 1) {
+        int idBuscado;
+        idBuscado = obterInteiro("Digite o ID do passageiro que deseja buscar: ");
 
         int encontrado = 0;
-        for (int i = 0; i < n; i++)
-        {
-            if (strstr(passageiros[i].nome, nomeBusca))
-            {
-                printf("ID: %d\nNome: %s\nEndereco: %s\nTelefone: %s\nFidelidade: %s\n\n",
-                       passageiros[i].id, passageiros[i].nome, passageiros[i].endereco,
-                       passageiros[i].telefone, passageiros[i].fidelidade == 1 ? "Sim" : "Não");
-                encontrado = 1;
-            }
-        }
-
-        if (!encontrado)
-        {
-            printf("Nenhum passageiro encontrado com este nome informado.\n");
-        }
-    }
-    else if (opcao == 2)
-    {
-        int codigoBusca;
-        codigoBusca = obterInteiro("Digite o código do passageiro: ");
-
-        int encontrado = 0;
-        for (int i = 0; i < n; i++)
-        {
-            if (passageiros[i].id == codigoBusca)
-            {
-                printf("ID: %d\nNome: %s\nEndereco: %s\nTelefone: %s\nFidelidade: %s\n\n",
-                       passageiros[i].id, passageiros[i].nome, passageiros[i].endereco,
-                       passageiros[i].telefone, passageiros[i].fidelidade == 1 ? "Sim" : "Não");
+        for (int i = 0; i < n; i++) {
+            if (passageiros[i].id == idBuscado) {
+                printf("\nPassageiro encontrado:\n");
+                printf("ID: %d\n", passageiros[i].id);
+                printf("Nome: %s\n", passageiros[i].nome);
+                printf("Endereco: %s\n", passageiros[i].endereco);
+                printf("Telefone: %d\n", passageiros[i].telefone);
+                printf("Fidelidade: %s\n", (passageiros[i].fidelidade == 1) ? "Sim" : "Não");
+                printf("Pontos: %d\n", passageiros[i].pontos);
                 encontrado = 1;
                 break;
             }
         }
 
-        if (!encontrado)
-        {
-            printf("Nenhum passageiro encontrado com o código informado.\n");
+        if (!encontrado) {
+            printf("\nPassageiro com ID %d não encontrado!\n", idBuscado);
         }
-    }
-    else
-    {
-        printf("Opção inválida.\n");
+
+    } else if (escolha == 2) {
+        char nomeBuscado[CHAR_MAX];
+        obterString("Digite o nome do passageiro que deseja buscar: ", nomeBuscado);
+
+        int encontrado = 0;
+        for (int i = 0; i < n; i++) {
+            // Compara o nome buscado com o nome do passageiro
+            if (strstr(passageiros[i].nome, nomeBuscado) != NULL) {
+                printf("\nPassageiro encontrado:\n");
+                printf("ID: %d\n", passageiros[i].id);
+                printf("Nome: %s\n", passageiros[i].nome);
+                printf("Endereco: %s\n", passageiros[i].endereco);
+                printf("Telefone: %d\n", passageiros[i].telefone);
+                printf("Fidelidade: %s\n", (passageiros[i].fidelidade == 1) ? "Sim" : "Não");
+                printf("Pontos: %d\n", passageiros[i].pontos);
+                encontrado = 1;
+            }
+        }
+
+        if (!encontrado) {
+            printf("\nNenhum passageiro com o nome '%s' encontrado!\n", nomeBuscado);
+        }
+
+    } else {
+        printf("Opção inválida! Tente novamente.\n");
     }
 }
-
 // Função para buscar membros da tripulação pelo nome ou código
 void buscarTripulante()
 {
