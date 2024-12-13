@@ -23,16 +23,16 @@ Professores: Carlos Ribas e Laerte                Entrega: 15/12/2024           
 O objetivo é realizar um sistema de gerenciamento para a Voo Seguro, que subtitua os métodos manuais antigos. Para isso propomos um software feito na linguagem C que irá auxiliar-los por meio da automatização do controle de dados. A solução incluirá uma interface intuitiva, projetada para facilitar o uso com uma gama de comandos e funções para isso.
 
 # Backlog to produto:
-#Sprint 1: Na primeira imagem, mostramos o quadro Kanban após a primeira sprint. Primeiro, entendemos os requisitos do trabalho e realizamos a divisão das tarefas que cada membro irá realizar, os níveis de dificuldade, o tempo estimado, o tamanho de cada tarefa e os seus níveis de prioridade. Por fim, mostramos os progressos que cada tarefa irá fazer ao decorrer das sprints.
+#Sprint 1: Na primeira imagem, mostramos o quadro Kanban na primeira sprint. Primeiro, entendemos os requisitos do trabalho e realizamos a divisão das tarefas que cada membro irá realizar, os níveis de dificuldade, o tempo estimado, o tamanho de cada tarefa e os seus níveis de prioridade. Por fim, mostramos os progressos que cada tarefa irá fazer ao decorrer das sprints.
 ![Sprint 1](img/Backlog-do-produto.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Sprint 2: Na segunda imagem, mostramos o quadro Kanban após a segunda sprint. Começamos os primeiros passos para desenvolver o código, iniciando com as funcionalidades de cadastrar passageiro, realizar reserva, cadastrar assento e, por último, o programa de fidelidade(Cada função com seu devido nivel de dificuldade e prioridade).
+#Sprint 2: Na segunda imagem, mostramos o quadro Kanban na segunda sprint. Começamos os primeiros passos para desenvolver o código, iniciando com as funcionalidades de cadastrar passageiro, realizar reserva, cadastrar assento e, por último, o programa de fidelidade(Cada função com seu devido nivel de dificuldade e prioridade).
 ![Sprint 2](img/Backlog-do-produto2.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#Sprint 3: Na terceira imagem, mostramos o quadro Kanban após a terceira sprint. 
+#Sprint 3: Na terceira imagem, mostramos o quadro Kanban na terceira sprint. 
 
 Continuamos desenvolvendo o código; as funcionalidades de cadastro de passageiro, realização de reserva, cadastro de assento e o programa de fidelidade foram concluídas e passaram para a etapa de testes. 
 ![Sprint 3](img/Backlog-do-produto3.png)
@@ -43,29 +43,35 @@ Continuamos desenvolvendo o código; as funcionalidades de cadastro de passageir
 ![Sprint 4](img/Backlog-do-produto4.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Sprint 5: Na quinta imagem, mostramos o quadro Kanban após a quinta sprint. Realizamos os testes utilizando a biblioteca Unit nas funções que foram realizadas na última sprint (4). Os testes foram nas funções de cadastrar voo, cadastrar tripulação, pesquisar e dar baixa em reservas. Também é perceptível o andamento das nossas tarefas ao longo das sprints. 
+#Sprint 5: Na quinta imagem, mostramos o quadro Kanban na quinta sprint. Realizamos os testes utilizando a biblioteca Unit nas funções que foram realizadas na última sprint (4). Os testes foram nas funções de cadastrar voo, cadastrar tripulação, pesquisar e dar baixa em reservas. Também é perceptível o andamento das nossas tarefas ao longo das sprints. 
 ![Sprint 5](img/Backlog-do-produto5.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Sprint 6: Na sexta imagem, mostramos o quadro Kanban após a sexta sprint. Começamos a parte de documentação, realizando a documentação nas funções de fazer reserva, cadastrar passageiros, menu e função de cadastro de assentos, também realizamos a revisão dos codigos e dos testes que foram feitos até o momento.
+#Sprint 6: Na sexta imagem, mostramos o quadro Kanban na sexta sprint. Começamos a parte de documentação, realizando a documentação nas funções de fazer reserva, cadastrar passageiros, menu e função de cadastro de assentos, também realizamos a revisão dos codigos e dos testes que foram feitos até o momento.
 ![Sprint 6](img/Backlog-do-produto6.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Sprint 7: Na sétima imagem, mostramos o quadro Kanban após a sétima sprint. 
+#Sprint 7: Na sétima imagem, mostramos o quadro Kanban na sétima sprint. 
 
 Continuamos desenvolvendo o código; as funcionalidades de teste de voo, baixa na reserva, cadastro de tripulação, pesquisa, teste de pesquisa e teste de baixa na reserva já foram revisadas e concluídas. As tarefas de documentação de reserva, documentação de cadastro de passageiros, documentação de menu e documentação de cadastro de assentos foram realizadas e estão aguardando revisão. A documentação de cadastro de voo e a documentação de pesquisa começaram a ser desenvolvidas. 
 ![Sprint 7](img/Backlog-do-produto7.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Sprint 8: Entendemos os problemas
+#Sprint 8: Na oitava imagem, mostramos o quadro Kanban na oitava sprint. 
+
+Continuamos desenvolvendo a parte de documentação; as tarefas de documentação de reserva, documentação de cadastro de passageiros, documentação de menu, documentação de cadastro de assentos, documentação de cadastro de voo e documentação de pesquisa estão aguardando revisão. O menu começou a ser desenvolvido. 
 ![Sprint 8](img/Backlog-do-produto8.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Sprint 9: Entendemos os problemas
+#Sprint 9: Na nona imagem, mostramos o quadro Kanban na nona sprint. 
+
+Nessa sprint, todas as tarefas que estavam em revisão foram revisadas e concluídas (documentação de reserva, documentação de cadastro de passageiros, documentação de menu, documentação de cadastro de assentos, documentação de cadastro de voo e documentação de pesquisa). O menu foi finalizado, e as tarefas de integração de todo o código e o teste de menu começaram a ser desenvolvidas. 
 ![Sprint 9](img/Backlog-do-produto9.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Sprint 10: Entendemos os problemas.
+#Sprint 10: Na décima imagem, mostramos o quadro Kanban na décima sprint. 
+
+Todos os testes foram realizados e todos os códigos foram criados. Agora, começamos a juntar todo o programa.
 ![Sprint 10](img/Backlog-do-produto10.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
