@@ -43,7 +43,7 @@ Continuamos desenvolvendo o código; as funcionalidades de cadastro de passageir
 ![Sprint 4](img/Backlog-do-produto4.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Sprint 5: Na quinta imagem, mostramos o quadro Kanban na quinta sprint. Realizamos os testes utilizando a biblioteca Unit nas funções que foram realizadas na última sprint (4). Os testes foram nas funções de cadastrar voo, cadastrar tripulação, pesquisar e dar baixa em reservas. Também é perceptível o andamento das nossas tarefas ao longo das sprints. 
+#Sprint 5: Na quinta imagem, mostramos o quadro Kanban da quinta sprint. Realizamos os testes utilizando a biblioteca Unit nas funções que foram realizadas na última sprint (4). Os testes foram nas funções de cadastrar voo, cadastrar tripulação, pesquisar e dar baixa em reservas. Também é perceptível o andamento das nossas tarefas ao longo das sprints. 
 ![Sprint 5](img/Backlog-do-produto5.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
