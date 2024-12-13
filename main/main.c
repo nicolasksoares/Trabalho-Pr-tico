@@ -60,9 +60,9 @@ Passageiro passageiros[MAX_PASSAGEIROS];
 Tripulacao tripulacao[MAX_TRIPULACAO];
 Voo voos[MAX_VOOS];
 int i;
-int quantidadeTripulacao = 0; 
+int quantidadeTripulacao = 0;
 int totalAssento = 0;
-int totalVoos = 0; 
+int totalVoos = 0;
 int n = 0; // Contador de passageiros
 
 // Funções auxiliares
@@ -70,7 +70,7 @@ void obterString(char mensagem[], char destino[]) {
     while (1) {
         printf("%s", mensagem);
         fgets(destino, CHAR_MAX, stdin);
-        destino[strcspn(destino, "\n")] = '\0';  
+        destino[strcspn(destino, "\n")] = '\0';
 
         // Verifica se a string não está vazia e se contém apenas letras
         int valido = 1;
@@ -110,11 +110,11 @@ int obterInteiro(char mensagem[]) {
     while (1) {
         printf("%s", mensagem);
         if (scanf("%d", &valor) == 1 && valor > 0) {
-            getchar(); 
+            getchar();
             return valor;
         }
         printf("Erro: Insira um número inteiro positivo.\n");
-        while (getchar() != '\n'); 
+        while (getchar() != '\n');
     }
 }
 
@@ -124,11 +124,11 @@ float obterFloat(char mensagem[]) {
     while (1) {
         printf("%s", mensagem);
         if (scanf("%f", &valor) == 1 && valor > 0) {
-            getchar(); 
+            getchar();
             return valor;
         }
         printf("Erro: Insira um número decimal positivo.\n");
-        while (getchar() != '\n'); 
+        while (getchar() != '\n');
     }
 }
 
@@ -189,7 +189,7 @@ void addPassageiro()
         setbuf(stdin, 0);
         printf("Digite o endereco: ");
         fgets(novo_passageiro.endereco, sizeof(novo_passageiro.endereco), stdin);
-        novo_passageiro.endereco[strcspn(novo_passageiro.endereco, "\n")] = '\0'; 
+        novo_passageiro.endereco[strcspn(novo_passageiro.endereco, "\n")] = '\0';
     } while (verificarEspacosBrancos(novo_passageiro.endereco));
 
         novo_passageiro.telefone = obterInteiro("Digite o telefone do passageiro (apenas numeros, minimo 8 digitos): ");
@@ -382,7 +382,7 @@ int verificarDuplicidade(Voo voos[], int total, Voo novoVoo) {
                 voos[i].idCopiloto == novoVoo.idCopiloto ||
                 voos[i].idComissario == novoVoo.idComissario ||
                 strcmp(voos[i].origem, novoVoo.origem) == 0 && strcmp(voos[i].destino, novoVoo.destino) == 0) {
-                return 1; 
+                return 1;
             }
         }
     }
@@ -391,10 +391,10 @@ int verificarDuplicidade(Voo voos[], int total, Voo novoVoo) {
 
 int verificarTripulanteCadastrado(int cargo, int idTripulante) {
     for (int i = 0; i < totalVoos; i++) {
-        if ((cargo == 1 && voos[i].idPiloto == idTripulante) || 
-            (cargo == 2 && voos[i].idCopiloto == idTripulante) || 
+        if ((cargo == 1 && voos[i].idPiloto == idTripulante) ||
+            (cargo == 2 && voos[i].idCopiloto == idTripulante) ||
             (cargo == 3 && voos[i].idComissario == idTripulante)) {
-            return 1; 
+            return 1;
         }
     }
     return 0;
@@ -404,10 +404,10 @@ int verificarTripulanteCadastrado(int cargo, int idTripulante) {
 int verificarExistenciaTripulante(int idTripulante) {
     for (int i = 0; i < quantidadeTripulacao; i++) {
         if (tripulacao[i].id == idTripulante) {
-            return 1; 
+            return 1;
         }
     }
-    return 0; // 
+    return 0; //
 }
 
 
@@ -426,7 +426,7 @@ void registrarVoo(int index) {
     obterString("Insira o destino do voo: ",temp.destino);
 
 temp.idAviao = obterInteiro("Insira o ID do avião: ");
-    
+
     // Obter o ID do tripulante para os cargos de piloto, copiloto e comissário
     int idPiloto = obterInteiro("Insira o ID do piloto: ");
     int idCopiloto = obterInteiro("Insira o ID do copiloto: ");
@@ -435,33 +435,33 @@ temp.idAviao = obterInteiro("Insira o ID do avião: ");
     // Verificar se o tripulante existe
     if (!verificarExistenciaTripulante(idPiloto)) {
         printf("Erro: Piloto com ID %d não encontrado.\n", idPiloto);
-        return; 
+        return;
     }
 
     if (!verificarExistenciaTripulante(idCopiloto)) {
         printf("Erro: Copiloto com ID %d não encontrado.\n", idCopiloto);
-        return; 
+        return;
     }
 
     if (!verificarExistenciaTripulante(idComissario)) {
         printf("Erro: Comissário com ID %d não encontrado.\n", idComissario);
-        return; 
+        return;
     }
 
     // Verificar se o tripulante já está cadastrado para o cargo correspondente
     if (verificarTripulanteCadastrado(1, idPiloto)) {
         printf("Piloto já cadastrado em outro voo.\n");
-        return; 
+        return;
     }
 
     if (verificarTripulanteCadastrado(2, idCopiloto)) {
         printf("Copiloto já cadastrado em outro voo.\n");
-        return; 
+        return;
     }
 
     if (verificarTripulanteCadastrado(3, idComissario)) {
         printf("Comissário já cadastrado em outro voo.\n");
-        return; 
+        return;
     }
 
     // Atribuindo os IDs dos tripulantes ao voo
@@ -480,12 +480,12 @@ temp.tarifa = obterFloat("Insira a tarifa do voo: ");
 
     if (verificarDuplicidade(voos, totalVoos,temp)) {
         printf("Erro: Voo duplicado. Insira os dados novamente.\n");
-        registrarVoo(index); 
+        registrarVoo(index);
     }
-    
+
     voos[index] = temp;
     totalVoos++;
-    
+
 }
 
 // Função para exibir os dados de um voo
@@ -520,7 +520,7 @@ void cadastrarVoo() {
                 if (totalVoos < MAX_VOOS) {
                     printf("\n--- Registro do Voo %d ---\n", totalVoos + 1);
                     voos[totalVoos].id = totalVoos + 1;
-                    registrarVoo(totalVoos);  
+                    registrarVoo(totalVoos);
                 } else {
                     printf("Limite máximo de voos atingido.\n");
                 }
@@ -528,7 +528,7 @@ void cadastrarVoo() {
             case 2:
                 printf("\n--- Voos Registrados ---\n");
                 for (int i = 0; i < totalVoos; i++) {
-                    exibirVoo(i);  
+                    exibirVoo(i);
                 }
                 break;
             case 3:
@@ -544,10 +544,10 @@ void cadastrarVoo() {
 int verificarCodigoVoo(int codVoo) {
     for (int i = 0; i < totalVoos; i++) {
         if (voos[i].id == codVoo) {
-            return 1; 
+            return 1;
         }
     }
-    return 0; 
+    return 0;
 }
 
 void cadastrarAssento() {
@@ -559,23 +559,23 @@ void cadastrarAssento() {
     int numAssento, codVoo;
     printf("Digite o número do assento: ");
     scanf("%d", &numAssento);
-    
+
     if (numAssento < 0) {
         printf("Número do assento inválido!\n");
         return;
     }
-    
+
     printf("Digite o código do voo: ");
     scanf("%d", &codVoo);
-    
+
     // Verificar se o código do voo está registrado
     if (!verificarCodigoVoo(codVoo)) {
         printf("Erro: Código de voo %d não registrado!\n", codVoo);
-        return;  
+        return;
     }
 
     // Verificar se o voo está ativo (status == 1)
-    if (voos[codVoo - 1].status != 1) {  
+    if (voos[codVoo - 1].status != 1) {
         printf("Erro: O voo com código %d não está ativo.\n", codVoo);
         return;
     }
@@ -588,7 +588,7 @@ void cadastrarAssento() {
 
     grupo[totalAssento].numeroAssento = numAssento;
     grupo[totalAssento].codVoo = codVoo;
-    grupo[totalAssento].status = 0;  
+    grupo[totalAssento].status = 0;
     totalAssento++;
 
     printf("Assento cadastrado com sucesso!\n");
@@ -617,10 +617,10 @@ int verificarReservaPassageiro(int idPassageiro, int codVoo)
         if (grupo[i].idPassageiro == idPassageiro && grupo[i].codVoo == codVoo)
         {
             printf("O passageiro ID %d já possui reserva no voo %d.\n", idPassageiro, codVoo);
-            return 1; 
+            return 1;
         }
     }
-    return 0; 
+    return 0;
 }
 
 void reserva() {
@@ -644,14 +644,14 @@ void reserva() {
             return;
         }
         printf("Cadastrando novo passageiro...\n");
-        addPassageiro(); 
-        codPassageiro = passageiros[n - 1].id; 
+        addPassageiro();
+        codPassageiro = passageiros[n - 1].id;
     }
 
     // Verificar se o passageiro existe
     if (!verificarPassageiro(codPassageiro)) {
     printf("Passageiro não encontrado! Cadastre o passageiro primeiro.\n");
-    getchar(); 
+    getchar();
     return;
 }
 
@@ -671,7 +671,7 @@ void reserva() {
         if (grupo[i].numeroAssento == numAssento && grupo[i].codVoo == codVoo) {
             if (grupo[i].status == 0) {
                 grupo[i].status = 1;
-                grupo[i].idPassageiro = codPassageiro; 
+                grupo[i].idPassageiro = codPassageiro;
                 printf("Assento reservado com sucesso para o passageiro ID %d!\n", codPassageiro);
                 printf("Você irá pagar: %.2f\n", voos[i].tarifa);
                 return;
@@ -708,7 +708,7 @@ void darBaixa()
             if (grupo[i].status == 1)
             {
                 grupo[i].status = 0;
-                grupo[i].idPassageiro = 0; 
+                grupo[i].idPassageiro = 0;
                 printf("Assento baixado com sucesso!\n");
                 return;
             }
@@ -834,7 +834,7 @@ void buscarTripulante()
     if (opcao == 1)
     {
         char nomeBusca[CHAR_MAX];
-        getchar(); 
+        getchar();
         printf("Digite o nome do tripulante: ");
         fgets(nomeBusca, sizeof(nomeBusca), stdin);
         nomeBusca[strcspn(nomeBusca, "\n")] = '\0';
@@ -1006,26 +1006,31 @@ void fidelidade(){
                "[2] Acumular pontos\n"
                "[3] Sair\n");
         opcao = obterInteiro("Escolha uma opção: ");
-        switch (opcao){
-            case 1:
+        
+        switch (opcao) {
+            case 1: {
+                // Bloco de código para a opção 1
                 int idPassageiro;
                 printf("Digite o ID do passageiro: ");
                 scanf("%d", &idPassageiro);
                 consultarPontos(idPassageiro);
                 break;
-            case 2:
+            }
+            case 2: {
+                // Bloco de código para a opção 2
                 int idPassageiro2;
                 printf("Digite o ID do passageiro: ");
                 scanf("%d", &idPassageiro2);
                 acumularPontos(idPassageiro2);
                 break;
+            }
             case 3:
                 printf("Saindo do menu de programa de fidelidade...\n");
                 break;
             default:
                 printf("Opção inválida!\n");
         }
-    } while (opcao!= 3);
+    } while (opcao != 3);
 }
 
 // Função principal
