@@ -159,9 +159,9 @@ Função que recebe como parâmetros as variáveis e o struct (Voo *voo, Voo voo
 Função para exibir todos os dados do voo. Mostra os dados como (ID, data, hora, origem, destino, IDS de tripulante, status (ativo ou inativo) e tarifa. 
 
 # Backlog to produto:
-#Sprint 1: Entendemos os problemas
+#Sprint 1: Na primeira imagem, mostramos o quadro Kanban após a primeira sprint. Primeiro, entendemos os requisitos do trabalho e realizamos a divisão das tarefas que cada membro irá realizar, os níveis de dificuldade, o tempo estimado, o tamanho de cada tarefa e os seus níveis de prioridade. Por fim, mostramos os progressos que cada tarefa irá fazer ao decorrer das sprints.
 ![WhatsApp Image 2024-12-13 at 14 38 10](https://github.com/user-attachments/assets/d43ffeb4-0e42-4284-a473-faf7f35dd25e)
-#Sprint 2: Entendemos os problemas
+#Sprint 2: Na segunda imagem, mostramos o quadro Kanban após a segunda sprint. Começamos os primeiros passos para desenvolver o código, iniciando com as funcionalidades de cadastrar passageiro, realizar reserva, cadastrar assento e, por último, o programa de fidelidade(Cada função com seu devido nivel de dificuldade e prioridade).
 ![WhatsApp Image 2024-12-13 at 14 39 40](https://github.com/user-attachments/assets/b2ccb033-ee7c-4ff3-ad30-875173eb0ec5)
 #Sprint 3: Entendemos os problemas
 ![WhatsApp Image 2024-12-13 at 14 45 46](https://github.com/user-attachments/assets/3fbc830d-9dca-42a5-b5e5-3268d3dd5760)
