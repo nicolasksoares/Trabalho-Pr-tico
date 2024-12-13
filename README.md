@@ -47,11 +47,11 @@ Continuamos desenvolvendo o código; as funcionalidades de cadastro de passageir
 ![Sprint 5](img/Backlog-do-produto5.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Sprint 6: Na sexta imagem, mostramos o quadro Kanban na sexta sprint. Começamos a parte de documentação, realizando a documentação nas funções de fazer reserva, cadastrar passageiros, menu e função de cadastro de assentos, também realizamos a revisão dos codigos e dos testes que foram feitos até o momento.
+#Sprint 6: Na sexta imagem, mostramos o quadro Kanban da sexta sprint. Começamos a parte de documentação, realizando a documentação nas funções de fazer reserva, cadastrar passageiros, menu e função de cadastro de assentos, também realizamos a revisão dos codigos e dos testes que foram feitos até o momento.
 ![Sprint 6](img/Backlog-do-produto6.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Sprint 7: Na sétima imagem, mostramos o quadro Kanban na sétima sprint. 
+#Sprint 7: Na sétima imagem, mostramos o quadro Kanban da sétima sprint. 
 
 Continuamos desenvolvendo o código; as funcionalidades de teste de voo, baixa na reserva, cadastro de tripulação, pesquisa, teste de pesquisa e teste de baixa na reserva já foram revisadas e concluídas. As tarefas de documentação de reserva, documentação de cadastro de passageiros, documentação de menu e documentação de cadastro de assentos foram realizadas e estão aguardando revisão. A documentação de cadastro de voo e a documentação de pesquisa começaram a ser desenvolvidas. 
 ![Sprint 7](img/Backlog-do-produto7.png)
