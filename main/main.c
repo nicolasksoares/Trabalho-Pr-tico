@@ -508,7 +508,7 @@ temp.tarifa = obterFloat("Insira a tarifa do voo: ");
         printf("Erro: Voo duplicado. Insira os dados novamente.\n");
         registrarVoo(index);
     }
-
+    temp.id=totalVoos+1;
     voos[index] = temp;
     totalVoos++;
 
