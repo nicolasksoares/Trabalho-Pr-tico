@@ -697,9 +697,6 @@ void reserva() {
         if (grupo[i].numeroAssento == numAssento && grupo[i].codVoo == codVoo) {
             if (grupo[i].status == 0) {
                 grupo[i].status = 1;
-                grupo[i].idPassageiro = codPassageiro;
-                passageiros[codPassageiro-1].pontos += 10;
-                printf("Mais 10 pontos\n");
                 printf("Assento reservado com sucesso para o passageiro ID %d!\n", codPassageiro);
                 printf("Você irá pagar: %.2f\n", voos[i].tarifa);
                 return;
@@ -737,6 +734,9 @@ void darBaixa()
             {
                 grupo[i].status = 0;
                 grupo[i].idPassageiro = 0;
+                if (passageiros[grupo[i].idPassageiro -1].fidelidade == 1){ 
+                    passageiros[grupo[i].idPassageiro - 1].pontos += 10;
+                    printf("Mais 10 pontos\n");}
                 printf("Assento baixado com sucesso!\n");
                 return;
             }
@@ -934,28 +934,21 @@ void buscarTripulante()
 
 
 // Função para listar todos os voos de um passageiro
-void listarVoosPassageiro()
-{
-    int codigoPassageiro;
-    codigoPassageiro = obterInteiro("Digite o código do passageiro: ");
+void listarVoosPassageiro() {
+    int codigoPassageiro = obterInteiro("Digite o código do passageiro: ");
 
-    if (!verificarPassageiro(codigoPassageiro))
-    {
+    if (!verificarPassageiro(codigoPassageiro)) {
         printf("Passageiro não encontrado.\n");
         return;
     }
 
     int encontrado = 0;
     printf("\nVoos do Passageiro ID %d:\n", codigoPassageiro);
-    for (int i = 0; i < totalAssento; i++)
-    {
-        if (grupo[i].status == 1 && grupo[i].idPassageiro == codigoPassageiro)
-        {
-            for (int j = 0; j < totalVoos; j++)
-            {
-                if (grupo[i].codVoo == voos[j].id)
-                {
-                    printf("Nome: %d\nVoo ID: %d\nOrigem: %s\nDestino: %s\nTarifa: %.2f\n\n",
+    for (int i = 0; i < totalAssento; i++) {
+        if (grupo[i].status == 1 && grupo[i].idPassageiro == codigoPassageiro) {
+            for (int j = 0; j < totalVoos; j++) {
+                if (grupo[i].codVoo == voos[j].id) {
+                    printf("Voo ID: %d\nOrigem: %s\nDestino: %s\nTarifa: %.2f\n\n",
                            voos[j].id, voos[j].origem, voos[j].destino, voos[j].tarifa);
                     encontrado = 1;
                 }
@@ -963,8 +956,7 @@ void listarVoosPassageiro()
         }
     }
 
-    if (!encontrado)
-    {
+    if (!encontrado) {
         printf("Nenhum voo encontrado para este passageiro.\n");
     }
 }
