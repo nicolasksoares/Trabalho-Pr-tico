@@ -41,11 +41,11 @@ O objetivo é realizar um sistema de gerenciamento para a Voo Seguro, que subtit
 ![Sprint 4](img/Backlog-do-produto4.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Sprint 5: Entendemos os problemas
+#Sprint 5: Na quinta imagem, mostramos o quadro Kanban após a quinta sprint. Realizamos os testes utilizando a biblioteca unit nas funções que foram realizadas na ultima sprint(4), os testes foram nas funções de cadastrar voo, cadastrar tripulação, pesquisa e dar baixa em reservas, e também é perceptivel o andamento das nossas tarefas ao decorrer das sprints. 
 ![Sprint 5](img/Backlog-do-produto5.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Sprint 6: Na quinta imagem, mostramos o quadro Kanban após a quinta sprint. Realizamos os testes utilizando a biblioteca unit nas funções que foram realizadas na ultima sprint(4), os testes foram nas funções de cadastrar voo, cadastrar tripulação, pesquisa e dar baixa em reservas, e também é perceptivel o andamento das nossas tarefas ao decorrer das sprints. 
+#Sprint 6:
 ![Sprint 6](img/Backlog-do-produto6.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
