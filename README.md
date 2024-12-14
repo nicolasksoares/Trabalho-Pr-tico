@@ -1,4 +1,4 @@
-# Trabalho-Prático
+# Trabalho-Prático - Voo Seguro
 
 Pontifícia Universidade Católica de Minas Gerais
 
@@ -20,7 +20,12 @@ Professores: Carlos Ribas e Laerte                Entrega: 15/12/2024           
 
 # Objetivo:
 
-O objetivo é realizar um sistema de gerenciamento para a Voo Seguro, que subtitua os métodos manuais antigos. Para isso propomos um software feito na linguagem C que irá auxiliar-los por meio da automatização do controle de dados. A solução incluirá uma interface intuitiva, projetada para facilitar o uso com uma gama de comandos e funções para isso.
+O objetivo da Voo Seguro é realizar um sistema de gerenciamento para a Voo Seguro, que subtitua os métodos manuais antigos. Para isso propomos um software feito na linguagem C que irá auxiliar-los por meio da automatização do controle de dados. A solução incluirá uma interface intuitiva, projetada para facilitar o uso com uma gama de comandos e funções para isso.
+
+# Video de demostração
+
+[![Demostração](https://img.youtube.com/vi/X9ePBc_Ke90/0.jpg)](https://www.youtube.com/watch?v=X9ePBc_Ke90)
+
 
 # Backlog to produto:
 #Sprint 1: Na primeira imagem, mostramos o quadro Kanban da primeira sprint.
