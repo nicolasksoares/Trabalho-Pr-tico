@@ -393,12 +393,48 @@ Relatorio de execução de testes:
 | Telefone: "12345" |  Telefone não válido  | Sim       |
 | Telefone: "40028922" |  Telefone válido  | Sim       |
 
+## Adicionar voo
+Teste 1: Menu de opções
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Inteiros  | Numeros entre 1 a 3 | Executar a funcionalidade que está associada | Números negativos, nulos ou  maiores que 3 | Pedir novamente uma inserção válida ao usúario |
+
+
+Relatorio de execução de testes:
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Valor: "-1"  | Opção inexistente        | Sim       |
+| Valor: "0"   | Opção inexistente        | Sim       |
+| Valor: "1"   | Cadastrar voo            | Sim       |
+| Valor: "2"   | Exibir voos cadastrados  | Sim       |
+| Valor: "3"   | Sair do menu             | Sim       |
+| Valor: "17"  | Opção inexistente        | Sim       |
+
+Teste 2: Adcionar voo
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Inteiros e string | Numeros inteiros positivos e ids existentes; String com apenas texto | Cadastrar o voo | Numeros negativos, nulo e ids inexistentes e strings com apenas numeros | Executar um erro, não foi possível cadastrar |
+
+Deixamos pré definidos 4 Voos e executamos teste baseados neles:
+1.Data: 01/01/2025, Hora: 12:00, Origem: São Paulo, Destino: Rio de Janeiro, ID Avião: 101, ID Piloto: 1, ID Copiloto: 2, ID Comissário: 3, Status: Ativo, Tarifa: R$ 150,00
+2. Data: 02/01/2025, Hora: 15:30, Origem: Rio de Janeiro, Destino: São Paulo, ID Avião: 102, ID Piloto: 4, ID Copiloto: 5, ID Comissário: 6, Status: Ativo, Tarifa: R$ 180,00  
+3. Data: 03/01/2025, Hora: 08:00, Origem: São Paulo, Destino: Brasília, ID Avião: 103, ID Piloto: 7, ID Copiloto: 8, ID Comissário: 9, Status: Inativo, Tarifa: R$ 200,00  
+4. Data: 04/01/2025, Hora: 17:00, Origem: Brasília, Destino: Fortaleza, ID Avião: 104, ID Piloto: 10, ID Copiloto: 11, ID Comissário: 12, Status: Ativo, Tarifa: R$ 220,00
+
+
+Relatorio de execução de teste
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Data: 05/01/2025, Hora: 10:00, Origem: Fortaleza, Destino: São Paulo, ID Avião: 105, ID Piloto: 13, ID Copiloto: 14, ID Comissário: 15, Status: Ativo, Tarifa: R$ 230,00 | Cadastrado com sucesso | Sim |
+| Data: 02/01/2025, Hora: 15:30, Origem: Rio de Janeiro, Destino: São Paulo, ID Avião: 102, ID Piloto: 4, ID Copiloto: 5, ID Comissário: 6, Status: Ativo, Tarifa: R$ 180,00 | Voo duplicado | Sim |
+
+
 ## Adicionar assentos
 
 Teste 1:  Limite de assentos cadastrados atingido
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
-| Inteiros         | Valores maiores que o limite| Erro ao cadastrar       | Numeros dentro do limite      | Executar a função de cadastrar     |
+| Inteiros         | Valores maiores que o limite| Erro ao cadastrar       | Numeros dentro do limite      | Executar a função de cadastrar     | Cadastro com sucesso |
 
 Relatorio de execução de teste
 | ENTRADAS     | RESULTADO                | APROVADOS |
