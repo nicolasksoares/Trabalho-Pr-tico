@@ -1,4 +1,4 @@
-# Trabalho-Prático
+# Trabalho-Prático - Voo Seguro
 
 Pontifícia Universidade Católica de Minas Gerais
 
@@ -20,14 +20,41 @@ Professores: Carlos Ribas e Laerte                Entrega: 15/12/2024           
 
 # Objetivo:
 
-O objetivo é realizar um sistema de gerenciamento para a Voo Seguro, que subtitua os métodos manuais antigos. Para isso propomos um software feito na linguagem C que irá auxiliar-los por meio da automatização do controle de dados. A solução incluirá uma interface intuitiva, projetada para facilitar o uso com uma gama de comandos e funções para isso.
+O objetivo da Voo Seguro é realizar um sistema de gerenciamento para a Voo Seguro, que subtitua os métodos manuais antigos. Para isso propomos um software feito na linguagem C que irá auxiliar-los por meio da automatização do controle de dados. A solução incluirá uma interface intuitiva, projetada para facilitar o uso com uma gama de comandos e funções para isso.
+
+# Video de demostração:
+
+[![Demostração](https://img.youtube.com/vi/X9ePBc_Ke90/0.jpg)](https://www.youtube.com/watch?v=X9ePBc_Ke90)
+
 
 # Backlog to produto:
-#Sprint 1: Na primeira imagem, mostramos o quadro Kanban da primeira sprint. Primeiro, entendemos os requisitos do trabalho e realizamos a divisão das tarefas que cada membro irá realizar, os níveis de dificuldade, o tempo estimado, o tamanho de cada tarefa e os seus níveis de prioridade. Por fim, mostramos os progressos que cada tarefa irá fazer ao decorrer das sprints.
+
+##Fotos das reuniões:
+
+
+#Reunião 1
+![WhatsApp Image 2024-12-13 at 19 24 14](https://github.com/user-attachments/assets/1800af9c-d985-45a0-9da2-14d844a81ecf)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Reunião 2
+![WhatsApp Image 2024-12-13 at 19 24 14 (1)](https://github.com/user-attachments/assets/ee7c8222-eaf8-491c-b6c2-a7089c9a06f4)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Reunião 3
+![WhatsApp Image 2024-12-13 at 21 02 07](https://github.com/user-attachments/assets/f47f35d0-fb5b-4134-bc0d-8d95e98b62a7)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Reunião 4
+![WhatsApp Image 2024-12-13 at 21 04 30](https://github.com/user-attachments/assets/519c4169-26eb-4186-aa6a-2066fad144d1)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Sprint 1: Na primeira imagem, mostramos o quadro Kanban da primeira sprint.
+
+Primeiro, entendemos os requisitos do trabalho e realizamos a divisão das tarefas que cada membro irá realizar, os níveis de dificuldade, o tempo estimado, o tamanho de cada tarefa e os seus níveis de prioridade. Por fim, mostramos os progressos que cada tarefa irá fazer ao decorrer das sprints.
 ![Sprint 1](img/Backlog-do-produto.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Sprint 2: Na segunda imagem, mostramos o quadro Kanban da segunda sprint. Começamos os primeiros passos para desenvolver o código, iniciando com as funcionalidades de cadastrar passageiro, realizar reserva, cadastrar assento e, por último, o programa de fidelidade(Cada função com seu devido nivel de dificuldade e prioridade).
+#Sprint 2: Na segunda imagem, mostramos o quadro Kanban da segunda sprint.
+
+Começamos os primeiros passos para desenvolver o código, iniciando com as funcionalidades de cadastrar passageiro, realizar reserva, cadastrar assento e, por último, o programa de fidelidade(Cada função com seu devido nivel de dificuldade e prioridade).
 ![Sprint 2](img/Backlog-do-produto2.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -39,15 +66,21 @@ Continuamos desenvolvendo o código; as funcionalidades de cadastro de passageir
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#Sprint 4: Na quarta imagem, mostramos o quadro Kanban da quarta sprint. Terminamos todas as primeiras funções e seus devidos testes e começamos a revisá-los. Após isso, iniciamos as funcionalidades de dar baixa em reservas, cadastro de voo, cadastro de tripulação e pesquisa.
+#Sprint 4: Na quarta imagem, mostramos o quadro Kanban da quarta sprint.
+
+Terminamos todas as primeiras funções e seus devidos testes e começamos a revisá-los. Após isso, iniciamos as funcionalidades de dar baixa em reservas, cadastro de voo, cadastro de tripulação e pesquisa.
 ![Sprint 4](img/Backlog-do-produto4.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Sprint 5: Na quinta imagem, mostramos o quadro Kanban da quinta sprint. Realizamos os testes utilizando a biblioteca Unit nas funções que foram realizadas na última sprint (4). Os testes foram nas funções de cadastrar voo, cadastrar tripulação, pesquisar e dar baixa em reservas. Também é perceptível o andamento das nossas tarefas ao longo das sprints. 
+#Sprint 5: Na quinta imagem, mostramos o quadro Kanban da quinta sprint.
+
+Realizamos os testes utilizando a biblioteca Unit nas funções que foram realizadas na última sprint (4). Os testes foram nas funções de cadastrar voo, cadastrar tripulação, pesquisar e dar baixa em reservas. Também é perceptível o andamento das nossas tarefas ao longo das sprints. 
 ![Sprint 5](img/Backlog-do-produto5.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Sprint 6: Na sexta imagem, mostramos o quadro Kanban da sexta sprint. Começamos a parte de documentação, realizando a documentação nas funções de fazer reserva, cadastrar passageiros, menu e função de cadastro de assentos, também realizamos a revisão dos codigos e dos testes que foram feitos até o momento.
+#Sprint 6: Na sexta imagem, mostramos o quadro Kanban da sexta sprint.
+
+Começamos a parte de documentação, realizando a documentação nas funções de fazer reserva, cadastrar passageiros, menu e função de cadastro de assentos, também realizamos a revisão dos codigos e dos testes que foram feitos até o momento.
 ![Sprint 6](img/Backlog-do-produto6.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -234,6 +267,12 @@ Função para exibir todos os dados do voo. Mostra os dados como (ID, data, hora
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
 | Nome, cargo, telefone | Nome com apenas letras e espaços. Codigo numerico representando o cargo. Int com comprimento válido | Tripulante salvo | Nome em branco. Crago com letras, caracteres especiais ou vazios. Telefone com letras, negativos ou vazios | Informar ao usuario erro que não foi possível cadastrar o tripulante |
 
+## Adicionar voo
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Data do voo, horas, origem, destino, id do avião, id do piloto, copiloto, comissario e tarifa | Data e horas válidas; Origem e destino com apenas texto; id do avião não negativo; id od piloto, comissario existente e tarifa não negativa e nula | Registrar as informações correspondentes do voo | Data e horas que não estão no padrão; origem e destino com apenas numero; ids inexistentes; tarifa negativa | Avisar o usuario que não foi possível realizar o cadastramento |
+
+
 ## Adicionar assentos
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
@@ -356,12 +395,48 @@ Relatorio de execução de testes:
 | Telefone: "12345" |  Telefone não válido  | Sim       |
 | Telefone: "40028922" |  Telefone válido  | Sim       |
 
+## Adicionar voo
+Teste 1: Menu de opções
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Inteiros  | Numeros entre 1 a 3 | Executar a funcionalidade que está associada | Números negativos, nulos ou  maiores que 3 | Pedir novamente uma inserção válida ao usúario |
+
+
+Relatorio de execução de testes:
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Valor: "-1"  | Opção inexistente        | Sim       |
+| Valor: "0"   | Opção inexistente        | Sim       |
+| Valor: "1"   | Cadastrar voo            | Sim       |
+| Valor: "2"   | Exibir voos cadastrados  | Sim       |
+| Valor: "3"   | Sair do menu             | Sim       |
+| Valor: "17"  | Opção inexistente        | Sim       |
+
+Teste 2: Adcionar voo
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Inteiros e string | Numeros inteiros positivos e ids existentes; String com apenas texto | Cadastrar o voo | Numeros negativos, nulo e ids inexistentes e strings com apenas numeros | Executar um erro, não foi possível cadastrar |
+
+Deixamos pré definidos 4 Voos e executamos teste baseados neles:
+1.Data: 01/01/2025, Hora: 12:00, Origem: São Paulo, Destino: Rio de Janeiro, ID Avião: 101, ID Piloto: 1, ID Copiloto: 2, ID Comissário: 3, Status: Ativo, Tarifa: R$ 150,00
+2. Data: 02/01/2025, Hora: 15:30, Origem: Rio de Janeiro, Destino: São Paulo, ID Avião: 102, ID Piloto: 4, ID Copiloto: 5, ID Comissário: 6, Status: Ativo, Tarifa: R$ 180,00  
+3. Data: 03/01/2025, Hora: 08:00, Origem: São Paulo, Destino: Brasília, ID Avião: 103, ID Piloto: 7, ID Copiloto: 8, ID Comissário: 9, Status: Inativo, Tarifa: R$ 200,00  
+4. Data: 04/01/2025, Hora: 17:00, Origem: Brasília, Destino: Fortaleza, ID Avião: 104, ID Piloto: 10, ID Copiloto: 11, ID Comissário: 12, Status: Ativo, Tarifa: R$ 220,00
+
+
+Relatorio de execução de teste
+| ENTRADAS     | RESULTADO                | APROVADOS |
+|--------------|--------------------------|-----------|
+| Data: 05/01/2025, Hora: 10:00, Origem: Fortaleza, Destino: São Paulo, ID Avião: 105, ID Piloto: 13, ID Copiloto: 14, ID Comissário: 15, Status: Ativo, Tarifa: R$ 230,00 | Cadastrado com sucesso | Sim |
+| Data: 02/01/2025, Hora: 15:30, Origem: Rio de Janeiro, Destino: São Paulo, ID Avião: 102, ID Piloto: 4, ID Copiloto: 5, ID Comissário: 6, Status: Ativo, Tarifa: R$ 180,00 | Voo duplicado | Sim |
+
+
 ## Adicionar assentos
 
 Teste 1:  Limite de assentos cadastrados atingido
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
-| Inteiros         | Valores maiores que o limite| Erro ao cadastrar       | Numeros dentro do limite      | Executar a função de cadastrar     |
+| Inteiros         | Valores maiores que o limite| Erro ao cadastrar       | Numeros dentro do limite      | Executar a função de cadastrar     | Cadastro com sucesso |
 
 Relatorio de execução de teste
 | ENTRADAS     | RESULTADO                | APROVADOS |
