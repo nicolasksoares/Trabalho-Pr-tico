@@ -697,6 +697,7 @@ void reserva() {
         if (grupo[i].numeroAssento == numAssento && grupo[i].codVoo == codVoo) {
             if (grupo[i].status == 0) {
                 grupo[i].status = 1;
+                grupo[i].idPassageiro = codPassageiro;
                 if (passageiros[i].fidelidade == 1){
                     passageiros[i].pontos += 10;
                     printf("Parabéns! Você é um assinante fidelidade.\n");
@@ -938,6 +939,7 @@ void buscarTripulante()
 void listarVoosPassageiro() {
     int codigoPassageiro = obterInteiro("Digite o código do passageiro: ");
 
+    printf("%d\n", codigoPassageiro);
     if (!verificarPassageiro(codigoPassageiro)) {
         printf("Passageiro não encontrado.\n");
         return;
@@ -947,11 +949,14 @@ void listarVoosPassageiro() {
     printf("\nVoos do Passageiro ID %d:\n", codigoPassageiro);
     for (int i = 0; i < totalAssento; i++) {
         if (grupo[i].status == 1 && grupo[i].idPassageiro == codigoPassageiro) {
+            printf("Assento ID: %d\nVoo ID: %d\nStatus: %s\n\n",
+                   grupo[i].idPassageiro, grupo[i].codVoo, grupo[i].status == 1? "Disponível" : "Reservado");
             for (int j = 0; j < totalVoos; j++) {
                 if (grupo[i].codVoo == voos[j].id) {
                     printf("Voo ID: %d\nOrigem: %s\nDestino: %s\nTarifa: %.2f\n\n",
                            voos[j].id, voos[j].origem, voos[j].destino, voos[j].tarifa);
                     encontrado = 1;
+                    break;
                 }
             }
         }
@@ -993,17 +998,6 @@ void pesquisa()
         }
     } while (opcao != 4);
 }
-void acumularPontos(int idPassageiro) {
-    for (int i = 0; i < MAX_PASSAGEIROS; i++) {
-        if (passageiros[i].id == idPassageiro && passageiros[i].fidelidade == 1){
-            passageiros[i].pontos += 10; // Adiciona 10 pontos por voo
-            printf("10 pontos adicionados ao passageiro %s (ID: %d). Total: %d pontos.\n",
-                   passageiros[i].nome, idPassageiro, passageiros[i].pontos);
-            return;
-        }
-    }
-    printf("Erro: Passageiro com ID %d não encontrado ou não possui fidelidade.\n", idPassageiro);
-}
 
 // Função para consultar pontos de fidelidade pelo ID
 void consultarPontos(int idPassageiro) {
@@ -1024,8 +1018,7 @@ void fidelidade(){
     {
         printf("\nMenu de Programa de Fidelidade:\n"
                "[1] Consultar pontos de fidelidade\n"
-               "[2] Acumular pontos\n"
-               "[3] Sair\n");
+               "[2] Sair\n");
         opcao = obterInteiro("Escolha uma opção: ");
         
         switch (opcao) {
@@ -1037,21 +1030,13 @@ void fidelidade(){
                 consultarPontos(idPassageiro);
                 break;
             }
-            case 2: {
-                // Bloco de código para a opção 2
-                int idPassageiro2;
-                printf("Digite o ID do passageiro: ");
-                scanf("%d", &idPassageiro2);
-                acumularPontos(idPassageiro2);
-                break;
-            }
-            case 3:
+            case 2:
                 printf("Saindo do menu de programa de fidelidade...\n");
                 break;
             default:
                 printf("Opção inválida!\n");
         }
-    } while (opcao != 3);
+    } while (opcao != 2);
 }
 
 // Função principal
