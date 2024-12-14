@@ -265,6 +265,12 @@ Função para exibir todos os dados do voo. Mostra os dados como (ID, data, hora
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
 | Nome, cargo, telefone | Nome com apenas letras e espaços. Codigo numerico representando o cargo. Int com comprimento válido | Tripulante salvo | Nome em branco. Crago com letras, caracteres especiais ou vazios. Telefone com letras, negativos ou vazios | Informar ao usuario erro que não foi possível cadastrar o tripulante |
 
+## Adicionar voo
+| ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
+|-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
+| Data do voo, horas, origem, destino, id do avião, id do piloto, copiloto, comissario e tarifa | Data e horas válidas; Origem e destino com apenas texto; id do avião não negativo; id od piloto, comissario existente e tarifa não negativa e nula | Registrar as informações correspondentes do voo | Data e horas que não estão no padrão; origem e destino com apenas numero; ids inexistentes; tarifa negativa | Avisar o usuario que não foi possível realizar o cadastramento |
+
+
 ## Adicionar assentos
 | ENTRADAS         | CLASSES VÁLIDAS          | RESULTADO ESPERADO         | CLASSES INVÁLIDAS             | RESULTADO ESPERADO    |
 |-------------------|--------------------------|----------------------------|-------------------------------|-----------------------|
