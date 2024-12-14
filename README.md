@@ -28,6 +28,20 @@ O objetivo da Voo Seguro é realizar um sistema de gerenciamento para a Voo Segu
 
 
 # Backlog to produto:
+
+##Fotos das reuniões:
+#Reunião 1
+![WhatsApp Image 2024-12-13 at 19 24 14](https://github.com/user-attachments/assets/1800af9c-d985-45a0-9da2-14d844a81ecf)
+
+#Reunião 2
+![WhatsApp Image 2024-12-13 at 19 24 14 (1)](https://github.com/user-attachments/assets/ee7c8222-eaf8-491c-b6c2-a7089c9a06f4)
+
+#Reunião 3
+![WhatsApp Image 2024-12-13 at 21 02 07](https://github.com/user-attachments/assets/f47f35d0-fb5b-4134-bc0d-8d95e98b62a7)
+
+#Reunião 4
+![WhatsApp Image 2024-12-13 at 21 04 30](https://github.com/user-attachments/assets/519c4169-26eb-4186-aa6a-2066fad144d1)
+
 #Sprint 1: Na primeira imagem, mostramos o quadro Kanban da primeira sprint.
 
 Primeiro, entendemos os requisitos do trabalho e realizamos a divisão das tarefas que cada membro irá realizar, os níveis de dificuldade, o tempo estimado, o tamanho de cada tarefa e os seus níveis de prioridade. Por fim, mostramos os progressos que cada tarefa irá fazer ao decorrer das sprints.
