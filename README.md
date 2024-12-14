@@ -30,6 +30,8 @@ O objetivo da Voo Seguro é realizar um sistema de gerenciamento para a Voo Segu
 # Backlog to produto:
 
 ##Fotos das reuniões:
+
+
 #Reunião 1
 ![WhatsApp Image 2024-12-13 at 19 24 14](https://github.com/user-attachments/assets/1800af9c-d985-45a0-9da2-14d844a81ecf)
 
