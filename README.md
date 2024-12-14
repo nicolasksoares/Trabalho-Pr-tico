@@ -22,7 +22,7 @@ Professores: Carlos Ribas e Laerte                Entrega: 15/12/2024           
 
 O objetivo da Voo Seguro é realizar um sistema de gerenciamento para a Voo Seguro, que subtitua os métodos manuais antigos. Para isso propomos um software feito na linguagem C que irá auxiliar-los por meio da automatização do controle de dados. A solução incluirá uma interface intuitiva, projetada para facilitar o uso com uma gama de comandos e funções para isso.
 
-# Video de demostração
+# Video de demostração:
 
 [![Demostração](https://img.youtube.com/vi/X9ePBc_Ke90/0.jpg)](https://www.youtube.com/watch?v=X9ePBc_Ke90)
 
